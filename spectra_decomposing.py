@@ -139,7 +139,10 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
         lowbound[ncold:_]=Tsmin
         for _ in range(nwarm):
             lowbound[2*ncold+_*3+1]=xemi.min()
-            lowbound[2*ncold+_*3]=calculate_noise(yemi,yemi_err,n=3)*2
+            ind=np.argmin(np.abs(x - p0[2*ncold+_*3+1]))
+            lowbound[2*ncold+_*3]=np.mean(yemi_err[(ind-4):(ind+4)])*3
+            p0[2*ncold+_*3]=np.mean(yemi_err[(ind-4):(ind+4)])*3+1
+            #lowbound[2*ncold+_*3]=calculate_noise(yemi,yemi_err,n=3)*2
         highbound=np.array([np.inf for _ in range(len(p0))])
         for _ in range(ncold):
             highbound[_]=p0[_]+v_sh

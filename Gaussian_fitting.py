@@ -80,8 +80,10 @@ def fitting(x,y,y_err,CF_limit=0.97,x_peak=[],fit_mode='BIC'):
         k = len(pop_)
         n = len(y)
         bic = k * np.log(n) + chi2
-        a=calculate_noise(y,y_err,n=10)*3.3
-        bic  += 20 if np.any(pop_[0::3] < a) else 0
+        a=calculate_noise(y,y_err,n=10)*4
+        count = np.sum(pop_[0::3] < a)
+        bic += 20 * count
+        #bic  += 20 if np.any(pop_[0::3] < a) else 0
 
         return pop_,bic,pcov_
     
@@ -176,6 +178,9 @@ def fitting(x,y,y_err,CF_limit=0.97,x_peak=[],fit_mode='BIC'):
         ]
         # Generate all combinations of the modified second elements
         all_combinations = list(product(*modifications))
+        original_p0_combination = tuple(p0[i * 3 + 1] for i in range(num))
+        all_combinations.append(original_p0_combination)
+       # print(all_combinations)
         # Evaluate all combinations to find the minimum BIC
         results = []
         for combination in all_combinations:
