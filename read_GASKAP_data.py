@@ -176,7 +176,7 @@ def slope_corr(x,y,err,n=3):
     return 1-ycor 
     
 
-def get_emi_abs_data(name,name_abs,ra,dec,mode='SMC',R_out=8,R_in=4,emi='ring',avg_m='raw',v_move=0.):
+def get_emi_abs_data(name,name_abs,ra,dec,mode='SMC',R_out=8,R_in=4,emi='ring',avg_m='raw',v_move=0.,save_saturated=False):
     if mode=='LMC':
         a = np.loadtxt(f"{datapathbase}/LMC_GASKAP_emi_all_abs/{name}.txt")
         x, y,yerr=read_GASKAP_abs(name_abs,mode='LMC',emi=False)
@@ -220,14 +220,18 @@ def get_emi_abs_data(name,name_abs,ra,dec,mode='SMC',R_out=8,R_in=4,emi='ring',a
     y=slope_corr(x,y,yerr)
     
     if y.min()<=0:
-        print('Satuated')
-        y=1-y
-        p=np.argwhere(y>=0.96).flatten()
-        y[p]=0.96
-        #y=y/y.max()-np.exp(-3)
-        y=1-y
+        #print('Satuated')
+        if save_saturated:
+            with open(datapathbase + '/output_data/LMC_fitting/saturated_spectra.txt', 'a') as f:
+                f.write(f"{name}\n")
+    #    y=1-y
+    #    p=np.argwhere(y>=0.99).flatten()
+    #    y[p]=0.99
+    #    #y=y/y.max()-np.exp(-3)
+    #    y=1-y
     x=x+v_move
-    y=-np.log(y)
+    #y=-np.log(y)
+    y=1-y
     #yerr=-np.log(yerr)
     
     

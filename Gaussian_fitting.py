@@ -73,16 +73,29 @@ def fitting(x,y,y_err,CF_limit=0.97,x_peak=[],fit_mode='BIC'):
         #f=gaussian_func_multi(x,*p0)
         #print(p0,f)
         pop_, pcov = curve_fit(gaussian_func_multi, x, y1,p0=p0,bounds=(lowbound,highbound),
-                               maxfev = 10000)
+                               maxfev = 100000)
         pcov_=np.diag(pcov)
         residuals=y-gaussian_func_multi(x,*pop_)
         chi2 = np.nansum((residuals / y_err) ** 2)
         k = len(pop_)
         n = len(y)
         bic = k * np.log(n) + chi2
-        a=calculate_noise(y,y_err,n=10)*4
-        count = np.sum(pop_[0::3] < a)
-        bic += 20 * count
+        
+        b=max(abs(y.min()),np.max(pop_[0::3])/5,calculate_noise(y,y_err,n=10)*4)
+        count = np.sum(pop_[0::3]<b)
+        bic +=5* count
+       # print(k * np.log(n),chi2,np.sum((residuals/y_err)**2))
+        #a=calculate_noise(y,y_err,n=10)*4
+        #count = np.sum(pop_[0::3] < a)
+        #print(count)
+        #a=bic/40
+        #bic += a * count
+        #b=max(abs(y.min()),np.max(pop_[0::3])/5)
+        #count = np.sum(pop_[0::3]<b)
+        #count = np.sum(pop_[0::3]<np.max(pop_[0::3])/5)
+        #count = np.sum(pop_[0::3]<abs(y.min())*1.1)
+        #bic +=a* count
+        #print(pop_[1::3],count,a)
         #bic  += 20 if np.any(pop_[0::3] < a) else 0
 
         return pop_,bic,pcov_
@@ -123,7 +136,7 @@ def fitting(x,y,y_err,CF_limit=0.97,x_peak=[],fit_mode='BIC'):
                 improving = True
                 y_res=y
                 k=1
-                while improving and k<6:
+                while improving and k<8:
                     _bbic=100000
                     try:
                         for pos in range(_pe):
@@ -151,11 +164,12 @@ def fitting(x,y,y_err,CF_limit=0.97,x_peak=[],fit_mode='BIC'):
                     index=np.argsort(y[pe])[::-1]
                     pe=pe[index]
                     pe=pe[(x[pe] > (x.min()+10)) &(x[pe] < (x.max()-10))]
-                    _pe = min(6-k, len(pe))
+                    #_pe = min(6-k, len(pe))
+                    _pe = min(5, len(pe))
                     b_pos=-1
                     k+=1
                     print('BIC ',bic,'n=',k)
-                    if bic< best_bic-5:
+                    if bic< best_bic-4:
                         best_bic = bic
 
                     else:
@@ -163,11 +177,26 @@ def fitting(x,y,y_err,CF_limit=0.97,x_peak=[],fit_mode='BIC'):
                         improving = False
                 #print(best_bic,p0_1)    
                 popt_1,score_1,pcov_1=loop(p0_1[:-3],x, y,y_err)
-                print('final n=',k-1)
+               
                 #print(popt_1)    
                
                 return popt_1,pcov_1
             popt,pcov= fit_and_calculate_bic(x, y, y_err)
+            if len(popt)/3>1:
+                #b=max(abs(y.min()),np.max(popt[0::3])/5,calculate_noise(y,y_err,n=10)*4)
+                b=calculate_noise(y,y_err,n=10)*4
+                _popt = popt.reshape(-1, 3)
+                _=np.argmax(popt[0::3])
+                mask = ~((_popt[:, 0] < b) & (abs(_popt[:, 1] - _popt[:, 1][_]) > 20))
+                #print(b,_popt[:,0] < b,_popt[:,0],_popt[:, 1])
+                popt_new = _popt[mask]  
+                #print(popt[0::3],b)
+                popt_new = popt_new.flatten()
+                popt,bic_,pcov=loop(popt_new , x, y, y_err)
+                print('final n=',len(popt)/3,b,popt[0::3] < b,popt[0::3])
+                print('BIC=',bic_)
+                
+                    
             
 
           
@@ -200,7 +229,7 @@ def fitting_plot(x,y,y_err,x_peak=[],fit_mode='BIC'):
     #g = Gaussian1DKernel(stddev=0.5) # you can adjust the stddev value to prevent over smooth (smaller stddev, less smooth)
     #y = convolve(y, g)
     popt,_=fitting(x,y,y_err,x_peak=x_peak,fit_mode=fit_mode)
-    print(popt)
+    print(popt[0::3],np.max(popt[0::3])/5,y.min())
     y_fit=gaussian_func_multi(x, *popt)
     plt.figure(dpi=200)
     plt.subplot(211)
@@ -216,6 +245,30 @@ def fitting_plot(x,y,y_err,x_peak=[],fit_mode='BIC'):
     plt.axhline(y=0, color='black', linestyle='--')
     plt.fill_between(x,y_err,-y_err,alpha=0.2,facecolor='gray',edgecolor='gray')
     plt.subplots_adjust(hspace=0)
+    
+    
+def fitting_plot2(x, y, y_err, x_peak=[], fit_mode='BIC', ax=None):
+    popt, _ = fitting(x, y, y_err, x_peak=x_peak, fit_mode=fit_mode)
+    print(popt[0::3], np.max(popt[0::3]) / 5, y.min())
+    y_fit = gaussian_func_multi(x, *popt)
+    
+    if ax is None:
+        ax = plt.gca()  # Use the current axis if none is provided
+    
+    # Original data and total fit
+    ax.plot(x, y, label='Data', linewidth=1)
+    ax.plot(x, y_fit, label='Total Fit', linewidth=1.2)
+    
+    # Individual Gaussian components
+    for i in range(int(len(popt) / 3)):
+        j = i * 3
+        _popt = popt[j:j+3]
+        ax.plot(x, gaussian_func_multi(x, *_popt), c='gray', linewidth=1)
+    
+    # Residuals
+    ax.fill_between(x, y_err*4, -y_err*4, alpha=0.2, facecolor='gray', edgecolor='gray')
+    #ax.axhline(y=0, color='black', linestyle='--', linewidth=0.8)
+
 
 
 

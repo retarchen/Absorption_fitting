@@ -10,6 +10,8 @@ from scipy.integrate import trapz
 from scipy.signal import savgol_filter
 import Gaussian_fitting as Gf
 import pandas as pd
+import os
+from itertools import product
 
 linestyle_plot=['--','dotted','-.','solid','--','dotted','-.','solid']
 datapathbase='/d/bip5/hchen'
@@ -89,9 +91,19 @@ def F_test(x,y_0, y_fit1, y_fit2, sigma_rms, x_1, x_2):
 def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1],selfabs=False,
                         C_Flim=0.97,Tsmin=9,iteration_max=7,fit_mode='F_test',v_sh=4.):
     yemi_selferr=yemi-savgol_filter(yemi, window_length=51, polyorder=3)
-    #y is tau
-    popt_,pcov_=Gf.fitting(x,1-np.exp(-y),yerr,x_peak=peak_abs)
+    #y is 1-e^(-tau)
+    
+    ynew=np.copy(y)
+    g = Gaussian1DKernel(stddev=0.5)
+    ynew = convolve(ynew, g)
+    popt_,pcov_=Gf.fitting(x,ynew,yerr,x_peak=peak_abs)
     print(popt_[1::3])
+    if y.max()>=1.:
+        print('Satuated')
+        p=np.argwhere(y>=0.99).flatten()
+        y[p]=y[p]/y.max()*0.99
+        #y=y/y.max()-np.exp(-3)
+    y=-np.log(1-y)
     popt,pcov=Gf.fitting(x,y,yerr,x_peak=popt_[1::3])
     #popt[1]=popt[1]-3
     popt_ori=np.copy(popt)
@@ -140,8 +152,8 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
         for _ in range(nwarm):
             lowbound[2*ncold+_*3+1]=xemi.min()
             ind=np.argmin(np.abs(x - p0[2*ncold+_*3+1]))
-            lowbound[2*ncold+_*3]=np.mean(yemi_err[(ind-4):(ind+4)])*3
-            p0[2*ncold+_*3]=np.mean(yemi_err[(ind-4):(ind+4)])*3+1
+            lowbound[2*ncold+_*3]=np.mean(yemi_err[max(ind-5,0):min(ind+5,len(xemi)-1)])
+            p0[2*ncold+_*3]=np.mean(yemi_err[max(ind-5,0):min(ind+5,len(xemi)-1)])*1+1
             #lowbound[2*ncold+_*3]=calculate_noise(yemi,yemi_err,n=3)*2
         highbound=np.array([np.inf for _ in range(len(p0))])
         for _ in range(ncold):
@@ -162,7 +174,7 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
             
        # print(highbound,lowbound,p0)
         values = np.arange(0, ncold)
-        #print(p0,lowbound,highbound)
+       # print(p0,lowbound,highbound)
         CNMsequences = np.array(list(itertools.permutations(values, ncold)))
         Fsequences = np.array(list(itertools.product(F, repeat=nwarm)))
         for cn in range(len(CNMsequences)):
@@ -199,7 +211,7 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
                     T_WNM=T_WNM+3.77*(np.exp(-gaussian_func_multi(x,*popt))-1)
                     return T_CNM+T_WNM
                 try:
-                    pop_, pcov = curve_fit(T_exp, xemi, yemi,p0=p0,bounds=(lowbound,highbound),maxfev=80000)
+                    pop_, pcov = curve_fit(T_exp, xemi, yemi,p0=p0,bounds=(lowbound,highbound),maxfev=120000)
                 except RuntimeError as e:
                     print(f"Fit failed: {e}")
                 pcov_=np.diag(pcov)
@@ -221,6 +233,13 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
                 n = len(yemi)
                 #print(k,n,chi2,yemi_err.min())
                 bic = k * np.log(n) + chi2
+                count = np.sum(np.array(fit_err)>50)
+                bic +=10* count
+
+                a=pop_[_:]
+                count = np.sum(a[0::3]<calculate_noise(yemi,yemi_err)*3)
+                #print(a[0::3],calculate_noise(yemi,yemi_err),count)
+                bic +=10* count
                 #print(k,n,chi2,bic)
                 res.append(bic)
                # print(i,cn)
@@ -307,7 +326,7 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
                 #print('_pe',x[pe])
                 index=np.argsort(y[pe])[::-1]
                 pe=pe[index]
-                _pe = min(4, len(pe))
+                _pe = min(5, len(pe))
                 #print('peak',len(pe),x[pe],y[pe])
                 res1,popt2_1,funTexp1,Fsequences1,wf1,sigma_Tsf1,all_Tsf1,order1,fit_err1,v_shift1=loop(p0_1,ncold, x, 
                                                                                  y,y_error,popt,nwarm=0)
@@ -377,25 +396,28 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
                     pe, _ =find_peaks(y_res, height=np.max(y_res)/5, distance=5)
                     index=np.argsort(y[pe])[::-1]
                     pe=pe[index]
-                    _pe = min(4, len(pe))
+                    _pe = min(5, len(pe))
                     b_pos=-1
                     
                     print('BIC ',bic, 'Mean_score ', mean_score)
-                    if (bic-best_bic)<.1 and (mean_score-best_mean_score)<5:
-                    #if bic< best_bic+.1:
-                        best_bic = bic
-                        best_mean_score=mean_score
-                        if not improving:
-                            num=0
-                            lim=0
-                        
-
+                    
+                    if bic<700:
+                        if (bic-best_bic)<.1 and (mean_score-best_mean_score)<5:
+                        #if bic< best_bic+.1:
+                            best_bic = bic
+                            best_mean_score=mean_score
+                            if not improving:
+                                num=0
+                                lim=0
+                        else:
+                            # If the BIC did not improve, stop fitting additional Gaussians
+                            num+=1
+                        # if num>=lim and lim<2:
+                        #     lim+=1
+                            improving = False
                     else:
-                        # If the BIC did not improve, stop fitting additional Gaussians
                         num+=1
-                       # if num>=lim and lim<2:
-                       #     lim+=1
-                        improving = False
+                        improving = True
                     
 
                 #print(p0_1)
@@ -418,7 +440,30 @@ def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1]
         resye=np.sqrt(np.sum(yemi_selferr**2))
         print(resye)
         
-        res,popt2_,funTexp,Fsequences,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift=loop(p0,ncold, xemi, yemi,yemi_err,popt)
+        p0_=p0[2*ncold:]
+        t0=p0[:2*ncold]
+        num = len(p0_) // 3
+        modifications = [
+            [p0_[i * 3 + 1] - 4, p0_[i * 3 + 1] + 4] for i in range(num)
+        ]
+        # Generate all combinations of the modified second elements
+        all_combinations = list(product(*modifications))
+        original_p0_combination = tuple(p0_[i * 3 + 1] for i in range(num))
+        all_combinations.append(original_p0_combination)
+       # print(all_combinations)
+        # Evaluate all combinations to find the minimum BIC
+        results = []
+        for combination in all_combinations:
+            new_p0 = p0_.copy()
+            for i in range(num):
+                new_p0[i * 3 + 1] = combination[i]  # Update second elements
+            new_p0=np.concatenate((t0, new_p0))
+            results.append(loop(new_p0,ncold, xemi, yemi,yemi_err,popt))
+
+        res,popt2_,funTexp,Fsequences,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift= min(results, key=lambda r: r[0])
+        #print('BIC=',bic)
+        
+        #res,popt2_,funTexp,Fsequences,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift=loop(p0,ncold, xemi, yemi,yemi_err,popt)
        
     
     _=2*ncold
@@ -518,7 +563,7 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
                         fit_mode='F_test',v_sh=0.0001):
     '''
     x:velocity
-    y:tau
+    y:1-e^(-tau)
     '''
     ra, dec = parse_coords(name)
     popt,pcov,popt2,Ts,Ts_err,gausf,funT,Tfit_err,Or,fit_e,mean_Ts,sigma_meanTsf,nwarm,v_shift,_F=Gaussian_fit(x,y,yerr,
@@ -529,6 +574,13 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
                                                                 fit_mode=fit_mode,v_sh=v_sh)
     popt_ori=np.copy(popt)
     ncold=int(len(popt)/3)
+    if y.max()>=1.:
+        p=np.argwhere(y>=0.99).flatten()
+        y[p]=y[p]/y.max()*0.99
+        if savetxt:
+            with open(datapathbase + '/output_data/LMC_fitting/saturated_spectra.txt', 'a') as f:
+                f.write(f"{name}\n")
+
     if savetxt:
          #properties for full LOS
         NHI_c=0
@@ -540,10 +592,16 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
             j=i*3
             _popt=popt[j:j+3]
             _pcov=pcov[j:j+3]
-            NHI_c+=K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
-            _d=((K*sigma_meanTsf[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2])**2+(K*mean_Ts[i]*_pcov[0]*np.sqrt(2*np.pi)*_popt[2])**2+
-                (K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_pcov[2])**2)
-            sigma_NHIc+=_d
+            if mean_Ts[i]<=1000:
+                NHI_c+=K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
+                _d=((K*sigma_meanTsf[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2])**2+(K*mean_Ts[i]*_pcov[0]*np.sqrt(2*np.pi)*_popt[2])**2+
+                    (K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_pcov[2])**2)
+                sigma_NHIc+=_d
+            else:
+                NHI_w+=K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
+                _d=((K*sigma_meanTsf[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2])**2+(K*mean_Ts[i]*_pcov[0]*np.sqrt(2*np.pi)*_popt[2])**2+
+                    (K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_pcov[2])**2)
+                sigma_NHIw+=_d
         sigma_NHIc=np.sqrt(sigma_NHIc)
         print('nhi_c:',NHI_c,sigma_NHIc)
         for i in range(int(len(gausf)/3)):
@@ -560,33 +618,41 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
         sigma_fc=np.sqrt(((NHI_c/(NHI_c+NHI_w)**2*sigma_NHIw))**2+((NHI_w/(NHI_c+NHI_w)**2*sigma_NHIc))**2)
         print('fc:',f_c,sigma_fc)
         data = {
-            "Name": [name],
-            "NHI_c": [NHI_c],
-            "Sigma_NHIc": [sigma_NHIc],
-            "NHI_w": [NHI_w],
-            "Sigma_NHIw": [sigma_NHIw],
-            "f_c": [f_c],
-            "Sigma_fc": [sigma_fc],
+            "Name": name,
+            "NHI_c": NHI_c,
+            "Sigma_NHIc": sigma_NHIc,
+            "NHI_w": NHI_w,
+            "Sigma_NHIw": sigma_NHIw,
+            "f_c": f_c,
+            "Sigma_fc": sigma_fc,
         }
-        df = pd.DataFrame(data)
-        df.to_csv(datapathbase + '/output_data/LMC_fitting/Fulldata.csv', mode='a', index=False)
+        df = pd.DataFrame([data])
+        file_path=datapathbase + '/output_data/LMC_fitting/Fulldata.csv'
+        if os.path.exists(file_path):
+            df_existing = pd.read_csv(file_path)
+            df_existing=df_existing[df_existing['Name'] != name]
+            df_existing.reset_index(drop=True, inplace=True)
+            df_existing.to_csv(file_path, mode='w', index=False, header=True)
+        write_header = not os.path.exists(file_path)
+        df.to_csv(file_path, mode='a', index=False,header=write_header)
         #a=np.c_[name,NHI_c,sigma_NHIc,NHI_w,sigma_NHIw,f_c,sigma_fc]
         #with open(datapathbase+'/output_data/LMC_fitting/Fulldata.txt', 'a') as file:
         #    np.savetxt(file, a)
-                
+        warm_i=[]
         for i in range(ncold):
             j=i*3
             _popt=popt[j:j+3]
             _pcov=pcov[j:j+3]
             #fwhm_=2*np.sqrt(-2*_popt[2]**2*np.log((1-np.sqrt(1-_popt[0]))/_popt[0]))
             fwhm_=2.35482*_popt[2]
+            
             NHI_c=K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
             NHI_c_err=np.sqrt((K*sigma_meanTsf[i]*_popt[0]*np.sqrt(2*np.pi)*_popt[2])**2+(K*mean_Ts[i]*_pcov[0]*np.sqrt(2*np.pi)*_popt[2])**2+
                 (K*mean_Ts[i]*_popt[0]*np.sqrt(2*np.pi)*_pcov[2])**2)
             #NHI_w=abs(1.823e18*trapz(gaussian_func_multi(xemi,*gausf), xemi)/1e20)
             #NHI_all=abs(1.823e18*trapz(funT, xemi)/1e20)
             T_K=21.866*fwhm_**2
-            #fc_=NHI_c/(NHI_all)
+            
             if i==0:
                 #latex_code = r'''%d &%s & %.4f & %.4f& %.2f & %.2f $\pm$ %.2f& %d & %.2f $\pm$ %.2f  & %.1f $\pm$ %.1f  & %.2f $\pm$ %.2f  & %d & %.2f  \\  '''%(number_source,name_abs[-23:-9],ra,dec,f_c,mean_Ts[i],sigma_meanTsf[i],Or[i]
                #      ,_popt[0],_pcov[0],_popt[1],_pcov[1],fwhm_,2.355*_pcov[2],T_K,
@@ -605,13 +671,21 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
                 '''%(mean_Ts[i],sigma_meanTsf[i],Or[i],_popt[0],_pcov[0],_popt[1],_pcov[1],fwhm_,2.355*_pcov[2],T_K,
                      NHI_c, NHI_c_err)
            # print('popt:',_popt[0])
+            
             data = {
-                "Name": [name],'ra':[ra],'dec':[dec],
-                'popt0':[_popt[0]],'popt1':[_popt[1]],'fwhm':[fwhm_],'mean_Ts':[mean_Ts[i]],'sigma_mean_Ts':[sigma_meanTsf[i]]
-                ,'T_k':[T_K],'NHI_c':[NHI_c],'NHI_c_err':[NHI_c_err],'v_shift':[v_shift[i]]
+                "Name": name, "ra": ra, "dec": dec, "popt0": _popt[0], "popt1": _popt[1], "fwhm": fwhm_, "mean_Ts": mean_Ts[i],
+                "sigma_mean_Ts": sigma_meanTsf[i], "T_k": T_K, "NHI_c": NHI_c, "NHI_c_err": NHI_c_err, "v_shift": v_shift[i]
             }
-            df = pd.DataFrame(data)
-            df.to_csv(datapathbase + '/output_data/LMC_fitting/CNMonlydata.csv', mode='a', index=False)
+            df = pd.DataFrame([data])
+            file_path=datapathbase + '/output_data/LMC_fitting/CNMonlydata.csv'
+                
+            if os.path.exists(file_path):
+                df_existing = pd.read_csv(file_path)
+                df_existing=df_existing[df_existing['Name'] != name]
+                df_existing.reset_index(drop=True, inplace=True)
+                df_existing.to_csv(file_path, mode='w', index=False, header=True)
+            write_header = not os.path.exists(file_path)
+            df.to_csv(file_path, mode='a', index=False,header=write_header)
             #a=np.c_[name,ra,dec,_popt[0],_popt[1],fwhm_,mean_Ts[i],sigma_meanTsf[i],T_K,
             #     NHI_c,NHI_c_err,v_shift[i]]
             #with open(datapathbase+'/output_data/LMC_fitting/CNMonlydata.txt', 'a') as file:
@@ -638,10 +712,18 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
                 file.write(latex_code)
             #print('nhi1',NHI_w)
             data = {
-                "Name": [name],'NHI_w':[NHI_w],'NHI_w_err':[NHI_w_err]
+                "Name": name,'NHI_w':NHI_w,'NHI_w_err':NHI_w_err,
+                #'fwhm':fwhm_,'center_v':_popt[1]
             }
-            df = pd.DataFrame(data)
-            df.to_csv(datapathbase + '/output_data/LMC_fitting/WNMonlydata.csv', mode='a', index=False)
+            df = pd.DataFrame([data])
+            file_path=datapathbase + '/output_data/LMC_fitting/WNMonlydata.csv'
+            if os.path.exists(file_path):
+                df_existing = pd.read_csv(file_path)
+                df_existing=df_existing[df_existing['Name'] != name]
+                df_existing.reset_index(drop=True, inplace=True)
+                df_existing.to_csv(file_path, mode='w', index=False, header=True)
+            write_header = not os.path.exists(file_path)
+            df.to_csv(file_path, mode='a', index=False,header=write_header)
             #a=np.c_[name,NHI_w,NHI_w_err]
             #with open(datapathbase+'/output_data/LMC_fitting/WNMonlydata.txt', 'a') as file:
             #    np.savetxt(file, a)
@@ -673,7 +755,7 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
                                                                                              2.35482*_popt[2]),
                    linewidth=1.8,linestyle=linestyle_plot[i],color='gray')
     
-    #ax[0].set_title('%s'%(name_abs[-23:-9]))
+    
     ax[0].set_ylabel(r'$T_B$')
     nco=2 if nwarm>4 else 1
     ax[0].legend(framealpha=0,fontsize='x-small',ncol=nco)
@@ -687,7 +769,7 @@ def fit_and_plot(x,y,yerr,xemi,yemi,yemi_err,ax,name='J003037-742901',peak_abs=[
     zero=np.array([0]*np.shape(xemi)[0])
     ax[1].plot(xemi,zero,linewidth=1,c='black')
     plt.subplots_adjust(hspace=0)
-    y=1-np.exp(-y)
+    #y=1-np.exp(-y)
     #yerr=1-np.exp(-yerr)
     a=1-np.exp(-gaussian_func_multi(x,*popt_ori))
     ax[2].plot(x, y, label='original data',linewidth=1.2,c='tab:blue')
