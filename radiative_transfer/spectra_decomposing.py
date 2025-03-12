@@ -30,6 +30,7 @@ class SpectraDecomposing:
         self.Tsky=2.73 #CMB
         self.v_shift=0.00001  # mannually adjust shift
         self.nGaussianMax=8
+        self.bic_weight=20
        # self.bic_weight=20
         self.peak_abs=[]
         self.peak_emi=[]
@@ -133,6 +134,7 @@ class SpectraDecomposing:
         
         gf=Gf(x,ynew,yerr)
         gf.x_peak=self.peak_abs
+        gf.bic_weight=self.bic_weight
         popt_,pcov_=gf.fitting()
 
        # popt_,pcov_=Gf.fitting(x,ynew,yerr,x_peak=self.peak_abs)
@@ -146,6 +148,7 @@ class SpectraDecomposing:
         
         gf=Gf(x,y,yerr)
         gf.x_peak=popt_[1::3]
+        gf.bic_weight=self.bic_weight
         popt,pcov=gf.fitting()
         
         #popt,pcov=Gf.fitting(x,y,yerr,x_peak=popt_[1::3])
