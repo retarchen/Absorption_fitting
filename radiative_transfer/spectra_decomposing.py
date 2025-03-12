@@ -39,6 +39,7 @@ class SpectraDecomposing:
         self.savecsv=False
         self.name='source'
         self.datapath='./'
+        self.renew=False
         
     @staticmethod
     def parse_coords(coord_string):
@@ -533,11 +534,11 @@ class SpectraDecomposing:
                                                                 np.array(funTexp),np.array(Fsequences),
                                                                 np.array(wf),np.array(sigma_Tsf),np.array(all_Tsf))
         #print(score_1.shape,popt2_.shape,funTexp.shape,Fsequences.shape,wf.shape,sigma_Tsf.shape,all_Tsf.shape)
-        #if len(score_1)>4:
-        #    _p=np.argwhere(score_1<(np.mean(score_1)+np.std(score_1))).flatten()
-        #    #print(score_1,_p,np.mean(score_1)+np.std(score_1))
-        #    score_1,popt2_,funTexp,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift,res=(score_1[_p],popt2_[_p],funTexp[_p],wf[_p],sigma_Tsf[_p],
-        #                                                                           all_Tsf[_p],order[_p],fit_err[_p],v_shift[_p],res[_p])
+        if len(score_1)>4:
+            _p=np.argwhere(score_1<(np.mean(score_1)+np.std(score_1))).flatten()
+            #print(score_1,_p,np.mean(score_1)+np.std(score_1))
+            score_1,popt2_,funTexp,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift,res=(score_1[_p],popt2_[_p],funTexp[_p],wf[_p],sigma_Tsf[_p],
+                                                                                   all_Tsf[_p],order[_p],fit_err[_p],v_shift[_p],res[_p])
             #print(score_1)
         #print(all_Tsf.shape)
         #for i in range(ncold):
@@ -639,6 +640,29 @@ class SpectraDecomposing:
             sigma_NHIc=0
             sigma_NHIw=0
             K=1.823e18/1e20
+            
+            if self.renew:
+                file_path=self.datapath+'CNMonlydata.csv'
+                if os.path.exists(file_path):
+                    df_existing = pd.read_csv(file_path)
+                    df_existing=df_existing[df_existing['Name'] != name]
+                    df_existing.reset_index(drop=True, inplace=True)
+                    df_existing.to_csv(file_path, mode='w', index=False, header=True)
+                    
+                file_path=self.datapath+'Fulldata.csv'
+                if os.path.exists(file_path):
+                    df_existing = pd.read_csv(file_path)
+                    df_existing=df_existing[df_existing['Name'] != name]
+                    df_existing.reset_index(drop=True, inplace=True)
+                    df_existing.to_csv(file_path, mode='w', index=False, header=True)
+                
+                file_path=self.datapath+'WNMonlydata.csv'
+                if os.path.exists(file_path):
+                    df_existing = pd.read_csv(file_path)
+                    df_existing=df_existing[df_existing['Name'] != name]
+                    df_existing.reset_index(drop=True, inplace=True)
+                    df_existing.to_csv(file_path, mode='w', index=False, header=True)
+                    
             for i in range(ncold):
                 j=i*3
                 _popt=popt[j:j+3]
@@ -681,11 +705,7 @@ class SpectraDecomposing:
             df = pd.DataFrame([data])
             file_path=self.datapath+'Fulldata.csv'
             #file_path=datapathbase + '/output_data/LMC_fitting/Fulldata.csv'
-            if os.path.exists(file_path):
-                df_existing = pd.read_csv(file_path)
-                df_existing=df_existing[df_existing['Name'] != name]
-                df_existing.reset_index(drop=True, inplace=True)
-                df_existing.to_csv(file_path, mode='w', index=False, header=True)
+        
             write_header = not os.path.exists(file_path)
             df.to_csv(file_path, mode='a', index=False,header=write_header)
             #a=np.c_[name,NHI_c,sigma_NHIc,NHI_w,sigma_NHIw,f_c,sigma_fc]
@@ -733,13 +753,6 @@ class SpectraDecomposing:
                 }
                 df = pd.DataFrame([data])
                 file_path=self.datapath+'CNMonlydata.csv'
-                #file_path=datapathbase + '/output_data/LMC_fitting/CNMonlydata.csv'
-                    
-                if os.path.exists(file_path):
-                    df_existing = pd.read_csv(file_path)
-                    df_existing=df_existing[df_existing['Name'] != name]
-                    df_existing.reset_index(drop=True, inplace=True)
-                    df_existing.to_csv(file_path, mode='w', index=False, header=True)
                 write_header = not os.path.exists(file_path)
                 df.to_csv(file_path, mode='a', index=False,header=write_header)
                 #a=np.c_[name,ra,dec,_popt[0],_popt[1],fwhm_,mean_Ts[i],sigma_meanTsf[i],T_K,
@@ -777,11 +790,6 @@ class SpectraDecomposing:
                 df = pd.DataFrame([data])
                 file_path=self.datapath+'WNMonlydata.csv'
                 #file_path=datapathbase + '/output_data/LMC_fitting/WNMonlydata.csv'
-                if os.path.exists(file_path):
-                    df_existing = pd.read_csv(file_path)
-                    df_existing=df_existing[df_existing['Name'] != name]
-                    df_existing.reset_index(drop=True, inplace=True)
-                    df_existing.to_csv(file_path, mode='w', index=False, header=True)
                 write_header = not os.path.exists(file_path)
                 df.to_csv(file_path, mode='a', index=False,header=write_header)
                 #a=np.c_[name,NHI_w,NHI_w_err]
