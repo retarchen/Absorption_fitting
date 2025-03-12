@@ -4,8 +4,7 @@ from astropy.io.votable import parse
 import glob
 import sys
 import os
-import Gaussian_fitting as Gf
-import spectra_decomposing as sd
+from radiative_transfer import Gf,sd
 import read_GASKAP_data as rd
 import time
 from multiprocessing import Process, Queue
@@ -38,9 +37,11 @@ def process_iteration(j, queue):
     """Function to handle the processing for each j."""
     try:
         print(f"Processing j={j} (PID: {os.getpid()})")
-        x, y, yerr, xemi, yemi, yemi_err, yemi_selferr = rd.get_emi_abs_data(
-            nlist[j], nabs[j], 1, 1, mode='LMC', v_move=0.
+        spectra= rd.get_emi_abs_data(
+            nlist[j], nabs[j], 1, 1, mode='LMC', v_move=0.,save_saturated=True
         )
+        x,y,yerr,xemi,yemi,yemi_err=spectra['velocity_tau'],spectra['1_e_tau'],spectra['1_e_tau_err'],spectra['velocity_TB'],spectra['TB'],spectra['TB_err']
+
 
         fig = plt.figure(figsize=(12, 8), dpi=300)
         ax1_first = plt.subplot2grid((8, 2), (0, 0), rowspan=3, fig=fig)
@@ -50,10 +51,23 @@ def process_iteration(j, queue):
               plt.subplot2grid((8, 2), (4, 0), rowspan=3, fig=fig, sharex=ax1_first),
               plt.subplot2grid((8, 2), (7, 0), fig=fig, sharex=ax1_first)]
 
-        sd.fit_and_plot(x, y, yerr, xemi, yemi, yemi_err, ax, name=nlist[j], savetxt=True,
-                        peak_abs=[], peak_emi=[], Tsmin=3.77,
-                        fit_mode='BIC', v_sh=4)
-
+        #sd.fit_and_plot(x, y, yerr, xemi, yemi, yemi_err, ax, name=nlist[j], savetxt=True,
+        #                peak_abs=[], peak_emi=[], Tsmin=3.77,
+        #                fit_mode='BIC', v_sh=4)
+        
+        tsyn,_=rd.read_synchro_emi(nlist[j],radius=60)
+        spec_fit=sd(x,y,yerr,xemi,yemi,yemi_err)
+        spec_fit.name=nlist[j]
+        spec_fit.v_shift=4.
+        spec_fit.peak_abs=[]
+        spec_fit.peak_emi=[]
+        spec_fit.Tsmin=2.73+tsyn
+        spec_fit.Tsky=2.73+tsyn
+        spec_fit.savecsv=True
+        spec_fit.fit_mode='BIC'
+        spec_fit.ax=ax
+        spec_fit.datapath=datapathbase + '/output_data/LMC_fitting/'
+        spec_fit.fit_and_plot()
         fig.savefig(datapathbase + '/output_data/LMC_fitting/plots/%s.png' % (nlist[j]), dpi=300, bbox_inches='tight')
         sys.stdout.flush()
         queue.put(None)  # Success
@@ -109,26 +123,29 @@ def parallel_processing(j_values, max_concurrent_processes=1, timeout=20):
 
 if __name__ == "__main__":
     directory_to_check = datapathbase + "/output_data/LMC_fitting"
-    #delete_csv_txt_files(directory_to_check,file='.csv')
+    delete_csv_txt_files(directory_to_check,file='.csv')
     #delete_csv_txt_files(directory_to_check,file='.txt')
-    #delete_csv_txt_files(directory_to_check+'/plots',file='.png')
+    delete_csv_txt_files(directory_to_check+'/plots',file='.png')
 
-    nemi = np.sort(glob.glob(datapathbase + '/LMC_GASKAP_emi_all_abs/*.txt'))
-    nabs_n = glob.glob(datapathbase + '/LMC_abs_new/sb*')
-    nabs = [None] * len(nemi)
+    nemi=np.sort(glob.glob(datapathbase+'/LMC_GASKAP_emi_all_abs/*.txt'))
+    nabs_n=glob.glob(datapathbase+'/LMC_abs_new/abs_v1.0/sb*')
+    nabs=[None] * len(nemi)
     for i, ni in enumerate(nemi):
-        na_ = ni[-18:-4]
+        na_=ni[-18:-4]
         for nj in nabs_n:
-            _ = glob.glob(nj + '/spectra_abs/*')
-            _all = [filename[-23:-9] for filename in _]
+            _=glob.glob(nj+'/averaged/spectra/*_spec.vot')
+            _all=[filename[-23:-9] for filename in _]
             if na_ in _all:
                 if nabs[i] is not None:
-                    break
+                    print(i,nj,na_)
+                    break  # Exit the loop once a match is found for this `na_`
                 else:
-                    nabs[i] = f'{nj}/spectra_abs/{na_}_spec.vot'
+                    nabs[i] = f'{nj}/averaged/spectra/{na_}_spec.vot'  # Record `nj` only once for this `na_`
+                    
+    nemi,nabs=np.array(nemi),np.array(nabs)  
+    nlist=[filename[-18:-4] for filename in nemi]
+    nlist=np.array(nlist)        
 
-    nemi, nabs = np.array(nemi), np.array(nabs)
-    nlist = np.array([filename[-18:-4] for filename in nemi])
     
     a= glob.glob(datapathbase + '/output_data/LMC_fitting/plots/*.png')
     nfinish=np.array([path[-18:-4] for path in a])
@@ -140,7 +157,7 @@ if __name__ == "__main__":
 
     # Timeout and number of concurrent processes
     max_concurrent_processes = 29  # Number of parallel processes
-    timeout = 168*60*60  # Timeout for each task in seconds
+    timeout = 25*60*60  # Timeout for each task in seconds
 
     # Open the file to log long-running iterations
     with open(datapathbase + '/output_data/LMC_fitting/long_runs.txt', 'a') as f:
@@ -157,3 +174,9 @@ if __name__ == "__main__":
                 
             else:
                 print(f"Successfully processed j={j}.")
+
+
+#nohup /bin/python3 run_decompose.py > output.log 2>&1 &
+            #ps aux | grep run_decompose.py
+            #ls -1 *.png 2>/dev/null | wc -l
+            #pkill -f run_decompose.py

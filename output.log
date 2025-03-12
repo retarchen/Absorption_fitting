@@ -1,174 +1,3029 @@
 nohup: ignoring input
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/Fulldata.csv
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/CNMonlydata.csv
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/WNMonlydata.csv
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044047-695217.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044926-691203.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044056-662425.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044056-662423.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045403-691154.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J043855-672153.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044953-680436.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045421-680056.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044415-684211.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045545-694830.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045603-693332.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044451-674636.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044710-675049.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045113-693200.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045608-701434.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045746-691937.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045332-704027.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045954-710737.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045747-691928.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050200-693150.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050200-693158.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050201-693151.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050202-693154.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045047-664757.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045344-693729.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050214-655037.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050413-700454.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045608-701435.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044903-705212.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045541-690629.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050506-641831.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044902-705155.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050411-670107.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045354-692131.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045551-690210.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050050-680345.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050529-665555.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050258-675809.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050529-665556.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044746-704843.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050543-665813.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045837-671243.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044902-705148.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050709-690101.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045205-665514.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050227-655711.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050531-655515.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050634-675643.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050536-700512.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050554-685039.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050831-670620.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050710-714405.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045209-665525.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050831-670609.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050413-700456.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050900-684329.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045209-665524.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050946-670557.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045425-691102.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045220-682306.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051222-673218.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051321-692239.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045114-693152.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050900-684341.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044928-692630.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050900-684342.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051416-673522.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045618-684948.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051417-673525.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051418-673528.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051637-723710.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050947-671644.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051641-714905.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050858-684343.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051832-693524.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051416-673521.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045207-665520.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051222-673220.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052229-703757.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052258-684428.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051317-692223.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052127-670722.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050501-664516.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052340-705019.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052341-705122.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052415-715800.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052105-695942.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045206-665514.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052501-693818.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051819-661717.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052502-693902.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052552-755034.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052009-665023.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052555-662744.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052554-662751.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052510-693811.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051317-692224.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052559-660518.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052350-704214.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044809-703144.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052626-655623.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045114-693123.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052635-674907.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052631-654906.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052951-674938.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053029-751334.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053250-682012.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053252-694623.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050858-684337.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053254-723155.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052537-661941.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053209-684307.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053344-721624.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053318-674000.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053523-673444.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053344-721625.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053523-673511.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053530-655915.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050900-684328.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052746-675925.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053542-660145.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052624-681505.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053542-660156.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053542-660206.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053545-660145.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053544-660204.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053547-660146.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053601-712930.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050952-685322.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050858-684326.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053548-660225.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050500-664520.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053548-660209.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045113-693133.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051340-670640.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045152-692332.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051321-692240.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052627-655607.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053342-684601.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052558-660442.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052505-664051.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053528-691612.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053929-700327.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053937-694612.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050858-684325.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053736-680033.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053604-691845.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053804-695337.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053952-694509.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054002-722214.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053839-690731.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053745-691008.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054002-690619.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053744-691025.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054009-694025.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054010-671813.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054010-671814.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051537-672127.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J045153-692328.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053822-704114.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054021-712441.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054150-733215.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054006-692005.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053940-694619.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054306-710403.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053537-685507.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054309-710424.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054317-662655.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054427-715527.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054006-694511.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054504-693928.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054427-715528.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054424-685820.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054550-684556.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054608-712741.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054623-665544.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054315-680651.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055031-682057.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055033-682053.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054539-661715.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055139-684315.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055142-684302.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054314-684436.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055218-702157.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055220-702147.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055206-681440.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055227-694801.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055653-682229.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055913-675617.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J060556-755658.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J060707-663212.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055613-692332.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054552-684612.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052319-675535.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J055130-691631.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J051716-702357.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050858-684336.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053544-660227.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054011-691954.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054009-691951.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054024-694014.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054020-712405.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052604-660502.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052000-711502.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052635-674909.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050952-685304.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052007-680223.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053937-694527.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J052456-693855.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054004-694438.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J050953-685302.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053915-693042.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053836-690555.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053946-693839.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053657-691329.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J044948-694013.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054109-642337.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054629-702643.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J054007-691952.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053851-690457.png
+Deleted: /d/bip5/hchen/output_data/LMC_fitting/plots/J053845-690509.png
+Started process for j=0.
+Started process for j=1.
+Started process for j=2.
+Started process for j=3.
+Started process for j=4.
+Started process for j=5.
+Started process for j=6.
+Started process for j=7.
+Started process for j=8.
+Started process for j=9.
+Started process for j=10.
+Started process for j=11.
+Started process for j=12.
+Started process for j=13.
 Started process for j=14.
-Started process for j=167.
-Started process for j=168.
-Started process for j=174.
-Started process for j=182.
-Started process for j=191.
-Processing j=191 (PID: 2442321)
-BIC  250.98764195493635 n=1
-BIC  239.69895314379707 n= 2
-BIC  241.55709069800827 n= 3
-final n= 2
-BIC= 239.69895302470252
-[253.01149107 289.73490005]
-BIC= 272.8689533559332
-popt_ori [1.99667466e-01 2.52882562e+02 8.19304057e-01 1.47119777e-01
- 2.89769765e+02 9.20837152e-01]
-Ts_low limit [4.216457955329483, 8.089269015834931]
-origin BIC  24.965970668276746 Original_Mean_score  24.965970668276746
-/usr/users/hchen/.local/lib/python3.6/site-packages/numpy/core/fromnumeric.py:3335: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/usr/users/hchen/.local/lib/python3.6/site-packages/numpy/core/_methods.py:161: RuntimeWarning: invalid value encountered in double_scalars
-  ret = ret.dtype.type(ret / rcount)
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/minpack.py:719: RuntimeWarning: invalid value encountered in greater
-  bounded_problem = np.any((lb > -np.inf) | (ub < np.inf))
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/least_squares.py:790: RuntimeWarning: invalid value encountered in greater_equal
-  if np.any(lb >= ub):
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/common.py:369: RuntimeWarning: invalid value encountered in greater_equal
-  return np.all((x >= lb) & (x <= ub))
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/common.py:369: RuntimeWarning: invalid value encountered in less_equal
-  return np.all((x >= lb) & (x <= ub))
-Processing j=14 (PID: 2442316)
-BIC  205.5847058100943 n=1
-BIC  212.09375794167008 n= 2
-final n= 1
+Started process for j=15.
+Started process for j=16.
+Started process for j=17.
+Started process for j=18.
+Started process for j=19.
+Started process for j=20.
+Started process for j=21.
+Started process for j=22.
+Started process for j=23.
+Started process for j=24.
+Started process for j=25.
+Started process for j=26.
+Started process for j=27.
+Processing j=1 (PID: 4075221)
+BIC  134.24654789279487 n=1
+BIC  147.6628837853226 n= 2
+[239.47412127]
+BIC= 145.07878898259167
+popt_ori [5.29776337e-02 2.39538591e+02 1.86128381e+00]
+origin BIC  34.60393346707281 Original_Mean_score  34.60393346707281
+BIC  44.76947222538375 Mean_score  44.77218565966484
+final BIC  39.60393346707281
+34.60393346707281
+velocity shift [2.70552384]
+nhi_c: [0.40478169] error: [0.0286616]
+nhi_w: 0 error: 0.0
+fc: [1.] error: [0.]
+
+Started process for j=28.
+Processing j=27 (PID: 4075247)
+BIC  258.38632735627095 n=1
+BIC  271.8608210226012 n= 2
+[243.17604646]
+BIC= 321.7482004292842
+popt_ori [  0.77778027 243.49032892   3.56400649]
+origin BIC  2491.200502010706 Original_Mean_score  2491.200502010706
+BIC  47.48715060582075 Mean_score  47.82333733620612
+BIC  50.99387604407434 Mean_score  51.14260029074435
+final BIC  52.48715060582075
+47.48715060582075
+velocity shift [2.97555418]
+nhi_c: 5.197901809576613 error: 2.314731666477971
+nhi_w: 18.878045975844834 error: 0.038022612516348926
+fc: 0.2158960409743065 error: 0.07538680693853614
+
+Started process for j=29.
+Processing j=11 (PID: 4075231)
+BIC  189.65593058415016 n=1
+BIC  181.49751920374848 n= 2
+[242.77306313]
+BIC= 253.85328305842296
+popt_ori [  0.91126531 242.83867578   4.06127645]
+origin BIC  2179.5076347115096 Original_Mean_score  2179.5076347115096
+BIC  50.67456601397906 Mean_score  51.57798796119746
+BIC  45.868098072139716 Mean_score  62.928413569859686
+final BIC  55.67456601397906
+50.67456601397906
+velocity shift [0.81209264]
+nhi_c: 13.847619571233913 error: 2.590320296555676
+nhi_w: 15.57767122290326 error: 0.04310737125334773
+fc: 0.4706026413847021 error: 0.04660816363722716
+
+Started process for j=30.
+Processing j=2 (PID: 4075222)
+BIC  218.24919508158274 n=1
+BIC  233.53044561161647 n= 2
+[231.11394454]
+BIC= 254.83464485935252
+popt_ori [  0.31314629 231.11503772   1.67337122]
+origin BIC  418.89745437183194 Original_Mean_score  418.89745437183194
+BIC  42.630871738392244 Mean_score  42.6784453787479
+BIC  54.940796577627815 Mean_score  62.375231718973204
+final BIC  42.630871738392244
+42.630871738392244
+velocity shift [4.]
+nhi_c: 0.14780989135891268 error: 0.0278389994556275
+nhi_w: 2.729680195637928 error: 0.015567922768773184
+fc: 0.05136764572251851 error: 0.009181988347635969
+
+Started process for j=31.
+Processing j=10 (PID: 4075230)
+BIC  187.97101569355092 n=1
+BIC  196.9128848512055 n= 2
+[236.60119333]
+BIC= 254.85809307223113
+popt_ori [  0.87251646 236.85796406   4.92036257]
+origin BIC  1952.8828758263185 Original_Mean_score  1952.8828758263185
+BIC  44.221962587621704 Mean_score  47.05097152962179
+BIC  51.74464048420601 Mean_score  56.71493718933425
+final BIC  49.221962587621704
+44.221962587621704
+velocity shift [2.50845677]
+nhi_c: 15.038199331553182 error: 5.195847844139802
+nhi_w: 19.500911115534418 error: 0.08409424055947642
+fc: 0.4353962547643212 error: 0.08494207285523955
+
+Started process for j=32.
+Processing j=13 (PID: 4075233)
+BIC  127.65558638566537 n=1
+BIC  136.17555325544626 n= 2
+[253.65897946]
+BIC= 159.1085542283746
+popt_ori [  0.94167252 253.74649013   2.90496721]
+origin BIC  2726.3188896081347 Original_Mean_score  2726.3188896081347
+BIC  350.69419396275873 Mean_score  354.0480770151796
+BIC  59.26147798204613 Mean_score  59.67036052003961
+BIC  70.58145777341628 Mean_score  75.83781840596681
+final BIC  64.26147798204613
+59.26147798204613
+velocity shift [1.00488159]
+nhi_c: 5.976750098390832 error: 1.6757914271272456
+nhi_w: 14.738740783885918 error: 0.06443882064684878
+fc: 0.2885159773599318 error: 0.05756290179988962
+
+Started process for j=33.
+Processing j=28 (PID: 4075248)
+BIC  202.79537515395836 n=1
+BIC  187.89100668265138 n= 2
+[260.14877153]
+BIC= 234.3478701072823
+popt_ori [  0.39158314 260.13398895   3.35014367]
+origin BIC  1002.1611376367929 Original_Mean_score  1002.1611376367929
+BIC  55.48999345012595 Mean_score  56.24192615237675
+BIC  50.472914640505785 Mean_score  51.17737710972009
+BIC  74.61401454931557 Mean_score  75.38861068580489
+final BIC  55.472914640505785
+50.472914640505785
+velocity shift [1.67921361]
+nhi_c: 1.2942652853830687 error: 0.5396593932467014
+nhi_w: 9.081293149527145 error: 0.7033992756673024
+fc: 0.12474174701077366 error: 0.046303234637202796
+
+Started process for j=34.
+Processing j=31 (PID: 4075303)
+BIC  182.32507480724996 n=1
+BIC  177.01334429879554 n= 2
+[262.24627679]
+BIC= 207.89690877460947
+popt_ori [1.07907162e-01 2.62252399e+02 2.36183997e+00]
+origin BIC  459.6016613659974 Original_Mean_score  459.6016613659974
+BIC  211.53571571951656 Mean_score  211.53706222947235
+BIC  68.02446929469808 Mean_score  68.03624507294819
+BIC  83.18537041935912 Mean_score  91.16263615061234
+final BIC  73.02446929469808
+68.02446929469808
+velocity shift [0.07846188]
+nhi_c: 0.7216309796041049 error: 0.048855133502476174
+nhi_w: 3.8304275981176934 error: 0.032121160340155885
+fc: 0.15852849151279264 error: 0.009100139999081935
+
+Started process for j=35.
+Processing j=12 (PID: 4075232)
+BIC  205.58470581009425 n=1
+BIC  217.0937579418372 n= 2
 [243.06446782]
-BIC= 229.66020175377093
+BIC= 229.6602017540007
 popt_ori [  0.7572891  243.05395607   1.72033411]
-Ts_low limit [10.535438460647903]
-origin BIC  2704.1781123038486 Original_Mean_score  2704.1781123038486
-BIC  201.44689614217575 Mean_score  201.6675019034841
-BIC  51.131257735252746 Mean_score  61.18405686616581
-/usr/users/hchen/.local/lib/python3.6/site-packages/numpy/core/fromnumeric.py:3335: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/usr/users/hchen/.local/lib/python3.6/site-packages/numpy/core/_methods.py:161: RuntimeWarning: invalid value encountered in double_scalars
-  ret = ret.dtype.type(ret / rcount)
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/minpack.py:719: RuntimeWarning: invalid value encountered in greater
-  bounded_problem = np.any((lb > -np.inf) | (ub < np.inf))
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/least_squares.py:790: RuntimeWarning: invalid value encountered in greater_equal
-  if np.any(lb >= ub):
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/common.py:369: RuntimeWarning: invalid value encountered in greater_equal
-  return np.all((x >= lb) & (x <= ub))
-/usr/users/hchen/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/common.py:369: RuntimeWarning: invalid value encountered in less_equal
-  return np.all((x >= lb) & (x <= ub))
-Processing j=182 (PID: 2442320)
-BIC  1338.7178138947438 n=1
-BIC  702.565754530964 n= 2
-BIC  536.9916316655751 n= 3
-BIC  389.2510764932574 n= 4
-BIC  267.44951139125214 n= 5
-BIC  206.46229551055325 n= 6
-BIC  220.05786941698568 n= 7
-final n= 6
-BIC= 206.4623008210807
-[261.61163045 254.58067909 302.14479135 276.67504584 241.39797134
- 309.74558946]
-BIC= 242.2870230406253
-popt_ori [1.50372750e+00 2.54585945e+02 1.61317254e+00 1.96569447e-01
- 2.61222268e+02 3.86821876e+00 1.31458784e-01 3.09741445e+02
- 1.33142662e+00 2.24594331e-01 2.76648258e+02 2.77931918e+00
- 2.57718338e-01 2.41461315e+02 4.45243877e+00 1.87126193e-01
- 3.02192385e+02 1.61938942e+00]
-Ts_low limit [21.264500912260925, 54.63962900030978, 37.488814256384764, 22.817836309422557, 61.406350538825095, 30.01797019494741]
-origin BIC  1225.0526051823801 Original_Mean_score  1286.4505466653054
-BIC  217.45291253067774 Mean_score  230.08851481767843
-BIC  77.47496487033783 Mean_score  113.20009000206147
-BIC  89.66607537774995 Mean_score  116.60191548804474
-Ts>3.77 (6480,)
-Ts>3.77 (6480,)
-Ts>3.77 (6480,)
-Ts>3.77 (6480,)
-Ts>3.77 (6480,)
-Ts>3.77 (6480,)
-final BIC  107.47496487033783
-77.47496487033783
-velocity shift [-4.          2.78093928 -2.58271102  4.          4.          1.679474  ]
-nhi_c: 9.251526492486331 2.596783522759911
-nhi_w: 41.248225793012026 1.0337258864313674
-fc: 0.18319944304247654 0.04216836009209466
+origin BIC  2704.127174467364 Original_Mean_score  2704.127174467364
+BIC  201.4510419958518 Mean_score  201.6696706199276
+BIC  50.99067399313374 Mean_score  52.685113493632656
+BIC  73.02969081574324 Mean_score  74.80197973240078
+final BIC  55.99067399313374
+50.99067399313374
+velocity shift [-3.1513389]
+nhi_c: 1.1032812172309834 error: 0.616916765761176
+nhi_w: 13.976513516670337 error: 0.04335568786882168
+fc: 0.0731628803110075 error: 0.037917635278988185
 
-Processing j=168 (PID: 2442318)
-BIC  9082.973596101408 n=1
-BIC  2489.467784339003 n= 2
-BIC  1232.8474818481955 n= 3
-BIC  787.524462601039 n= 4
-BIC  476.70053833552265 n= 5
-BIC  271.6918191682963 n= 6
-BIC  282.42071524128266 n= 7
-final n= 6
-BIC= 1584.0552811105026
-[253.48439061 260.78138502 244.4881527  269.66518682 284.34981515]
-BIC= 1787.0228235032378
-popt_ori [9.92728745e-01 2.53393798e+02 3.08814941e+00 3.72589190e-01
- 2.60489359e+02 2.00554359e+00 5.02183638e-01 2.45321852e+02
- 3.88972922e+00 4.82591482e-01 2.69623481e+02 3.81918693e+00
- 3.75425357e-02 2.83738928e+02 4.37287393e+00]
-Ts_low limit [63.017951529875944, 74.07404809442949, 83.66270071670404, 74.78861967585317, 113.40234844849871]
-origin BIC  413.09757676145017 Original_Mean_score  419.55919667946375
-BIC  139.22634980641703 Mean_score  163.34332617639237
-BIC  84.36810073847913 Mean_score  91.79544678646148
-BIC  96.98895793083696 Mean_score  104.67143181474887
-Ts>3.77 (1080,)
-Ts>3.77 (1080,)
-Ts>3.77 (1080,)
-Ts>3.77 (1080,)
-Ts>3.77 (1080,)
-final BIC  104.36810073847913
-84.36810073847913
-velocity shift [ 4.          0.82164865 -4.         -4.         -2.72021208]
-nhi_c: 8.330504248640631 17.576566623707684
-nhi_w: 8.717092607983146 177.63354503816834
-fc: 0.48866149984089086 5.119004338452753
+Started process for j=36.
+Processing j=26 (PID: 4075246)
+BIC  412.38227352736504 n=1
+BIC  402.5066020128061 n= 2
+[236.33528459]
+BIC= 778.8276327065226
+popt_ori [  1.48490465 236.54746932   2.43578145]
+origin BIC  5995.267606576347 Original_Mean_score  5995.267606576347
+BIC  94.04120643133803 Mean_score  95.3211846453163
+BIC  72.27731689765176 Mean_score  72.3612411202667
+BIC  78.66750406859944 Mean_score  78.73011891182034
+final BIC  77.27731689765176
+72.27731689765176
+velocity shift [-3.31442539]
+nhi_c: 5.937170704302337 error: 2.2357394929305516
+nhi_w: 23.89713270241748 error: 0.7713349415749934
+fc: 0.19900483759795312 error: 0.0602455178905684
 
-Processing j=167 (PID: 2442317)
-BIC  12071.459529284255 n=1
-BIC  7208.283945580023 n= 2
-BIC  3025.3935365643647 n= 3
-BIC  1502.1452056704138 n= 4
-BIC  930.4487689872955 n= 5
-BIC  741.4788745128441 n= 6
-BIC  421.28199719388664 n= 7
-BIC  417.12825920428395 n= 8
-final n= 7
-BIC= 421.27626572648626
-[260.08542396 221.91459346 246.57051005 254.71267643 283.10123236
- 268.85468788 273.20081543]
-BIC= 461.70448394835097
-popt_ori [3.94397259e-01 2.59993357e+02 2.25668923e+00 2.05405687e-01
- 2.21923750e+02 3.00627070e+00 4.60236052e-01 2.47719507e+02
- 3.89643474e+00 4.87774858e-01 2.55767344e+02 3.49803357e+00
- 8.18527407e-02 2.83076400e+02 3.21389589e+00 3.02588300e-01
- 2.73117325e+02 2.90021881e+00 3.32531911e-01 2.68884402e+02
- 1.32233981e+00]
-Ts_low limit [51.56726847756358, 32.82731964321367, 50.2328303830254, 62.84386729751032, 37.228642599206964, 47.611221715753125, 73.21416536940376]
-origin BIC  218.82777166605604 Original_Mean_score  222.18385295702203
-BIC  115.65448977674299 Mean_score  181.48350683660772
-BIC  93.86826848042236 Mean_score  98.03656306953037
-BIC  108.1183463526238 Mean_score  112.3561008042034
-Ts>3.77 (45360,)
-Ts>3.77 (45360,)
-Ts>3.77 (45360,)
-Ts>3.77 (45360,)
-Ts>3.77 (45360,)
-Ts>3.77 (45360,)
-Ts>3.77 (45360,)
-final BIC  118.86826848042236
-93.86826848042236
-velocity shift [ 1.71309568  4.         -4.          4.         -4.          0.94278511
-  2.60988565]
-nhi_c: 12.14377296994983 77.80195842778444
-nhi_w: 8.694574607416262 2486.630192043213
-fc: 0.5827608415141315 69.55802271282218
+Started process for j=37.
+Processing j=30 (PID: 4075287)
+BIC  252.8923265105613 n=1
+BIC  214.8844350096119 n= 2
+BIC  220.50732731671212 n= 3
+final n= 2 noise level= 0.1710744639237112
+final BIC= 214.8845770855838
+[239.14110047 247.97730786]
+BIC= 284.2965515049149
+popt_ori [1.12480225e+00 2.38947747e+02 2.15778314e+00 2.16891495e-01
+ 2.45779372e+02 5.49317974e+00]
+origin BIC  1757.8852251121239 Original_Mean_score  1774.1983986921327
+BIC  47.87666756769021 Mean_score  48.503726381926526
+BIC  69.97795932475607 Mean_score  104.88064508605778
+final BIC  57.87666756769021
+47.87666756769021
+velocity shift [-1.14544175 -3.25520734]
+nhi_c: 11.10318366466272 error: 3.139253346689725
+nhi_w: 11.264764518961954 error: 0.026862552611296688
+fc: 0.4963881163132896 error: 0.07068245641060597
 
-Started process for j=207.
-Timeout for j=174. Terminating process.
-Timeout for j=207. Terminating process.
-[(191, '`x0` is infeasible.'), (14, '`x0` is infeasible.'), (182, None), (168, None), (167, None), (174, 'Timeout'), (207, 'Timeout')]
-Error for j=191: `x0` is infeasible.
-Error for j=14: `x0` is infeasible.
-Successfully processed j=182.
-Successfully processed j=168.
-Successfully processed j=167.
-Timeout for j=174. Logging to long_runs.txt.
-Timeout for j=207. Logging to long_runs.txt.
+Started process for j=38.
+Processing j=3 (PID: 4075223)
+BIC  156.4765679453151 n=1
+BIC  167.93103336559528 n= 2
+[241.28422995]
+BIC= 190.13421205476388
+popt_ori [  0.68844269 241.32757693   2.79941922]
+origin BIC  3296.332391075587 Original_Mean_score  3296.332391075587
+BIC  62.93283787563544 Mean_score  63.92850088433997
+BIC  55.5160401899623 Mean_score  56.106258396662646
+BIC  65.61418292828672 Mean_score  105.46700227446436
+final BIC  60.5160401899623
+55.5160401899623
+velocity shift [0.88482115]
+nhi_c: 4.974310082231602 error: 0.8151084538508716
+nhi_w: 12.98487220568471 error: 0.23371940754524143
+fc: 0.2769786509477397 error: 0.03301294685718168
+
+Started process for j=39.
+Processing j=4 (PID: 4075224)
+BIC  185.2348038737549 n=1
+BIC  189.660655584781 n= 2
+[256.02868332]
+BIC= 209.85928965511965
+popt_ori [2.29487180e-01 2.56017099e+02 1.16597136e+00]
+origin BIC  6520.635103061195 Original_Mean_score  6520.635103061195
+BIC  143.2951755801709 Mean_score  143.29535011757102
+BIC  113.42827630264202 Mean_score  113.4448073413054
+BIC  122.1971034781636 Mean_score  133.04148374814537
+final BIC  118.42827630264202
+113.42827630264202
+velocity shift [0.11142457]
+nhi_c: 0.45545579650744283 error: 0.1048724087011193
+nhi_w: 11.381050749171962 error: 0.04469098419891398
+fc: 0.038478903783793754 error: 0.008520393693714457
+
+Started process for j=40.
+Processing j=33 (PID: 4075317)
+BIC  352.5955711593158 n=1
+BIC  331.271845503166 n= 2
+BIC  333.7917934396042 n= 3
+final n= 1 noise level= 0.40503273841895443
+final BIC= 352.5955695162872
+[247.3823989]
+BIC= 413.2329732873778
+popt_ori [  0.96732102 247.45027379   2.14496192]
+origin BIC  1722.102336686932 Original_Mean_score  1722.102336686932
+BIC  94.30735845956418 Mean_score  94.35303370963159
+BIC  71.65329728016394 Mean_score  71.68721228851506
+BIC  90.45228026376354 Mean_score  90.47211270449394
+final BIC  76.65329728016394
+71.65329728016394
+velocity shift [0.94573977]
+nhi_c: 2.242204252315884 error: 0.33629334554014756
+nhi_w: 8.199933147666815 error: 0.04625650120863197
+fc: 0.2147265608973503 error: 0.025307936815299758
+
+Started process for j=41.
+Processing j=38 (PID: 4075354)
+BIC  317.0020101336402 n=1
+BIC  282.2656331328627 n= 2
+BIC  291.7336494768781 n= 3
+final n= 2 noise level= 0.21418676666085637
+final BIC= 282.26560015236026
+[236.34461117 241.2566642 ]
+BIC= 324.70080503193753
+popt_ori [  0.3682976  238.56187874   3.87492141   1.85214342 241.14145421
+   1.06983697]
+origin BIC  609.1552751858128 Original_Mean_score  623.3594368651231
+BIC  69.07409237064778 Mean_score  69.9570610800548
+BIC  73.84233561835111 Mean_score  74.7185838883819
+final BIC  79.07409237064778
+69.07409237064778
+velocity shift [ 0.91805362 -1.36761445]
+nhi_c: 5.6746332129953245 error: 0.9360010644827632
+nhi_w: 5.9469915471551404 error: 0.049242627726560614
+fc: 0.48828226088086635 error: 0.04126544204660736
+
+Started process for j=42.
+Processing j=40 (PID: 4075405)
+BIC  146.5340110484035 n=1
+BIC  163.14525332050601 n= 2
+[239.45923374]
+BIC= 173.31797839617906
+popt_ori [  1.09950212 239.54223576   1.13861112]
+origin BIC  170.5367175435405 Original_Mean_score  170.5367175435405
+BIC  68.93773802367059 Mean_score  70.60729279112608
+BIC  69.90579409957529 Mean_score  74.1085217195841
+final BIC  73.93773802367059
+68.93773802367059
+velocity shift [-1.94502492]
+nhi_c: 0.6280629046461033 error: 0.10867331902247955
+nhi_w: 1.7711742401747539 error: 0.042636068071207
+fc: 0.2617760841198541 error: 0.03375985590771643
+
+Started process for j=43.
+Processing j=41 (PID: 4075413)
+BIC  253.01184825602604 n=1
+BIC  261.2517660369054 n= 2
+[269.34400151]
+BIC= 292.0867259397057
+popt_ori [1.39767478e-01 2.69348609e+02 1.19903356e+00]
+origin BIC  188.19808796272477 Original_Mean_score  188.19808796272477
+BIC  61.965388016943294 Mean_score  61.96539586312482
+BIC  78.89397520096432 Mean_score  78.93799486406093
+final BIC  61.965388016943294
+61.965388016943294
+velocity shift [3.58891569]
+nhi_c: 0.07275852753345448 error: 0.00940986073136968
+nhi_w: 1.3072571009839682 error: 0.026690861669427798
+fc: 0.05272297358807477 error: 0.006539158546169686
+
+Started process for j=44.
+Processing j=36 (PID: 4075343)
+BIC  143.3367002881295 n=1
+BIC  155.8333148215306 n= 2
+[207.43481105]
+BIC= 157.95970451925152
+popt_ori [  0.26351954 207.50901668   1.22655596]
+origin BIC  1490.5639050476505 Original_Mean_score  1490.5639050476505
+BIC  103.19672856325214 Mean_score  103.40093612686627
+BIC  61.94260561107601 Mean_score  61.943371027114694
+BIC  64.43826979801042 Mean_score  64.53560652951666
+final BIC  61.94260561107601
+61.94260561107601
+velocity shift [-1.15818507]
+nhi_c: 0.06209633438738641 error: 0.0068473298897259545
+nhi_w: 5.191733466559612 error: 0.03179954284272781
+fc: 0.011819251239580237 error: 0.0012898837986157763
+
+Started process for j=45.
+Processing j=35 (PID: 4075341)
+BIC  226.45816675601037 n=1
+BIC  211.14127962195872 n= 2
+[257.96228035]
+BIC= 576.0847987486904
+popt_ori [  0.9011267  258.22955324   5.21241045]
+origin BIC  619.5397881604144 Original_Mean_score  619.5397881604144
+BIC  73.50744340320654 Mean_score  77.12028992534925
+BIC  60.16860820860232 Mean_score  62.25233546843668
+BIC  88.88323379790631 Mean_score  240.2928696956018
+final BIC  65.16860820860232
+60.16860820860232
+velocity shift [-2.21450605]
+nhi_c: 7.579344959234322 error: 3.2537041565944276
+nhi_w: 14.503583793442132 error: 19.725340847726102
+fc: 0.343221908838324 error: 0.32148915768788144
+
+Started process for j=46.
+Processing j=39 (PID: 4075358)
+BIC  335.89741188215254 n=1
+BIC  321.59027649908415 n= 2
+[272.67284334]
+BIC= 392.7832979144163
+popt_ori [  0.59270985 272.55585422   1.8097755 ]
+origin BIC  1790.758267151136 Original_Mean_score  1790.758267151136
+BIC  144.54923403077754 Mean_score  144.8695291643894
+BIC  58.38412319512584 Mean_score  63.974781147119316
+BIC  64.93816414018085 Mean_score  67.92865236507372
+final BIC  63.38412319512584
+58.38412319512584
+velocity shift [1.95069484]
+nhi_c: 1.0114325913034592 error: 0.38112139887990787
+nhi_w: 10.52543687188992 error: 0.052333484457722575
+fc: 0.08766958788346185 error: 0.03014153125783866
+
+Started process for j=47.
+Processing j=17 (PID: 4075237)
+BIC  319.5185037485178 n=1
+BIC  239.7321074762297 n= 2
+BIC  210.09499080509147 n= 3
+BIC  215.1394694835875 n= 4
+final n= 3 noise level= 0.12388551137179081
+final BIC= 210.2521580307279
+[246.49303239 218.59116431 234.14108867]
+BIC= 230.28013637936533
+popt_ori [5.88782090e-01 2.46573890e+02 1.54085415e+00 1.62358801e-01
+ 2.18436694e+02 2.11666907e+00 1.05587175e-01 2.35221794e+02
+ 5.42140256e+00]
+origin BIC  1603.7440343957871 Original_Mean_score  1605.0691694626075
+BIC  107.18300092620981 Mean_score  108.72456758614118
+BIC  101.09571330458205 Mean_score  136.84379322805358
+final BIC  122.18300092620981
+107.18300092620981
+velocity shift [3.09029977 0.50445219 4.        ]
+nhi_c: 2.194927832906691 error: 0.42816507200379544
+nhi_w: 14.867418787546603 error: 0.2556981646102916
+fc: 0.12864161546662908 error: 0.021950817630792305
+
+Started process for j=48.
+Processing j=46 (PID: 4075445)
+BIC  149.9766116413975 n=1
+BIC  171.86683773177373 n= 2
+[246.970566]
+BIC= 175.83264411753183
+popt_ori [1.42868219e-01 2.46976705e+02 2.98121170e+00]
+origin BIC  1514.3875384626474 Original_Mean_score  1514.3875384626474
+BIC  177.8899344898052 Mean_score  177.9603284507173
+BIC  70.23193467130439 Mean_score  70.32284248798389
+BIC  75.91914464624024 Mean_score  98.41562431852452
+final BIC  75.23193467130439
+70.23193467130439
+velocity shift [4.]
+nhi_c: 0.5955417863692865 error: 0.13752920869422347
+nhi_w: 8.845865418448556 error: 0.057567120940270625
+fc: 0.06307765076220717 error: 0.013653191857328455
+
+Started process for j=49.
+Processing j=43 (PID: 4075426)
+BIC  118.958124165288 n=1
+BIC  141.87782394173428 n= 2
+[243.47333013]
+BIC= 137.48562619746446
+popt_ori [2.03282190e-01 2.43489589e+02 2.29538537e+00]
+origin BIC  452.46369895224694 Original_Mean_score  452.46369895224694
+BIC  76.93999343295565 Mean_score  76.97652013080396
+BIC  64.51879711484004 Mean_score  64.52082548003328
+BIC  74.42045396398088 Mean_score  74.44483706716764
+final BIC  69.51879711484004
+64.51879711484004
+velocity shift [-0.10937468]
+nhi_c: 0.9492541871539452 error: 0.06502715126422988
+nhi_w: 4.924214450101914 error: 0.1798118587214093
+fc: 0.16161730755362402 error: 0.010518388910419795
+
+Started process for j=50.
+Processing j=5 (PID: 4075225)
+BIC  176.80145521871276 n=1
+BIC  154.55180941416546 n= 2
+BIC  171.1826524608964 n= 3
+final n= 2 noise level= 0.28239421209362137
+final BIC= 154.54918438374733
+[262.01603186 248.57467592]
+BIC= 193.53683036209804
+popt_ori [  0.93631175 261.89668325   3.06780588   0.27605244 248.84846732
+   3.31240305]
+origin BIC  2282.400839136316 Original_Mean_score  2286.2516420550846
+BIC  192.41469162129246 Mean_score  238.74586385764985
+BIC  68.49310059959618 Mean_score  70.61874093000534
+BIC  68.9249248336364 Mean_score  74.82817577982733
+final BIC  78.49310059959618
+68.49310059959618
+velocity shift [3.14838151 4.        ]
+nhi_c: 3.5184846230096323 error: 0.48475132750548255
+nhi_w: 10.659729801627073 error: 0.12584558596974088
+fc: 0.24816133524513176 error: 0.02579946790811385
+
+Started process for j=51.
+Processing j=51 (PID: 4075514)
+BIC  236.49910363431948 n=1
+BIC  237.1503371677482 n= 2
+[229.80301569]
+BIC= 302.9319378244622
+popt_ori [  0.79516145 230.19735637   3.533356  ]
+origin BIC  300.7492476018666 Original_Mean_score  300.7492476018666
+BIC  59.150439965737306 Mean_score  59.60604952925511
+BIC  67.85866073620394 Mean_score  68.26187277917326
+final BIC  64.1504399657373
+59.150439965737306
+velocity shift [2.38936371]
+nhi_c: 5.522006758705141 error: 0.6807511513547523
+nhi_w: 4.203882785789123 error: 0.05202661928915172
+fc: 0.5677636717384991 error: 0.030405891170498037
+
+Processing j=44 (PID: 4075432)
+BIC  218.87721129102167 n=1
+BIC  170.12544156290426 n= 2
+BIC  180.06066797319684 n= 3
+final n= 2 noise level= 0.2753039939614163
+final BIC= 170.12541781600345
+[279.9823353  267.26800053]
+BIC= 205.9440132025593
+popt_ori [  0.81898359 279.81547377   1.41592193   0.33379634 267.26076592
+   2.11039859]
+origin BIC  2973.1784510439275 Original_Mean_score  2973.207306459002
+BIC  59.2777168722053 Mean_score  59.44072208758367
+BIC  61.42644138527412 Mean_score  62.22055055699843
+final BIC  69.2777168722053
+59.2777168722053
+velocity shift [1.37206416 3.1435451 ]
+nhi_c: 2.199991583570874 error: 0.7103514663601417
+nhi_w: 13.264207797099806 error: 0.025351028127358826
+fc: 0.14226352942142814 error: 0.03940100734511471
+
+Started process for j=52.
+Started process for j=53.
+Processing j=48 (PID: 4075466)
+BIC  383.0021775959758 n=1
+BIC  385.64824903256533 n= 2
+[232.57701135]
+BIC= 438.9723494003858
+popt_ori [  0.53771176 232.67523216   1.29411214]
+origin BIC  2118.1669665579184 Original_Mean_score  2118.1669665579184
+BIC  86.40714326191704 Mean_score  86.41038151005455
+BIC  59.701289391630816 Mean_score  60.98921548903541
+BIC  70.29172006999951 Mean_score  113.98698253656069
+final BIC  59.701289391630816
+59.701289391630816
+velocity shift [3.89927538]
+nhi_c: 0.1556952112308637 error: 0.01675967677361746
+nhi_w: 8.143992153795928 error: 0.0846970074036946
+fc: 0.018759165783392266 error: 0.001990659721184703
+
+Started process for j=54.
+Processing j=54 (PID: 4075529)
+BIC  147.88184432004502 n=1
+BIC  157.09451331833196 n= 2
+[226.74795021]
+BIC= 166.2059589340634
+popt_ori [9.55722319e-02 2.26767168e+02 8.23830880e-01]
+origin BIC  240.46056701498367 Original_Mean_score  240.46056701498367
+BIC  46.693891538689066 Mean_score  46.69414666680935
+BIC  63.92313048787755 Mean_score  63.9233407994666
+final BIC  46.693891538689066
+46.693891538689066
+velocity shift [-1.08291497]
+nhi_c: 0.031603406977851085 error: 0.004752906363268322
+nhi_w: 1.5826077796423061 error: 0.021984864424181863
+fc: 0.01957823563595941 error: 0.0028990565583809076
+
+Started process for j=55.
+Processing j=37 (PID: 4075352)
+BIC  166.89899400955585 n=1
+BIC  182.32828903044796 n= 2
+[240.27955632]
+BIC= 194.5306918556169
+popt_ori [  1.86599208 240.37832544   1.53197476]
+origin BIC  1359.5119235332795 Original_Mean_score  1359.5119235332795
+BIC  106.73987635493576 Mean_score  107.10029721591529
+BIC  77.48925852186642 Mean_score  78.06498477290634
+BIC  81.9321939192479 Mean_score  82.50611981203427
+final BIC  82.48925852186642
+77.48925852186642
+velocity shift [-0.8588017]
+nhi_c: 2.668417562304745 error: 1.062540580390283
+nhi_w: 8.89629340599582 error: 0.20321113699422733
+fc: 0.23073793799248482 error: 0.07079432719233791
+
+Started process for j=56.
+Processing j=9 (PID: 4075229)
+BIC  418.8086487468647 n=1
+BIC  306.5210280351349 n= 2
+BIC  315.10256149534354 n= 3
+final n= 2 noise level= 0.06160500561896966
+final BIC= 306.52101666044587
+[234.64858808 246.27547061]
+BIC= 355.67619300201443
+popt_ori [1.15726178e-01 2.34580747e+02 1.49930615e+00 1.06480336e-01
+ 2.46345258e+02 1.92773643e+00]
+origin BIC  1321.019216679715 Original_Mean_score  1321.084734337457
+BIC  143.31065832186684 Mean_score  147.55735357761347
+BIC  59.11702560839528 Mean_score  62.464533590222715
+BIC  74.39797365050924 Mean_score  198.76297275787772
+final BIC  69.11702560839528
+59.11702560839528
+velocity shift [0.44985832 1.29838052]
+nhi_c: 0.5451982657792789 error: 0.08118744540108469
+nhi_w: 9.863695028276325 error: 0.0828121904762655
+fc: 0.052378120360849045 error: 0.007403013414337212
+
+Started process for j=57.
+Processing j=34 (PID: 4075338)
+BIC  1407.3750613256518 n=1
+BIC  418.1344763337862 n= 2
+BIC  394.6536905936174 n= 3
+BIC  376.04045789720925 n= 4
+final n= 3 noise level= 0.044710936985417844
+final BIC= 394.65369056617476
+[234.23847136 229.68275247 226.26910144]
+BIC= 926.3671089737381
+popt_ori [  2.00373355 236.51263513   0.26691201   3.96465188 234.25898974
+   0.80502655   0.92403947 232.30649615   2.75353277]
+origin BIC  82.66131910696083 Original_Mean_score  84.55456584761014
+BIC  59.89834066594037 Mean_score  65.80090456061161
+BIC  76.61928307351165 Mean_score  81.03858075289033
+final BIC  69.89834066594037
+59.89834066594037
+velocity shift [ 2.97847936 -0.56139289  1.38527712]
+nhi_c: 5.757347854084863 error: 136430859.0032899
+nhi_w: 2.1291390574531315 error: 0.04040769248785912
+fc: 0.730026933242204 error: 4670350.413139235
+
+Started process for j=58.
+Processing j=25 (PID: 4075245)
+BIC  200.32404536263752 n=1
+BIC  204.39824279176045 n= 2
+[248.89943105]
+BIC= 237.255577079415
+popt_ori [  0.41757154 248.83880232   2.59131799]
+origin BIC  2266.7695315575634 Original_Mean_score  2266.7695315575634
+BIC  353.9383261029722 Mean_score  353.9444948769721
+BIC  116.18474162493814 Mean_score  116.42018085392972
+BIC  79.84790863987341 Mean_score  113.4889537744876
+BIC  81.704524973778 Mean_score  231.38552631150773
+final BIC  84.84790863987341
+79.84790863987341
+velocity shift [0.95912494]
+nhi_c: 2.0002104838759105 error: 0.251928103048577
+nhi_w: 11.849217711012411 error: 0.8014484051189602
+fc: 0.14442549221015255 error: 0.017665467496723177
+
+Started process for j=59.
+Processing j=49 (PID: 4075482)
+BIC  322.31668869349795 n=1
+BIC  307.6480368836209 n= 2
+[271.58050546]
+BIC= 417.0393273442221
+popt_ori [  1.35219665 271.12159519   1.48640792]
+origin BIC  6379.177795534306 Original_Mean_score  6379.177795534306
+BIC  214.83138577615665 Mean_score  215.10339287086467
+BIC  66.94912384720158 Mean_score  66.98447711963557
+BIC  73.98968507242088 Mean_score  79.77150427427316
+final BIC  71.94912384720158
+66.94912384720158
+velocity shift [-0.09767902]
+nhi_c: 2.461912942391028 error: 1.4769443921889167
+nhi_w: 18.23627334062184 error: 0.02650619936959664
+fc: 0.11894341411022742 error: 0.06286905457221932
+
+Started process for j=60.
+Processing j=24 (PID: 4075244)
+BIC  236.2129072867922 n=1
+BIC  184.41760569389996 n= 2
+BIC  185.04566906939752 n= 3
+final n= 2 noise level= 0.1952688203523084
+final BIC= 186.16468717191086
+[257.32322986 242.03519756]
+BIC= 206.97009228853395
+popt_ori [7.96858881e-01 2.57349551e+02 1.29016585e+00 1.55900262e-01
+ 2.39692121e+02 8.42348463e+00]
+origin BIC  564.9877027201825 Original_Mean_score  565.4291233971876
+BIC  133.9910736656105 Mean_score  137.5779227715782
+BIC  87.04498372243563 Mean_score  127.73792014593272
+BIC  89.63472511467357 Mean_score  104.7701520295867
+final BIC  92.04498372243563
+87.04498372243563
+velocity shift [2.97414859 4.        ]
+nhi_c: 5.676064209219543 error: 4.2624144508027
+nhi_w: 5.669524864373957 error: 2.8192606131281037
+fc: 0.5002881888636707 error: 0.2251654575836438
+
+Started process for j=61.
+Processing j=14 (PID: 4075234)
+BIC  136.62993098381975 n=1
+BIC  140.31424742734853 n= 2
+[246.83780186]
+BIC= 160.76820466244442
+popt_ori [  0.37956539 247.22866875   4.72491067]
+origin BIC  4234.450090915334 Original_Mean_score  4234.450090915334
+BIC  154.47358609358068 Mean_score  155.83805934174225
+BIC  120.79047746334041 Mean_score  121.885095437521
+BIC  75.22845175746048 Mean_score  75.69733447178925
+BIC  80.76876502799118 Mean_score  81.23841988537792
+final BIC  80.22845175746048
+75.22845175746048
+velocity shift [2.08315356]
+nhi_c: 5.712736580549584 error: 0.2708305645549227
+nhi_w: 12.198712985051657 error: 0.2524103594347185
+fc: 0.3189432859482706 error: 0.011236050185163885
+
+Processing j=59 (PID: 4075573)
+BIC  212.25095745526957 n=1
+BIC  200.74487825008808 n= 2
+[250.45487479]
+BIC= 289.9196901406402
+popt_ori [  0.80811997 250.522061     6.2006168 ]
+origin BIC  648.4400666610895 Original_Mean_score  648.4400666610895
+BIC  109.36106005610472 Mean_score  110.98586083108125
+BIC  47.858246988296656 Mean_score  48.204012892168095
+BIC  82.38242661313568 Mean_score  212.51771295879698
+final BIC  52.858246988296656
+47.858246988296656
+velocity shift [-1.15939916]
+nhi_c: 11.113263053393627 error: 0.3176738377321585
+nhi_w: 5.6406123619681106 error: 0.023273747291519865
+fc: 0.6633249190335869 error: 0.006449929795387229
+
+Started process for j=62.
+Started process for j=63.
+Processing j=42 (PID: 4075418)
+BIC  250.25210621619482 n=1
+BIC  193.7325631201482 n= 2
+BIC  202.16913526783404 n= 3
+final n= 2 noise level= 0.4034725356058556
+final BIC= 193.73256337842204
+[247.50133465 237.90476865]
+BIC= 219.82619535630621
+popt_ori [  1.22185388 247.51016378   2.83699445   0.79320056 237.9511002
+   1.84123952]
+origin BIC  426.0647238648354 Original_Mean_score  426.49955962580077
+BIC  98.93486051973147 Mean_score  99.19557030589563
+BIC  79.24508846255955 Mean_score  94.26609522951468
+BIC  87.86134367546148 Mean_score  167.10743358905114
+final BIC  89.24508846255955
+79.24508846255955
+velocity shift [-3.9344227  4.       ]
+nhi_c: 6.126690131666946 error: 1.187124675135614
+nhi_w: 14.758766931435758 error: 0.35379886934759314
+fc: 0.2933471895374827 error: 0.0404722167181373
+
+Started process for j=64.
+Processing j=60 (PID: 4075583)
+BIC  252.42128823974735 n=1
+BIC  245.246325982361 n= 2
+[220.41006157]
+BIC= 295.12199214460776
+popt_ori [1.73553704e-01 2.20423027e+02 3.82154102e+00]
+origin BIC  1256.0656411481766 Original_Mean_score  1256.0656411481766
+BIC  80.63580560124274 Mean_score  80.76543604674681
+BIC  82.57033254340374 Mean_score  82.7488000138193
+final BIC  85.63580560124274
+80.63580560124274
+velocity shift [4.]
+nhi_c: 1.8253484759319618 error: 0.3349091918565662
+nhi_w: 10.086746770133127 error: 0.07860743478948536
+fc: 0.1532348791901179 error: 0.023828311820118443
+
+Started process for j=65.
+Processing j=15 (PID: 4075235)
+BIC  279.4135062497612 n=1
+BIC  248.482993892868 n= 2
+BIC  245.2690250592629 n= 3
+final n= 1 noise level= 0.1463260820247008
+final BIC= 279.4134880510852
+[246.39862383]
+BIC= 336.01473435633295
+popt_ori [  0.42890637 246.4834603    3.29444935]
+origin BIC  4436.190341197016 Original_Mean_score  4436.190341197016
+BIC  110.2720689218248 Mean_score  110.46235732419517
+BIC  91.62179011032565 Mean_score  91.64498125603558
+BIC  67.7581263248291 Mean_score  74.75329456657784
+BIC  88.67549901395152 Mean_score  88.91152847235674
+final BIC  72.7581263248291
+67.7581263248291
+velocity shift [3.77392611]
+nhi_c: 2.438399597318396 error: 0.24731651979128194
+nhi_w: 14.616511381441605 error: 0.38296825727905776
+fc: 0.14297345792980992 error: 0.012835885573540639
+
+Started process for j=66.
+Processing j=57 (PID: 4075549)
+BIC  154.46036983393697 n=1
+BIC  170.64458901663858 n= 2
+[282.32274685]
+BIC= 186.76774467761481
+popt_ori [  1.80028536 282.33359945   1.32358722]
+origin BIC  2590.4697134423513 Original_Mean_score  2590.4697134423513
+BIC  420.6211619057331 Mean_score  421.5499034299137
+BIC  103.36231620014715 Mean_score  103.82222019689304
+BIC  69.76529315939975 Mean_score  70.75863374528815
+BIC  79.52293586243432 Mean_score  92.39344820309134
+final BIC  74.76529315939975
+69.76529315939975
+velocity shift [-0.15660027]
+nhi_c: 2.6015456563445865 error: 1.2079747024658474
+nhi_w: 11.110589763193497 error: 0.12448305597835645
+fc: 0.18972578498879966 error: 0.0714021282846469
+
+Started process for j=67.
+Processing j=56 (PID: 4075542)
+BIC  179.27028399972892 n=1
+BIC  158.75491179344124 n= 2
+BIC  171.74942408476159 n= 3
+final n= 2 noise level= 0.159826499979051
+final BIC= 158.75494698184374
+[277.28307713 282.06968623]
+BIC= 177.74001402403846
+popt_ori [  1.22537061 277.00986643   2.01475512   1.53670563 281.37345235
+   1.81036852]
+origin BIC  3321.4630960374643 Original_Mean_score  3332.9137774982905
+BIC  132.50954152414914 Mean_score  133.97766365877496
+BIC  74.62218196111276 Mean_score  75.86193723353827
+BIC  86.36298916403135 Mean_score  86.99323563454129
+final BIC  84.62218196111276
+74.62218196111276
+velocity shift [-1.36723779 -2.20595418]
+nhi_c: 6.561135857729583 error: 1.7348059138146303
+nhi_w: 16.265750785258728 error: 0.2825422381529435
+fc: 0.2874301677817704 error: 0.05427087456620284
+
+Started process for j=68.
+Processing j=7 (PID: 4075227)
+BIC  147.53015323367507 n=1
+BIC  159.6905555116099 n= 2
+[232.24904191]
+BIC= 165.58119523237033
+popt_ori [  0.29130814 232.34670385   1.06067519]
+origin BIC  1500.4403121040984 Original_Mean_score  1500.4403121040984
+BIC  192.8382013496649 Mean_score  192.94447110430494
+BIC  73.53981220311327 Mean_score  73.97668064799291
+BIC  67.56960526409821 Mean_score  69.79377656208378
+BIC  86.4601303905637 Mean_score  88.87941914727433
+final BIC  72.56960526409821
+67.56960526409821
+velocity shift [-0.96969544]
+nhi_c: 0.14875937397371855 error: 0.026513351072372755
+nhi_w: 6.681718177418919 error: 0.4201336084604912
+fc: 0.02177876625088807 error: 0.0040264573028916915
+
+Started process for j=69.
+Processing j=67 (PID: 4075667)
+BIC  952.8311327148376 n=1
+BIC  507.2801737343643 n= 2
+BIC  427.89642065603834 n= 3
+BIC  431.9992624102711 n= 4
+final n= 2 noise level= 0.07121579821753249
+final BIC= 507.28032075242595
+[277.20943686 268.90939551]
+BIC= 629.3750336176693
+popt_ori [2.70089887e-01 2.76778941e+02 7.78988563e+00 4.97139917e-01
+ 2.69051392e+02 2.36397692e+00]
+origin BIC  748.7464489217875 Original_Mean_score  750.3040622576802
+BIC  95.893279735662 Mean_score  96.58946193251585
+BIC  80.7541941747905 Mean_score  103.13034541386541
+final BIC  105.893279735662
+95.893279735662
+velocity shift [ 3.9662786  -1.94062755]
+nhi_c: 12.857848237174021 error: 0.5121402935196028
+nhi_w: 15.87490628405494 error: 0.11771238231435734
+fc: 0.4474979322874911 error: 0.01001713712209956
+
+Started process for j=70.
+Processing j=45 (PID: 4075443)
+BIC  233.33321742284514 n=1
+BIC  189.16547003123463 n= 2
+BIC  193.8168809763473 n= 3
+final n= 2 noise level= 0.17990583601660823
+final BIC= 189.16546439707463
+[271.99072798 277.63015482]
+BIC= 227.4535901835843
+popt_ori [  0.81900275 271.91943039   1.46043311   0.7519063  277.54028951
+   1.60352548]
+origin BIC  4441.606680780342 Original_Mean_score  4442.737554353054
+BIC  116.88501385962525 Mean_score  117.3826916306129
+BIC  56.52567821683344 Mean_score  72.17069927747632
+BIC  71.9336082180638 Mean_score  119.0834707164089
+final BIC  66.52567821683344
+56.52567821683344
+velocity shift [-0.14640624  3.56250244]
+nhi_c: 2.3043543246240406 error: 0.9950996878133157
+nhi_w: 18.63712541108716 error: 0.5772354814541922
+fc: 0.1100377983650534 error: 0.04239795994698163
+
+Started process for j=71.
+Processing j=61 (PID: 4075586)
+BIC  196.28689594015924 n=1
+BIC  209.62295787505008 n= 2
+[288.37514696]
+BIC= 222.9287842708621
+popt_ori [  0.44990131 288.37399826   1.17263004]
+origin BIC  2761.0572790722213 Original_Mean_score  2761.0572790722213
+BIC  824.4385213192178 Mean_score  824.5281925563985
+BIC  98.62089567497512 Mean_score  98.71570735923049
+BIC  72.07110010760277 Mean_score  120.34237528578795
+final BIC  103.62089567497512
+98.62089567497512
+velocity shift [-4.]
+nhi_c: 0.6383933411163795 error: 0.27697392377300545
+nhi_w: 14.913787947147402 error: 0.10478136376500177
+fc: 0.041048476048702785 error: 0.01708052295252811
+
+Processing j=29 (PID: 4075281)
+BIC  244.7354254188434 n=1
+BIC  240.97660691984044 n= 2
+[239.05258316]
+BIC= 282.47809714016324
+popt_ori [  0.90221525 238.94123055   2.95051074]
+origin BIC  4202.340416169778 Original_Mean_score  4202.340416169778
+BIC  113.89065133476055 Mean_score  116.18418359348023
+BIC  54.67355329945468 Mean_score  56.755813166939916
+BIC  64.40292943868927 Mean_score  123.10868732971063
+final BIC  59.67355329945468
+54.67355329945468
+velocity shift [4.]
+nhi_c: 3.5339910668349397 error: 2.6970819929538545
+nhi_w: 17.864933326964458 error: 0.3869356728374141
+fc: 0.1651480701459442 error: 0.10526560306940218
+
+Started process for j=72.
+Started process for j=73.
+Processing j=74 (PID: 4075742)
+BIC  212.28781869256636 n=1
+BIC  227.66418930630408 n= 2
+[236.69789259]
+Satuated
+BIC= 2230.0946011524825
+popt_ori [  3.50408697 237.87094164   4.18252065]
+origin BIC  1085.7406011509281 Original_Mean_score  1085.7406011509281
+BIC  100.76841017223137 Mean_score  101.40513319310605
+BIC  147.12500146394436 Mean_score  170.6788048910422
+final BIC  105.76841017223137
+100.76841017223137
+velocity shift [-0.56715594]
+nhi_c: 27.145442586327704 error: 3.87155740151257
+nhi_w: 9.985048834065159 error: 0.23791571459285268
+fc: 0.7310822331701983 error: 0.028428383298034956
+
+Started process for j=74.
+Processing j=55 (PID: 4075534)
+BIC  215.9936697045343 n=1
+BIC  208.67056699282512 n= 2
+[237.76850182]
+BIC= 269.9949669156427
+popt_ori [  2.11533543 237.72183368   0.97767107]
+origin BIC  1447.569594885687 Original_Mean_score  1447.569594885687
+BIC  76.19684112892342 Mean_score  77.86177820203132
+BIC  62.67581316459389 Mean_score  65.91820719066027
+BIC  75.76734202499298 Mean_score  80.58506310807915
+final BIC  67.67581316459389
+62.67581316459389
+velocity shift [0.38573092]
+nhi_c: 1.2879980139675862 error: 0.6193434538814105
+nhi_w: 10.474476754847952 error: 0.2884442698392355
+fc: 0.10950059738978597 error: 0.04696534092298594
+
+Started process for j=75.
+Processing j=32 (PID: 4075315)
+BIC  325.72232738540197 n=1
+BIC  273.6323276965179 n= 2
+BIC  291.1033454961218 n= 3
+final n= 2 noise level= 0.13695436496066504
+final BIC= 273.6323322613131
+[251.50896442 256.10662397]
+BIC= 310.65926221653956
+popt_ori [  0.70397307 256.09793277   1.11824321   0.38075162 251.53996527
+   1.37143574]
+origin BIC  2799.035937007178 Original_Mean_score  2799.4094085073
+BIC  87.09350582621605 Mean_score  97.39437866560594
+BIC  70.16256986997311 Mean_score  73.40699112986036
+BIC  77.20563211893342 Mean_score  87.52834955393344
+final BIC  80.16256986997311
+70.16256986997311
+velocity shift [ 3.16081113 -2.88387824]
+nhi_c: 0.9164916889531665 error: 0.38013674598789343
+nhi_w: 17.091918145179726 error: 0.668632797465999
+fc: 0.050892427337813066 error: 0.020123476981075396
+
+Started process for j=76.
+Processing j=8 (PID: 4075228)
+BIC  320.43215744882593 n=1
+BIC  270.0091097396688 n= 2
+BIC  278.0969302919467 n= 3
+final n= 2 noise level= 0.07759714066407623
+final BIC= 270.0091056192608
+[246.29305714 234.37743876]
+BIC= 306.4027019193361
+popt_ori [1.47732756e-01 2.46287584e+02 1.88662555e+00 1.29863784e-01
+ 2.34384783e+02 1.43381151e+00]
+origin BIC  1441.3858325091862 Original_Mean_score  1441.512903204552
+BIC  138.8887995207976 Mean_score  145.62682294137645
+BIC  59.42997385542313 Mean_score  63.26810796751416
+BIC  74.7116002015168 Mean_score  86.47845077446762
+final BIC  69.42997385542313
+59.42997385542313
+velocity shift [2.29419814 0.65803591]
+nhi_c: 0.5669402848211088 error: 0.0841278866106323
+nhi_w: 9.842163428837232 error: 0.08335001734615943
+fc: 0.05446581189091201 error: 0.007654379503334062
+
+Started process for j=77.
+Processing j=50 (PID: 4075497)
+BIC  402.21130252923444 n=1
+BIC  310.27289793897205 n= 2
+BIC  259.2649555294754 n= 3
+BIC  265.0733122140706 n= 4
+final n= 3 noise level= 0.20417943635428643
+final BIC= 259.26494791478353
+[227.94407759 247.28015033 233.79465018]
+BIC= 378.27155248401994
+popt_ori [5.45116819e-01 2.30199217e+02 4.10563401e+00 2.25995072e-01
+ 2.47505601e+02 3.60696455e+00 3.30214794e+00 2.28006747e+02
+ 1.12895328e+00]
+origin BIC  146.1318816637065 Original_Mean_score  146.4818003741465
+BIC  66.4115756658824 Mean_score  66.82165943088368
+BIC  89.20799011685409 Mean_score  108.48287738876586
+final BIC  81.4115756658824
+66.4115756658824
+velocity shift [-0.61670984  0.72863715  0.50017769]
+nhi_c: 6.761401373341833 error: 1.1662797123231148
+nhi_w: 6.683160222175821 error: 0.10192720192995966
+fc: 0.502909769523169 error: 0.04328947467378356
+
+Started process for j=78.
+Processing j=22 (PID: 4075242)
+BIC  192.1527869244478 n=1
+BIC  217.4340368746755 n= 2
+[272.96735412]
+BIC= 246.4038271675638
+popt_ori [  1.63419807 273.04223086   2.43111086]
+origin BIC  4061.950858155551 Original_Mean_score  4061.950858155551
+BIC  233.4294461311681 Mean_score  236.31859032804414
+BIC  62.3179902781699 Mean_score  131.03693502042444
+BIC  61.58992922005271 Mean_score  70.29494716782725
+BIC  87.18027717984828 Mean_score  436.7343376868292
+final BIC  66.58992922005271
+61.58992922005271
+velocity shift [4.]
+nhi_c: 6.914043331570523 error: 2.871229436215455
+nhi_w: 25.104099718042047 error: 0.43870416525296535
+fc: 0.21594142173882835 error: 0.07037274047213032
+
+Started process for j=79.
+Processing j=20 (PID: 4075240)
+BIC  262.6189051347908 n=1
+BIC  287.8997971549692 n= 2
+[272.34120135]
+BIC= 372.39585675628535
+popt_ori [  2.13216742 272.55399783   2.71738212]
+origin BIC  3523.3094479341553 Original_Mean_score  3523.3094479341553
+BIC  236.1878305787051 Mean_score  240.59201824198348
+BIC  63.13594201198141 Mean_score  96.88170681452364
+BIC  61.500051848951514 Mean_score  92.97661767130545
+BIC  76.79330405842597 Mean_score  437.05160849532336
+final BIC  66.50005184895151
+61.500051848951514
+velocity shift [2.72651204]
+nhi_c: 8.410859473281562 error: 4.7489536947846664
+nhi_w: 24.20024228003021 error: 0.41961470841276693
+fc: 0.25791399312129676 error: 0.1081163550412582
+
+Started process for j=80.
+Processing j=58 (PID: 4075560)
+BIC  266.1209397006259 n=1
+BIC  277.1787332946726 n= 2
+[233.62469062]
+BIC= 293.57669621089053
+popt_ori [  0.24109047 233.50183635   2.74779356]
+origin BIC  894.1794026886862 Original_Mean_score  894.1794026886862
+BIC  107.29177690376312 Mean_score  107.56540205528995
+BIC  77.64240181068011 Mean_score  86.0584366287767
+BIC  71.75526757993886 Mean_score  80.0556717000781
+BIC  95.12220492339316 Mean_score  101.95839194251087
+final BIC  76.75526757993886
+71.75526757993886
+velocity shift [0.06248469]
+nhi_c: 1.1272425770560401 error: 0.5547100549392069
+nhi_w: 9.145526959208139 error: 0.57098698408506
+fc: 0.10973112684721788 error: 0.04845819229893481
+
+Started process for j=81.
+Processing j=70 (PID: 4075715)
+BIC  287.334534894022 n=1
+BIC  273.79750964180045 n= 2
+[239.15303034]
+BIC= 450.57277423714595
+popt_ori [  2.04077111 239.20534243   3.30069013]
+origin BIC  2332.317553132854 Original_Mean_score  2332.317553132854
+BIC  221.79010643358768 Mean_score  223.33652255498393
+BIC  126.82170200875743 Mean_score  128.86493860516163
+BIC  72.48286353453722 Mean_score  73.45055423247996
+BIC  84.1988639485592 Mean_score  352.50822300394736
+final BIC  77.48286353453722
+72.48286353453722
+velocity shift [4.]
+nhi_c: 9.791283606781425 error: 4.989422783214544
+nhi_w: 23.710812517776567 error: 0.6855634894945039
+fc: 0.2922588356972725 error: 0.10557248700787054
+
+Started process for j=82.
+Processing j=0 (PID: 4075220)
+BIC  212.27100890954438 n=1
+BIC  140.86134305547634 n= 2
+BIC  151.43342509388492 n= 3
+final n= 2 noise level= 0.02725218847848584
+final BIC= 140.86134233787766
+[240.99166725 247.01821488]
+BIC= 158.17963248609587
+popt_ori [8.43374418e-02 2.46968167e+02 1.57318356e+00 1.07848282e-01
+ 2.41007483e+02 2.06935849e+00]
+origin BIC  658.1692174969423 Original_Mean_score  658.204869473738
+BIC  51.44588114497001 Mean_score  51.499764799844115
+BIC  75.02633634543245 Mean_score  94.54561198439342
+final BIC  61.44588114497001
+51.44588114497001
+velocity shift [3.60324538 4.        ]
+nhi_c: 0.4647517394821172 error: 0.047479949138772015
+nhi_w: 4.304790328745838 error: 0.022024563249884024
+fc: 0.0974415851320477 error: 0.008996069672427408
+
+Started process for j=83.
+Processing j=83 (PID: 4075891)
+BIC  227.86695835414633 n=1
+BIC  230.39699596938078 n= 2
+[275.59610818]
+BIC= 248.4028221207046
+popt_ori [8.06433474e-02 2.75320167e+02 6.60898143e+00]
+origin BIC  884.7720050518461 Original_Mean_score  884.7720050518461
+BIC  91.17229827264623 Mean_score  91.26116456734421
+BIC  69.52049153143645 Mean_score  69.6103630986744
+BIC  88.54718829332987 Mean_score  88.80820380058107
+final BIC  74.52049153143645
+69.52049153143645
+velocity shift [4.]
+nhi_c: 5.471846745247863 error: 0.8087800429372454
+nhi_w: 13.084813259640395 error: 0.16776753087453924
+fc: 0.2948723931896392 error: 0.030847940853484416
+
+Started process for j=84.
+Processing j=79 (PID: 4075816)
+BIC  416.37644848575997 n=1
+BIC  235.85323910257765 n= 2
+BIC  228.75171082568312 n= 3
+final n= 2 noise level= 0.09727112400397964
+final BIC= 235.85323233030644
+[293.76442938 305.21224013]
+BIC= 270.0204460115486
+popt_ori [4.45788688e-01 2.93799982e+02 2.50575168e+00 1.87295073e-01
+ 3.05215709e+02 2.24241479e+00]
+origin BIC  1671.4445360977402 Original_Mean_score  1671.620785119409
+BIC  199.3510692395735 Mean_score  199.66535594201605
+BIC  98.04920549712082 Mean_score  102.04503126130835
+BIC  98.41426357541965 Mean_score  106.30132078434909
+final BIC  108.04920549712082
+98.04920549712082
+velocity shift [-4.          0.43737783]
+nhi_c: 2.2243040957033475 error: 1.1152171668081992
+nhi_w: 23.02341666630784 error: 0.34180398269170786
+fc: 0.08809920375268614 error: 0.04029722745972686
+
+Started process for j=85.
+Processing j=75 (PID: 4075753)
+BIC  447.0690517020791 n=1
+BIC  346.5513152755376 n= 2
+BIC  318.457375752487 n= 3
+BIC  327.1101937933738 n= 4
+final n= 3 noise level= 0.2090748342725993
+final BIC= 318.4573395952119
+[234.80158927 247.13769134 239.64478033]
+Satuated
+BIC= 661.6627986221148
+popt_ori [  3.70358156 239.99190292   1.04616843   0.58235041 245.26514939
+   3.59349228   2.40470535 236.16903774   1.91342808]
+origin BIC  1035.855486726336 Original_Mean_score  1036.770885025405
+BIC  136.18919116597263 Mean_score  139.0917500828137
+BIC  100.47583131478714 Mean_score  197.316199469961
+final BIC  151.18919116597263
+136.18919116597263
+velocity shift [-2.96291447 -4.         -3.17601203]
+nhi_c: 17.860603874906378 error: 2.372773395314715
+nhi_w: 9.872143580719628 error: 0.40497600995785743
+fc: 0.6440257642516081 error: 0.03187558471792907
+
+Started process for j=86.
+Processing j=87 (PID: 4075947)
+BIC  450.60430353445366 n=1
+BIC  380.18627175197804 n= 2
+BIC  372.7769644699693 n= 3
+final n= 1 noise level= 0.4620639153454341
+final BIC= 450.60430763856147
+[225.66941819]
+Satuated
+BIC= 739.1552339928854
+popt_ori [  4.23852881 226.01707225   1.0699379 ]
+origin BIC  1111.107397131717 Original_Mean_score  1111.107397131717
+BIC  203.16881826926044 Mean_score  204.04223767544582
+BIC  61.325118026843185 Mean_score  61.76097045656828
+BIC  71.85665152570348 Mean_score  72.28806517920164
+final BIC  66.32511802684319
+61.325118026843185
+velocity shift [0.0746816]
+nhi_c: 5.5092223405798375 error: 2.1931868048066723
+nhi_w: 9.943280884395033 error: 0.2297260334589027
+fc: 0.3565262055196107 error: 0.09148245276188736
+
+Started process for j=87.
+Processing j=86 (PID: 4075945)
+BIC  779.7159658380543 n=1
+BIC  328.7374757334825 n= 2
+BIC  346.04266674057186 n= 3
+final n= 2 noise level= 0.028132471101082815
+final BIC= 328.7378767184967
+[244.9369886  217.87246837]
+BIC= 379.2126266302055
+popt_ori [3.98802868e-02 2.44879061e+02 1.09414857e+01 7.30406021e-01
+ 2.17876715e+02 1.46047524e+00]
+origin BIC  1703.3339432859143 Original_Mean_score  1704.374817093786
+BIC  81.23412545631707 Mean_score  84.53618479111968
+BIC  78.4237813755018 Mean_score  99.84714258793281
+final BIC  91.23412545631707
+81.23412545631707
+velocity shift [-4. -4.]
+nhi_c: 9.771731995206238 error: 1.0013589854417586
+nhi_w: 13.327864855024684 error: 0.719380167481769
+fc: 0.4230260838993193 error: 0.028269020971317563
+
+Started process for j=88.
+Processing j=81 (PID: 4075858)
+BIC  597.4456357142097 n=1
+BIC  224.3905251958554 n= 2
+BIC  151.70517392357755 n= 3
+BIC  168.55441605746284 n= 4
+final n= 3 noise level= 0.043236340745130296
+final BIC= 151.70515258933648
+[230.83100411 226.14778959 236.97408387]
+BIC= 181.8247316666783
+popt_ori [1.42993112e-01 2.36934381e+02 1.05464177e+00 1.54694188e-01
+ 2.26403596e+02 4.39683554e+00 4.81767346e-01 2.30839765e+02
+ 1.46588467e+00]
+origin BIC  345.8435440295008 Original_Mean_score  346.1183969028559
+BIC  67.44601725254431 Mean_score  67.51609814555715
+BIC  69.8404701054812 Mean_score  69.87592960865261
+final BIC  82.44601725254431
+67.44601725254431
+velocity shift [-1.84738538 -0.89240993 -2.17782811]
+nhi_c: 5.831266621643185 error: 0.3649481310717933
+nhi_w: 6.514902852852527 error: 0.07401238938459158
+fc: 0.4723138325364165 error: 0.01585310318789373
+
+Started process for j=89.
+Processing j=21 (PID: 4075241)
+BIC  324.6266007726754 n=1
+BIC  279.8150232852297 n= 2
+BIC  295.0983647921412 n= 3
+final n= 2 noise level= 0.0937837379815334
+final BIC= 279.8148056813847
+[265.25364612 273.03484063]
+BIC= 301.19903992900936
+popt_ori [  0.45305712 271.10895163   4.88950946   1.50212961 273.1335461
+   2.05679346]
+origin BIC  1645.7975592821963 Original_Mean_score  1729.5744287019113
+BIC  218.6964611580836 Mean_score  227.86485659402032
+BIC  53.41282208892669 Mean_score  66.59601583655747
+BIC  66.78887748677944 Mean_score  158.77676938219423
+final BIC  63.41282208892669
+53.41282208892669
+velocity shift [-0.09195775 -0.03233582]
+nhi_c: 13.998468514317784 error: 4.381230030324137
+nhi_w: 16.794247381955863 error: 0.15977128122125064
+fc: 0.4546032432303834 error: 0.0776356423883942
+
+Started process for j=90.
+Processing j=68 (PID: 4075690)
+BIC  320.01794899552783 n=1
+BIC  254.433202014185 n= 2
+BIC  241.32287605842998 n= 3
+final n= 2 noise level= 0.1681074281580017
+final BIC= 254.43373035378562
+[270.13566984 280.76966861]
+BIC= 334.56903329833784
+popt_ori [  0.6279633  270.06292067   2.26807999   0.28012094 274.84479744
+   7.78197208]
+origin BIC  942.222795971507 Original_Mean_score  968.5156512753106
+BIC  133.10700917108204 Mean_score  138.71701260546948
+BIC  106.66898175070125 Mean_score  116.02135574624997
+BIC  79.19710829241873 Mean_score  215.9809939228965
+final BIC  116.66898175070125
+106.66898175070125
+velocity shift [-4.         -0.20778845]
+nhi_c: 12.174479631958938 error: 1.7763591188292926
+nhi_w: 17.421193714973953 error: 0.15428534196745572
+fc: 0.4113601163671657 error: 0.035395720231189975
+
+Started process for j=91.
+Processing j=88 (PID: 4075972)
+BIC  322.7961269340796 n=1
+BIC  275.27392092089735 n= 2
+BIC  268.81640978900873 n= 3
+final n= 2 noise level= 0.14158350160296626
+final BIC= 275.27419691672986
+[274.38152467 294.83175734]
+BIC= 333.332099593534
+popt_ori [3.51274086e-01 2.74372267e+02 4.77270244e+00 1.71470322e-01
+ 2.94779009e+02 2.04481238e+00]
+origin BIC  2115.7398862041355 Original_Mean_score  2115.7547643777852
+BIC  411.9581119351636 Mean_score  412.80463276065944
+BIC  99.11684006070888 Mean_score  100.77440400631771
+BIC  74.34675321514831 Mean_score  112.10341671549432
+final BIC  109.11684006070888
+99.11684006070888
+velocity shift [ 1.67733435 -2.407159  ]
+nhi_c: 8.856069807766607 error: 0.6031803800440897
+nhi_w: 22.269695537939647 error: 0.45865103221455705
+fc: 0.2845253669879088 error: 0.014485077485059753
+
+Started process for j=92.
+Processing j=93 (PID: 4076160)
+BIC  148.00409833342053 n=1
+BIC  169.69056007335888 n= 2
+[234.81144724]
+BIC= 169.58085223147063
+popt_ori [  0.27307688 234.81343518   1.93714496]
+origin BIC  1036.8964502645063 Original_Mean_score  1036.8964502645063
+BIC  57.54533169522282 Mean_score  57.556570060659915
+BIC  63.088066376965884 Mean_score  63.08813702045187
+final BIC  62.54533169522282
+57.54533169522282
+velocity shift [-3.89304385]
+nhi_c: 1.316182761730046 error: 0.1084892322258549
+nhi_w: 6.463301791447997 error: 0.023474384267509738
+fc: 0.16918637124774086 error: 0.011597399264995034
+
+Started process for j=93.
+Processing j=94 (PID: 4076171)
+BIC  165.29507190743777 n=1
+BIC  164.1738821767726 n= 2
+[245.3949001]
+BIC= 216.52516715897562
+popt_ori [  0.73779271 245.83365633   3.61089786]
+origin BIC  1340.365337782758 Original_Mean_score  1340.365337782758
+BIC  74.30467115889002 Mean_score  75.56509837750104
+BIC  72.53448538435566 Mean_score  75.07537366511905
+BIC  91.59665802245506 Mean_score  95.79475782346987
+final BIC  77.53448538435566
+72.53448538435566
+velocity shift [-4.]
+nhi_c: 2.084766285004667 error: 0.8576393303672178
+nhi_w: 12.04989853496102 error: 0.1321026449797016
+fc: 0.14749315329075685 error: 0.051745335458474075
+
+Started process for j=94.
+Processing j=92 (PID: 4076154)
+BIC  169.02103177020683 n=1
+BIC  169.63344333388244 n= 2
+[285.65185573]
+BIC= 191.27990091468223
+popt_ori [  0.55123816 285.58980694   1.04673433]
+origin BIC  2640.181388489495 Original_Mean_score  2640.181388489495
+BIC  325.2887732566876 Mean_score  325.3428210856779
+BIC  121.84494507870804 Mean_score  125.51752831756585
+BIC  101.53163360826397 Mean_score  151.1936818645802
+final BIC  126.84494507870804
+121.84494507870804
+velocity shift [-2.3124929]
+nhi_c: 0.28971803457907097 error: 0.13640864613724474
+nhi_w: 12.441324476147454 error: 0.1622910315331766
+fc: 0.022756819351987034 error: 0.010474835044168268
+
+Started process for j=95.
+Processing j=47 (PID: 4075460)
+BIC  211.33501822240845 n=1
+BIC  170.35074912117338 n= 2
+BIC  183.1159902838184 n= 3
+final n= 2 noise level= 0.08329367450528648
+final BIC= 170.35074962068373
+[244.99726095 255.34978548]
+BIC= 194.59260243190806
+popt_ori [1.38417197e-01 2.45001742e+02 2.00090930e+00 6.70770803e-02
+ 2.55352927e+02 6.33934972e+00]
+origin BIC  499.93486621122145 Original_Mean_score  500.56619979792856
+BIC  151.19522155163259 Mean_score  156.6608257147078
+BIC  66.6894292728667 Mean_score  69.75508150687314
+BIC  81.63694144493331 Mean_score  88.33535714371398
+final BIC  76.6894292728667
+66.6894292728667
+velocity shift [ 1.60943944 -2.15856422]
+nhi_c: 5.135533776683839 error: 1.3859160697249873
+nhi_w: 4.145721744266636 error: 0.046751846202653546
+fc: 0.5533231754143021 error: 0.06675787031541595
+
+Started process for j=96.
+Processing j=96 (PID: 4076219)
+BIC  275.6601603263775 n=1
+BIC  277.23083961917297 n= 2
+[222.18327032]
+BIC= 317.1261412842534
+popt_ori [  0.2305405  222.16822031   1.26630102]
+origin BIC  1608.5692132936017 Original_Mean_score  1608.5692132936017
+BIC  173.0184853914081 Mean_score  173.10190763180245
+BIC  74.94953410741311 Mean_score  75.02540338478768
+BIC  81.46502650552665 Mean_score  81.47018156663525
+final BIC  79.94953410741311
+74.94953410741311
+velocity shift [3.27367647]
+nhi_c: 0.6212181792781268 error: 0.10806779203389313
+nhi_w: 7.966029516730666 error: 0.15119116255497275
+fc: 0.07234194252564281 error: 0.011743558078922531
+
+Started process for j=97.
+Processing j=89 (PID: 4075998)
+BIC  203.0580384117249 n=1
+BIC  209.74841469027757 n= 2
+[293.82900838]
+Satuated
+BIC= 318.15678151720783
+popt_ori [  3.60982532 294.20904868   1.64356431]
+origin BIC  4048.7189272723613 Original_Mean_score  4048.7189272723613
+BIC  374.8871411062346 Mean_score  377.5195146145143
+BIC  77.04955593498525 Mean_score  77.8603508167958
+BIC  73.7098910447915 Mean_score  74.16828745186756
+BIC  96.2981528053214 Mean_score  96.77906179283193
+final BIC  78.7098910447915
+73.7098910447915
+velocity shift [-1.56612345]
+nhi_c: 7.856315067209031 error: 3.491304500153975
+nhi_w: 14.980564787758874 error: 0.2431670807325894
+fc: 0.3440187590031034 error: 0.10035335639319334
+
+Started process for j=98.
+Processing j=97 (PID: 4076246)
+BIC  201.60887592311462 n=1
+BIC  204.99901974922057 n= 2
+[227.80118277]
+BIC= 236.95525189579544
+popt_ori [7.11609603e-02 2.27842738e+02 2.42973944e+00]
+origin BIC  1152.7912181123602 Original_Mean_score  1152.7912181123602
+BIC  149.92064542295483 Mean_score  149.9619700337865
+BIC  75.59455339686293 Mean_score  75.59770659670215
+BIC  96.45299105438266 Mean_score  96.90533867172732
+final BIC  80.59455339686293
+75.59455339686293
+velocity shift [-2.24369068]
+nhi_c: 1.2009660564257438 error: 0.0640876536257854
+nhi_w: 7.052152218809676 error: 0.5389554034989804
+fc: 0.14551664187697425 error: 0.011590019423281035
+
+Started process for j=99.
+Processing j=91 (PID: 4076090)
+BIC  406.86719676426003 n=1
+BIC  201.03668190628582 n= 2
+BIC  193.98797021836307 n= 3
+final n= 2 noise level= 0.1732981874893025
+final BIC= 201.0366819305691
+[264.75012802 295.89505572]
+BIC= 286.2747358827861
+popt_ori [7.34798352e-01 2.64546801e+02 2.97422724e+00 2.49641325e-01
+ 2.95854872e+02 4.58005161e+00]
+origin BIC  2313.922290731327 Original_Mean_score  2313.9238048079924
+BIC  73.7175479226498 Mean_score  73.89978796956615
+BIC  56.174700346635035 Mean_score  60.16760276011826
+BIC  73.80009691866653 Mean_score  74.79006486082955
+final BIC  66.17470034663503
+56.174700346635035
+velocity shift [-0.3177684  -2.48970241]
+nhi_c: 7.401724151340866 error: 1.1811960578487997
+nhi_w: 13.83428065409926 error: 0.40830838854594836
+fc: 0.34854598212582494 error: 0.036849889140509934
+
+Started process for j=100.
+Processing j=95 (PID: 4076188)
+BIC  281.06952484938745 n=1
+BIC  264.10373190040644 n= 2
+[282.36529841]
+Satuated
+BIC= 668.5694844493784
+popt_ori [  3.29022987 279.73155884   1.81757538]
+origin BIC  4188.791996876491 Original_Mean_score  4188.791996876491
+BIC  2160.765621827829 Mean_score  2684.9402401189627
+BIC  281.59744225903 Mean_score  283.3218491114204
+BIC  111.68805345750039 Mean_score  125.9903787992319
+BIC  99.51053383978712 Mean_score  136.24503676861588
+final BIC  116.68805345750039
+111.68805345750039
+velocity shift [0.15532476]
+nhi_c: 7.784634376302222 error: 4.836140479164849
+nhi_w: 32.4956763933307 error: 0.13230785025419187
+fc: 0.19326152722165715 error: 0.09686083102224786
+
+Started process for j=101.
+Processing j=78 (PID: 4075783)
+BIC  249.42096016828955 n=1
+BIC  236.731226924896 n= 2
+[294.00054892]
+BIC= 289.01727863235567
+popt_ori [  0.51130732 294.0215782    2.71629917]
+origin BIC  2514.8602504565897 Original_Mean_score  2514.8602504565897
+BIC  299.74808720343333 Mean_score  300.3590537539538
+BIC  90.02371890027624 Mean_score  103.40827177719409
+BIC  86.5106376642407 Mean_score  87.50240009911901
+BIC  108.29626280147224 Mean_score  108.42699221227748
+final BIC  91.5106376642407
+86.5106376642407
+velocity shift [1.82709347]
+nhi_c: 2.6234063660341103 error: 1.2069853841330884
+nhi_w: 23.917941703409163 error: 0.4708637218591705
+fc: 0.09884224264608495 error: 0.04101824506088941
+
+Started process for j=102.
+Processing j=16 (PID: 4075236)
+BIC  329.27856967821936 n=1
+BIC  286.17065799587385 n= 2
+BIC  305.84070136407774 n= 3
+final n= 2 noise level= 0.18227427533658686
+final BIC= 286.17068412851654
+[249.42369632 244.39554499]
+BIC= 337.6375893233949
+popt_ori [2.15548079e-01 2.44979831e+02 1.05400059e+01 5.79453550e-01
+ 2.49224132e+02 1.53421766e+00]
+origin BIC  778.0678787657251 Original_Mean_score  778.1299762812678
+BIC  159.35490009354513 Mean_score  161.01153955282504
+BIC  97.22305833685976 Mean_score  136.36863823118125
+BIC  96.94798807782348 Mean_score  112.27922719018173
+BIC  83.13013896659764 Mean_score  536.9403104702203
+final BIC  106.94798807782348
+96.94798807782348
+velocity shift [-2.08429059  1.17851442]
+nhi_c: 13.739819458320627 error: 3.48651547301204
+nhi_w: 4.6823482596365285 error: 0.2702255206012777
+fc: 0.7458307658836277 error: 0.049331580987675705
+
+Started process for j=103.
+Processing j=103 (PID: 4076450)
+BIC  231.45306754293395 n=1
+BIC  225.8052990329844 n= 2
+[278.40864657]
+BIC= 300.38454518341194
+popt_ori [  0.61357258 279.22380607   2.00196089]
+origin BIC  1614.8664574624881 Original_Mean_score  1614.8664574624881
+BIC  202.9996075887965 Mean_score  203.95429644003897
+BIC  109.441219339281 Mean_score  110.60663073580766
+BIC  94.51012089801823 Mean_score  315.45054001325485
+final BIC  114.441219339281
+109.441219339281
+velocity shift [-4.]
+nhi_c: 1.3076874558279343 error: 0.4540497918555014
+nhi_w: 11.582364686570138 error: 0.5963427120518778
+fc: 0.1014493534534804 error: 0.031997378703705184
+
+Started process for j=104.
+Processing j=99 (PID: 4076260)
+BIC  92.12947357486722 n=1
+BIC  111.076910365249 n= 2
+[219.22343334]
+BIC= 109.46706209134634
+popt_ori [  1.03268176 219.31187598   3.61750573]
+origin BIC  1082.7034404479896 Original_Mean_score  1082.7034404479896
+BIC  196.03890808001148 Mean_score  196.20729750985038
+BIC  68.99971047671373 Mean_score  69.27432659052351
+BIC  75.2226878991871 Mean_score  77.96117017368597
+final BIC  73.99971047671373
+68.99971047671373
+velocity shift [0.59722612]
+nhi_c: 5.448987715191871 error: 1.016051307728584
+nhi_w: 8.985364264780557 error: 0.1646100678865748
+fc: 0.377501374689512 error: 0.04402939485334754
+
+Started process for j=105.
+Processing j=106 (PID: 4076549)
+BIC  209.47057640003098 n=1
+BIC  220.24688447971758 n= 2
+[253.21917928]
+BIC= 230.13974349577805
+popt_ori [  0.46034806 253.22370578   0.92140855]
+origin BIC  541.8172194781004 Original_Mean_score  541.8172194781004
+BIC  49.809799535870695 Mean_score  50.07857996559526
+BIC  65.74510084974742 Mean_score  65.84633654289107
+final BIC  49.809799535870695
+49.809799535870695
+velocity shift [-2.28441208]
+nhi_c: 0.05291487842125409 error: 0.006915690228690312
+nhi_w: 2.7809402980071107 error: 0.04315781800882039
+fc: 0.01867240036166742 error: 0.0024116389645907326
+
+Processing j=62 (PID: 4075590)
+BIC  417.2456811419627 n=1
+BIC  269.0710976024108 n= 2
+BIC  256.08403247910167 n= 3
+final n= 2 noise level= 0.1294907557209579
+final BIC= 269.071099211194
+[288.22026911 279.50877756]
+BIC= 317.223857501582
+popt_ori [4.93976250e-01 2.88290997e+02 1.56640243e+00 1.96168885e-01
+ 2.79774115e+02 4.93613209e+00]
+origin BIC  1581.334890432012 Original_Mean_score  1582.0417223246632
+BIC  197.41969741877705 Mean_score  197.9864905111051
+BIC  64.71014744035125 Mean_score  65.70898310919698
+BIC  80.32566830053732 Mean_score  129.76450005750797
+final BIC  74.71014744035125
+64.71014744035125
+velocity shift [-1.700542  4.      ]
+nhi_c: 4.265157900801716 error: 0.6672426331183463
+nhi_w: 12.873958977638804 error: 0.06827357525616193
+fc: 0.2488551732888236 error: 0.02925960258828141
+
+Started process for j=106.
+Started process for j=107.
+Processing j=6 (PID: 4075226)
+BIC  196.94300874290246 n=1
+BIC  185.65404742150204 n= 2
+[245.56303991]
+BIC= 227.14341846713143
+popt_ori [2.27646794e-01 2.45483141e+02 1.88220478e+00]
+origin BIC  2069.53202652075 Original_Mean_score  2069.53202652075
+BIC  132.10622152968165 Mean_score  135.78932385054694
+BIC  81.33317068974515 Mean_score  81.49624935588857
+BIC  75.0037245391158 Mean_score  76.25517633049589
+BIC  87.9056801432195 Mean_score  88.02050665433018
+final BIC  80.0037245391158
+75.0037245391158
+velocity shift [-4.]
+nhi_c: 0.35196791230071267 error: 0.1824942055731692
+nhi_w: 9.802230023692678 error: 0.3874943839346787
+fc: 0.03466230563155547 error: 0.01739968192202008
+
+Started process for j=108.
+Processing j=104 (PID: 4076463)
+BIC  217.61689590129865 n=1
+BIC  193.39346767947188 n= 2
+BIC  201.01677717194323 n= 3
+final n= 2 noise level= 0.1368258398722137
+final BIC= 193.39180982243374
+[271.91654642 252.08102536]
+BIC= 220.21918715833903
+popt_ori [1.90765972e-01 2.71721267e+02 2.88034568e+00 1.21325922e-01
+ 2.52102956e+02 3.10638667e+00]
+origin BIC  524.3122048153951 Original_Mean_score  524.3201840258453
+BIC  126.75603458567542 Mean_score  128.27585360283294
+BIC  77.77312491580577 Mean_score  81.17132224523725
+BIC  88.853138149221 Mean_score  88.986554886479
+final BIC  87.77312491580577
+77.77312491580577
+velocity shift [-0.72415012  4.        ]
+nhi_c: 2.723732096157847 error: 0.2625505903153561
+nhi_w: 11.0391328365428 error: 0.9363943539568745
+fc: 0.19790444137006996 error: 0.02038228047292228
+
+Started process for j=109.
+Processing j=69 (PID: 4075696)
+BIC  334.11564007101447 n=1
+BIC  232.96402891269454 n= 2
+BIC  212.75948629697413 n= 3
+BIC  229.58512270359455 n= 4
+final n= 3 noise level= 0.20431326648063816
+final BIC= 212.75949898407802
+[236.49401252 272.95506035 239.52103328]
+Satuated
+BIC= 313.264196599642
+popt_ori [  1.60700911 239.1949999    3.41870025   0.2951469  272.92184271
+   2.94250725   3.26779267 237.086888     0.83751085]
+origin BIC  1452.7868992590918 Original_Mean_score  1453.3976646066915
+BIC  139.5214438130234 Mean_score  144.82149564942438
+BIC  101.9418727088708 Mean_score  103.40202991085435
+BIC  96.34471026079714 Mean_score  328.4423012311712
+final BIC  116.9418727088708
+101.9418727088708
+velocity shift [ 0.55825266 -0.12264111  1.7035748 ]
+nhi_c: 14.166976187193885 error: 3.751516488441851
+nhi_w: 21.367388854326343 error: 1.2275013259640117
+fc: 0.39868381412304515 error: 0.06496024384635506
+
+Started process for j=110.
+Processing j=84 (PID: 4075921)
+BIC  251.33538818163169 n=1
+BIC  257.42646650605235 n= 2
+[271.35440588]
+BIC= 267.7012884197047
+popt_ori [1.23351513e-01 2.71802628e+02 2.17611596e+00]
+origin BIC  3722.263082530821 Original_Mean_score  3722.263082530821
+BIC  121.3674020526293 Mean_score  123.2780086843079
+BIC  91.43723564378716 Mean_score  92.62742185111357
+BIC  85.7068364860202 Mean_score  86.51784625802702
+BIC  104.2767514143567 Mean_score  105.53049665064394
+final BIC  90.7068364860202
+85.7068364860202
+velocity shift [4.]
+nhi_c: 0.3657968736638666 error: 0.16190349284497563
+nhi_w: 17.844928639975702 error: 1.6945968020171618
+fc: 0.020086891836895243 error: 0.00891023709796001
+
+Started process for j=111.
+Processing j=107 (PID: 4076558)
+BIC  120.12749112009996 n=1
+BIC  114.29997244272803 n= 2
+[284.05915175]
+BIC= 194.64593963319157
+popt_ori [  0.91711209 283.64087135   4.75479814]
+origin BIC  981.9989992397113 Original_Mean_score  981.9989992397113
+BIC  128.56499284361385 Mean_score  130.64487440806974
+BIC  73.84505563422869 Mean_score  83.60184251048443
+BIC  100.56897797642306 Mean_score  264.33088848405924
+final BIC  78.84505563422869
+73.84505563422869
+velocity shift [-1.08135118]
+nhi_c: 15.322691973875777 error: 0.7363902162573627
+nhi_w: 9.032842562869812 error: 0.8569570900819985
+fc: 0.6291256695991699 error: 0.024814148756297987
+
+Started process for j=112.
+Processing j=65 (PID: 4075640)
+BIC  1102.675274207259 n=1
+BIC  892.5678169940031 n= 2
+BIC  714.3682896858437 n= 3
+BIC  600.1462437037264 n= 4
+BIC  588.9209502518675 n= 5
+final n= 4 noise level= 0.05417266835602219
+final BIC= 600.1462792911691
+[270.54763761 278.77020175 285.22576304 226.94729431]
+BIC= 679.1452372675424
+popt_ori [5.50106081e-01 2.70469177e+02 3.73679378e+00 3.11023667e-01
+ 2.78596741e+02 1.50590467e+00 1.14389072e-01 2.81432177e+02
+ 8.99642795e+00 5.57076054e-02 2.26942370e+02 5.25939067e+00]
+origin BIC  602.1508497893922 Original_Mean_score  609.0107736941775
+BIC  75.01583869487638 Mean_score  75.3882493152238
+BIC  81.56399366621692 Mean_score  124.7998113932539
+final BIC  95.01583869487638
+75.01583869487638
+velocity shift [-4.         -2.8277814  -0.21803165 -4.        ]
+nhi_c: 16.288384264283515 error: 3.8555506410554456
+nhi_w: 12.9966347425466 error: 0.056965092283492565
+fc: 0.5562019358937275 error: 0.058438727031162735
+
+Started process for j=113.
+Processing j=105 (PID: 4076543)
+BIC  175.2554901454196 n=1
+BIC  134.86358947956853 n= 2
+BIC  140.43406526160666 n= 3
+final n= 2 noise level= 0.3419544736193262
+final BIC= 134.86373660494434
+[288.58529266 299.39749821]
+BIC= 240.7854631973297
+popt_ori [  1.2741317  289.12301294   5.76782967   0.89284417 299.42590051
+   1.96630481]
+origin BIC  1333.9326312024932 Original_Mean_score  1335.0376963120063
+BIC  142.38732680334633 Mean_score  149.47336953414467
+BIC  65.84844117147048 Mean_score  84.111738163446
+BIC  65.37869717215303 Mean_score  92.3608024078607
+final BIC  75.84844117147048
+65.84844117147048
+velocity shift [-2.22537114  0.40642833]
+nhi_c: 33.6528982124846 error: 3.189602624381961
+nhi_w: 21.637646436328282 error: 7.365309921618125
+fc: 0.608655574406738 error: 0.0841639904256863
+
+Started process for j=114.
+Processing j=73 (PID: 4075738)
+BIC  295.1368940206155 n=1
+BIC  245.72512071460883 n= 2
+BIC  259.20269344056135 n= 3
+final n= 2 noise level= 0.20388533136431272
+final BIC= 245.72509565154118
+[294.66422281 290.12433941]
+BIC= 291.8203313498496
+popt_ori [  0.45197705 290.08579965   7.20811674   0.9198837  294.57389869
+   1.44304611]
+origin BIC  956.0482418788722 Original_Mean_score  956.4830683482458
+BIC  471.9415675507526 Mean_score  475.38354673238376
+BIC  160.51725415034005 Mean_score  163.77438110165664
+BIC  70.37560469254872 Mean_score  116.8091205365026
+BIC  85.80982197239084 Mean_score  244.85974045392177
+final BIC  80.37560469254872
+70.37560469254872
+velocity shift [0.81349581 1.05622661]
+nhi_c: 3.860055026912012 error: 2.5186664948978286
+nhi_w: 22.89078812890101 error: 6.4935223039714
+fc: 0.1442965742959475 error: 0.08785150765619684
+
+Started process for j=115.
+Processing j=108 (PID: 4076559)
+BIC  138.00928126586265 n=1
+BIC  105.25820650371523 n= 2
+BIC  118.38287804898995 n= 3
+final n= 2 noise level= 0.32204002789358177
+final BIC= 105.25826862655225
+[281.13052025 288.73289297]
+BIC= 139.4238565234031
+popt_ori [  1.04479439 281.34139656   2.33837981   0.44877568 288.54949911
+   5.63803827]
+origin BIC  852.4835087824312 Original_Mean_score  856.8426346593434
+BIC  65.14152988096063 Mean_score  66.15264859324667
+BIC  59.08670063342717 Mean_score  60.071625533056164
+BIC  73.51593171101118 Mean_score  319.917721527933
+final BIC  69.08670063342717
+59.08670063342717
+velocity shift [-0.39289484 -3.84206604]
+nhi_c: 14.415025044965613 error: 3.0505167105631927
+nhi_w: 9.289487501369495 error: 0.36240383572870705
+fc: 0.6081131184110462 error: 0.051281439096117
+
+Started process for j=116.
+Processing j=98 (PID: 4076248)
+BIC  211.06691897238662 n=1
+BIC  188.65424534339292 n= 2
+BIC  200.43508531242915 n= 3
+final n= 2 noise level= 0.2047428038464572
+final BIC= 188.65412685241347
+[230.19239139 235.59459201]
+BIC= 214.90415997093118
+popt_ori [  0.29899094 230.62091684   4.78600284   0.50653458 235.72043151
+   1.22396532]
+origin BIC  343.01045843660665 Original_Mean_score  343.3203569484839
+BIC  90.33750287985202 Mean_score  90.83039824001877
+BIC  82.154193197621 Mean_score  90.02259937995926
+BIC  84.16280263547858 Mean_score  142.54713540898007
+final BIC  92.154193197621
+82.154193197621
+velocity shift [-0.53414609 -4.        ]
+nhi_c: 7.633776436569311 error: 0.5995067392642207
+nhi_w: 3.8306939319039115 error: 0.5447646655318111
+fc: 0.6658638551294835 error: 0.03614426321733398
+
+Started process for j=117.
+Processing j=113 (PID: 4076747)
+BIC  876.6597438163518 n=1
+BIC  167.78847229358908 n= 2
+BIC  129.82223939395618 n= 3
+BIC  139.50453383233085 n= 4
+final n= 3 noise level= 0.12212090657600118
+final BIC= 129.8222392611613
+[293.3612837  302.70237138 287.1746268 ]
+BIC= 256.2597540510216
+popt_ori [  0.3178891  298.198489     7.16504052   1.268157   302.7146529
+   1.77405398   1.74476288 293.22085593   1.49083958]
+origin BIC  474.5446002872053 Original_Mean_score  484.6145476526817
+BIC  72.43213464608793 Mean_score  77.78620696915507
+BIC  80.35729531673445 Mean_score  244.11042757724297
+final BIC  87.43213464608793
+72.43213464608793
+velocity shift [-2.04328349  0.14523873  1.7061072 ]
+nhi_c: 24.16091068872944 error: 2.97359488633567
+nhi_w: 5.8336304974028 error: 0.1663395331427582
+fc: 0.8055102606436955 error: 0.019792001442987026
+
+Started process for j=118.
+Processing j=119 (PID: 4076890)
+BIC  251.96155052405973 n=1
+BIC  235.54043175017247 n= 2
+[229.34586219]
+BIC= 299.3082817129378
+popt_ori [5.14543184e-02 2.29347230e+02 6.28668719e+00]
+origin BIC  188.63973956826487 Original_Mean_score  188.63973956826487
+BIC  39.480333056990574 Mean_score  39.48524196729286
+BIC  48.08693272992723 Mean_score  48.099994401450395
+final BIC  44.480333056990574
+39.480333056990574
+velocity shift [1.11076988]
+nhi_c: 1.3156218841625105 error: 0.20147006636774192
+nhi_w: 2.5836937298317135 error: 0.08773006797163127
+fc: 0.3373981524965266 error: 0.035066843808876355
+
+Started process for j=119.
+Processing j=118 (PID: 4076854)
+BIC  138.76086802469507 n=1
+BIC  156.37955847363358 n= 2
+[238.82000156]
+BIC= 145.69022024314233
+popt_ori [8.80563064e-02 2.38778689e+02 1.01475877e+00]
+origin BIC  3170.2206672841266 Original_Mean_score  3170.2206672841266
+BIC  134.84300474813782 Mean_score  134.8495111794491
+BIC  66.09596288441335 Mean_score  66.1086154852432
+BIC  77.26298077639751 Mean_score  77.26468564395624
+final BIC  71.09596288441335
+66.09596288441335
+velocity shift [4.]
+nhi_c: 0.12705784402044246 error: 0.010861556762656533
+nhi_w: 11.738637004688393 error: 0.28348197771259087
+fc: 0.01070799861621827 error: 0.0009410143005908042
+
+Started process for j=120.
+Processing j=85 (PID: 4075940)
+BIC  203.6640315348628 n=1
+BIC  151.19641871650794 n= 2
+BIC  154.0128924473813 n= 3
+final n= 2 noise level= 0.21414539984717407
+final BIC= 151.19641894592124
+[288.28497091 294.12120428]
+BIC= 175.61382412411086
+popt_ori [  1.4199957  288.33525579   1.38041901   0.48707279 294.03357222
+   1.09095876]
+origin BIC  2481.2296159782722 Original_Mean_score  2485.5803031601863
+BIC  923.6732804994447 Mean_score  924.129049329913
+BIC  101.08630411435152 Mean_score  104.89135853120507
+BIC  71.7583101337856 Mean_score  74.64185624887973
+BIC  77.78843751459945 Mean_score  81.41015227842396
+final BIC  81.7583101337856
+71.7583101337856
+velocity shift [-1.31982713 -4.        ]
+nhi_c: 2.296419126731448 error: 0.6966731506939529
+nhi_w: 11.137107547088435 error: 0.17826916154578815
+fc: 0.17094685427668496 error: 0.0430551470339909
+
+Started process for j=121.
+Processing j=100 (PID: 4076310)
+BIC  487.79123354693616 n=1
+BIC  330.88276360644363 n= 2
+BIC  309.27539602546784 n= 3
+BIC  302.6279838960278 n= 4
+final n= 3 noise level= 0.040464137810127115
+final BIC= 309.27538114516346
+[268.80356976 256.72120463 244.95177961]
+BIC= 351.935857808618
+popt_ori [1.14322762e-01 2.68738426e+02 2.14743513e+00 4.71936166e-02
+ 2.56714541e+02 2.88973086e+00 4.18207163e-02 2.44932529e+02
+ 4.29138069e+00]
+origin BIC  449.99750852354083 Original_Mean_score  460.3866524577941
+BIC  118.40148933073505 Mean_score  125.83243583285012
+BIC  124.71513940930316 Mean_score  137.09395157695693
+final BIC  133.40148933073505
+118.40148933073505
+velocity shift [-1.94846525  0.82467675  4.        ]
+nhi_c: 4.901634553516331 error: 1.4501867442439762
+nhi_w: 11.703156895204867 error: 2.0842749751554406
+fc: 0.2951939847394967 error: 0.07184652147724331
+
+Started process for j=122.
+Processing j=52 (PID: 4075525)
+BIC  555.8671101023771 n=1
+BIC  300.83535908855623 n= 2
+BIC  284.6464905070788 n= 3
+final n= 2 noise level= 0.11888241980886245
+final BIC= 300.83584259177525
+[267.94972238 282.39963366]
+BIC= 365.9326033684504
+popt_ori [  0.3747911  267.92709999   1.95391879   0.28873695 282.70970872
+   3.00005115]
+origin BIC  1831.8100138579562 Original_Mean_score  1833.6762541225949
+BIC  187.03778686656966 Mean_score  190.36092297986158
+BIC  108.12576655670304 Mean_score  193.05661642025058
+BIC  73.79381713743663 Mean_score  74.60987613071516
+BIC  97.55595692018017 Mean_score  98.37188366924653
+final BIC  83.79381713743663
+73.79381713743663
+velocity shift [-1.42378354 -3.06700636]
+nhi_c: 4.138038221895548 error: 0.3796461484654231
+nhi_w: 13.945297957609725 error: 2.7429009104462496
+fc: 0.2288315707245098 error: 0.038299662890835355
+
+Started process for j=123.
+Processing j=110 (PID: 4076637)
+BIC  827.1585867222749 n=1
+BIC  205.39467407544083 n= 2
+BIC  149.548877065111 n= 3
+BIC  165.33847211847254 n= 4
+final n= 3 noise level= 0.06170164418063567
+final BIC= 149.5489384427658
+[298.42435201 280.78504021 291.62494911]
+BIC= 188.12603871395237
+popt_ori [4.13870154e-01 2.96497275e+02 4.79110398e+00 1.69282882e-01
+ 2.80358689e+02 3.49443375e+00 3.28599154e-01 2.99002585e+02
+ 1.78262071e+00]
+origin BIC  1691.3347734149781 Original_Mean_score  1696.8060831528817
+BIC  77.60274699412153 Mean_score  78.1813457232204
+BIC  87.60027277000364 Mean_score  89.39700769377163
+final BIC  92.60274699412153
+77.60274699412153
+velocity shift [-1.87352981  4.          2.73372525]
+nhi_c: 21.149574072518284 error: 1.2456776103272036
+nhi_w: 18.00124799185931 error: 0.5199075928652073
+fc: 0.5402076625042768 error: 0.01629361741626368
+
+Started process for j=124.
+Processing j=120 (PID: 4076897)
+BIC  126.71417018961108 n=1
+BIC  146.01331061953397 n= 2
+[247.26781988]
+BIC= 149.23813514694027
+popt_ori [  0.88502663 247.22999455   3.57682025]
+origin BIC  911.420439983055 Original_Mean_score  911.420439983055
+BIC  229.6660864689809 Mean_score  231.45683560186504
+BIC  78.3861374011621 Mean_score  80.17843222294579
+BIC  66.94768561511995 Mean_score  78.74729169778081
+BIC  76.08645043827359 Mean_score  100.81202509871093
+final BIC  66.94768561511995
+66.94768561511995
+velocity shift [-4.]
+nhi_c: 4.672278372259938 error: 3.0152570143544226
+nhi_w: 17.9808445265086 error: 1.0777158064064016
+fc: 0.20625316841034444 error: 0.10610681697320035
+
+Started process for j=125.
+Processing j=82 (PID: 4075860)
+BIC  342.4929516022802 n=1
+BIC  316.73482019051806 n= 2
+BIC  293.7863806007871 n= 3
+BIC  291.66533688760126 n= 4
+final n= 3 noise level= 0.07897886358418404
+final BIC= 293.78636418148045
+[229.81391976 240.86582229 218.75851638]
+BIC= 360.1850432308486
+popt_ori [4.73298097e-01 2.29879447e+02 2.73154442e+00 1.03179050e-01
+ 2.40818144e+02 1.14468282e+00 8.87731624e-02 2.18794405e+02
+ 1.33314666e+00]
+origin BIC  1131.6332968018055 Original_Mean_score  1131.6702469154068
+BIC  140.5324686464084 Mean_score  158.48946482459507
+BIC  75.78839296730132 Mean_score  77.93453318320968
+BIC  81.98721688226266 Mean_score  90.11884466960079
+final BIC  90.78839296730132
+75.78839296730132
+velocity shift [ 2.29428791 -4.         -3.88668257]
+nhi_c: 1.781401984288268 error: 0.2388856600162774
+nhi_w: 11.157432740677756 error: 0.1312924887492478
+fc: 0.13767870307910945 error: 0.015981946494272235
+
+Started process for j=126.
+Processing j=111 (PID: 4076639)
+BIC  263.8027728939784 n=1
+BIC  193.9495216669699 n= 2
+BIC  185.2935260284234 n= 3
+final n= 2 noise level= 0.061631012492034475
+final BIC= 193.94887166293213
+[303.72643441 296.76255775]
+BIC= 242.56157194071625
+popt_ori [2.58093604e-01 3.03420840e+02 3.48677285e+00 2.22868384e-01
+ 2.96691062e+02 5.49725055e+00]
+origin BIC  1362.2393698224985 Original_Mean_score  1379.09022494977
+BIC  242.74580638737828 Mean_score  255.16037345981204
+BIC  88.07394528520243 Mean_score  89.41030156905678
+BIC  89.52200839377912 Mean_score  98.01506504180767
+final BIC  98.07394528520243
+88.07394528520243
+velocity shift [-3.02266271 -2.20074411]
+nhi_c: 15.52657044664657 error: 6.326953607454884
+nhi_w: 22.1491359329682 error: 1.0583950924441132
+fc: 0.4121109313838253 error: 0.0994018217477191
+
+Started process for j=127.
+Processing j=66 (PID: 4075656)
+BIC  462.59550570099645 n=1
+BIC  372.22754562785036 n= 2
+BIC  341.4509987581582 n= 3
+BIC  323.56273130373785 n= 4
+final n= 3 noise level= 0.07529215308632069
+final BIC= 341.4510269459022
+[270.69016633 286.96597777 279.43440865]
+BIC= 450.81975903714806
+popt_ori [1.97830476e-01 2.68223389e+02 8.85409777e-01 1.02949500e-01
+ 2.87803643e+02 2.49301680e+00 3.75691565e-01 2.72226729e+02
+ 6.02163087e+00]
+origin BIC  945.2253937209742 Original_Mean_score  945.7536440003076
+BIC  124.94060044440792 Mean_score  128.4306421112676
+BIC  86.3180909853336 Mean_score  89.24166068858005
+BIC  77.10051705939884 Mean_score  106.9754680086
+final BIC  101.3180909853336
+86.3180909853336
+velocity shift [-1.68718342  1.35092305 -4.        ]
+nhi_c: 7.386567281701918 error: 0.5404661459318856
+nhi_w: 21.31551375611177 error: 0.2511751648893895
+fc: 0.25735302161437185 error: 0.014164385960583298
+
+Started process for j=128.
+Processing j=129 (PID: 4077549)
+BIC  443.8140450104614 n=1
+BIC  452.77726920300654 n= 2
+[279.97751083]
+Satuated
+BIC= 6859.154478492067
+popt_ori [  3.64565585 279.90033489   4.08256204]
+origin BIC  1394.690108683733 Original_Mean_score  1394.690108683733
+BIC  106.90425006525962 Mean_score  109.177319475616
+BIC  103.45206638955887 Mean_score  117.23213932317556
+final BIC  111.90425006525962
+106.90425006525962
+velocity shift [0.58921554]
+nhi_c: 24.903788093352492 error: 13.354152688204737
+nhi_w: 20.331736965562882 error: 0.2300117042746291
+fc: 0.5505360678563465 error: 0.13271749552671944
+
+Started process for j=129.
+Processing j=121 (PID: 4076908)
+BIC  227.70813418351167 n=1
+BIC  197.69214057413205 n= 2
+BIC  203.55718780895148 n= 3
+final n= 2 noise level= 0.44633720181177283
+final BIC= 197.81558312817515
+[266.52109242 252.82526772]
+BIC= 218.98180562931856
+popt_ori [  1.12904012 266.47820081   3.45055739   0.4654042  252.58864353
+   4.34643261]
+origin BIC  2392.6254652854177 Original_Mean_score  2395.5166712159353
+BIC  270.92083398404714 Mean_score  277.46565331295113
+BIC  61.80667101577352 Mean_score  67.23762471664327
+BIC  77.01726874284905 Mean_score  259.3803417941081
+final BIC  71.80667101577352
+61.80667101577352
+velocity shift [-0.76724573  3.24087297]
+nhi_c: 19.170105445857367 error: 3.033101861178614
+nhi_w: 24.213255306265992 error: 0.5075254116932367
+fc: 0.44187691118233857 error: 0.03936150840817475
+
+Started process for j=130.
+Processing j=124 (PID: 4076976)
+BIC  312.9223994631865 n=1
+BIC  274.28262989798054 n= 2
+BIC  280.7665552022406 n= 3
+final n= 2 noise level= 0.15322692043686087
+final BIC= 274.28260571913614
+[279.16361766 295.91924199]
+BIC= 333.4499148835959
+popt_ori [6.33063765e-01 2.79039163e+02 3.98187687e+00 1.42900762e-01
+ 2.95490557e+02 3.55950090e+00]
+origin BIC  536.8232721239298 Original_Mean_score  537.6538041361474
+BIC  95.16189623598409 Mean_score  96.96704618762546
+BIC  90.32066772903428 Mean_score  92.07438146974309
+BIC  92.62011640223827 Mean_score  93.29426472360196
+final BIC  100.32066772903428
+90.32066772903428
+velocity shift [ 1.35112173 -4.        ]
+nhi_c: 8.838903725609635 error: 1.3291219919439767
+nhi_w: 11.591875984859884 error: 0.5789041240964911
+fc: 0.4326268429726272 error: 0.03889275704736507
+
+Started process for j=131.
+Processing j=122 (PID: 4076919)
+BIC  443.4919673025628 n=1
+BIC  309.5428368432474 n= 2
+BIC  259.7350839396812 n= 3
+BIC  271.80528804876695 n= 4
+final n= 2 noise level= 0.2961632720070793
+final BIC= 328.3574152891662
+[264.08095815 245.80270613]
+BIC= 375.9578021821274
+popt_ori [  2.71291029 264.32014936   1.11181634   0.57180979 245.91193189
+   2.5905551 ]
+origin BIC  1294.2051058005325 Original_Mean_score  1294.2052619374065
+BIC  100.7487825192865 Mean_score  100.85275375625196
+BIC  78.74410183713326 Mean_score  79.43357779257434
+BIC  99.33863659399113 Mean_score  100.03397775873397
+final BIC  88.74410183713326
+78.74410183713326
+velocity shift [-1.43907701  2.62028471]
+nhi_c: 5.026581813566976 error: 1.6608052466959835
+nhi_w: 17.27414866210264 error: 0.11412099662446916
+fc: 0.22539987284501917 error: 0.057698428137258576
+
+Started process for j=132.
+Processing j=23 (PID: 4075243)
+BIC  1145.953678822816 n=1
+BIC  239.34286624622567 n= 2
+BIC  193.7108218266941 n= 3
+BIC  198.04014109823765 n= 4
+final n= 3 noise level= 0.08970568870711879
+final BIC= 193.7102832436928
+[261.78193219 244.08618672 256.70367349]
+BIC= 264.19466519374134
+popt_ori [1.57723717e-01 2.59841968e+02 6.56692049e+00 6.29768566e-01
+ 2.44101162e+02 1.26681326e+00 1.61002311e+00 2.61775121e+02
+ 1.31168793e+00]
+origin BIC  360.8410150078969 Original_Mean_score  383.35804194816825
+BIC  110.64483904029471 Mean_score  147.06489333962855
+BIC  68.21805040116857 Mean_score  77.39382898924413
+BIC  75.72278346720591 Mean_score  120.4710043959853
+final BIC  83.21805040116857
+68.21805040116857
+velocity shift [-4.          2.10483229  1.16399879]
+nhi_c: 8.429003646468505 error: 2.089265828614245
+nhi_w: 9.36480873821348 error: 0.21994762172651303
+fc: 0.47370419920380374 error: 0.06207197499322175
+
+Started process for j=133.
+Processing j=101 (PID: 4076388)
+BIC  2125.4035883550814 n=1
+BIC  2066.7287314790074 n= 2
+BIC  2031.8309194268875 n= 3
+BIC  2016.9165178836593 n= 4
+final n= 2 noise level= 0.06277118581546313
+final BIC= 2090.506248753019
+[261.65041142 257.24055188]
+BIC= 1772.9064115020133
+popt_ori [1.43836724e-01 2.61724008e+02 1.22745022e+00 1.83977128e-01
+ 2.57314205e+02 2.46249402e+00]
+origin BIC  584.6840718609191 Original_Mean_score  584.7971191418608
+BIC  140.50681024831786 Mean_score  140.50998035819745
+BIC  139.3681502393789 Mean_score  142.41349203017455
+BIC  95.90464138189913 Mean_score  105.712569228162
+BIC  99.22124124951644 Mean_score  116.9060830509288
+final BIC  105.90464138189913
+95.90464138189913
+velocity shift [-0.14460611  0.04828133]
+nhi_c: 3.909652671881676 error: 1.3858629094431583
+nhi_w: 11.902671409482455 error: 0.5864956742595976
+fc: 0.24725351262496953 error: 0.06660843552196379
+
+Started process for j=134.
+Processing j=128 (PID: 4077547)
+BIC  483.5174829134382 n=1
+BIC  269.3647746274739 n= 2
+BIC  276.50291147482295 n= 3
+final n= 2 noise level= 0.1049034118552408
+final BIC= 269.3647549949893
+[285.71901181 278.79889497]
+BIC= 576.8365319378697
+popt_ori [  1.34914494 284.9183699    1.65064554   2.60006596 280.20205089
+   4.38344479]
+origin BIC  949.1507485263323 Original_Mean_score  949.1838546500458
+BIC  87.5001279142449 Mean_score  92.48374024896253
+BIC  108.48905839510208 Mean_score  219.33939924780412
+final BIC  97.5001279142449
+87.5001279142449
+velocity shift [ 2.45639701 -2.26356616]
+nhi_c: 22.74161853720563 error: 7.474913969216811
+nhi_w: 17.53269101822312 error: 0.3740029314457105
+fc: 0.5646681169271638 error: 0.08096759933487055
+
+Started process for j=135.
+Processing j=127 (PID: 4077073)
+BIC  157.43401176008234 n=1
+BIC  168.9705092110654 n= 2
+[286.08223421]
+BIC= 185.85268561675832
+popt_ori [  0.35488004 285.96105795   3.35871061]
+origin BIC  644.6904228803115 Original_Mean_score  644.6904228803115
+BIC  149.68762609459935 Mean_score  149.77326661308953
+BIC  99.90105571326296 Mean_score  101.2933916470874
+BIC  87.90874987823904 Mean_score  119.5486438755798
+final BIC  104.90105571326296
+99.90105571326296
+velocity shift [-1.78871179]
+nhi_c: 0.7909198029729131 error: 0.2539038694037716
+nhi_w: 6.273321245347441 error: 1.0822459138755682
+fc: 0.11196104401915448 error: 0.0362348955566217
+
+Started process for j=136.
+Processing j=126 (PID: 4077062)
+BIC  272.0789138662678 n=1
+BIC  259.5071145682955 n= 2
+[226.14029641]
+BIC= 309.5450758867908
+popt_ori [  0.25288422 226.181968     1.40402399]
+origin BIC  4541.047166923485 Original_Mean_score  4541.047166923485
+BIC  117.66879053928686 Mean_score  125.43213992751298
+BIC  52.35693069095379 Mean_score  52.375590342287566
+BIC  64.28414924587543 Mean_score  64.47703970414545
+final BIC  57.35693069095379
+52.35693069095379
+velocity shift [-3.23660687]
+nhi_c: 0.31688630719852817 error: 0.050282633666903755
+nhi_w: 12.32897226345543 error: 0.6410230742174281
+fc: 0.02505850476091011 error: 0.004079375968776236
+
+Started process for j=137.
+Processing j=138 (PID: 4077635)
+BIC  175.72943694880698 n=1
+BIC  190.04138719644533 n= 2
+[277.33279181]
+BIC= 193.1353741282602
+popt_ori [  0.49846336 277.32757859   2.57375793]
+origin BIC  1113.4538510119608 Original_Mean_score  1113.4538510119608
+BIC  177.02041390444336 Mean_score  189.71481320102725
+BIC  45.67074982532169 Mean_score  46.34360611414982
+BIC  60.1957536398656 Mean_score  61.024134080624165
+final BIC  50.67074982532169
+45.67074982532169
+velocity shift [4.]
+nhi_c: 1.2511246774327427 error: 0.2268019389992063
+nhi_w: 12.50984922456826 error: 0.11935214879548785
+fc: 0.09091832353891864 error: 0.015003795655754
+
+Started process for j=138.
+Processing j=136 (PID: 4077623)
+BIC  176.72126241988076 n=1
+BIC  167.65490696257996 n= 2
+[279.38081932]
+BIC= 223.4704240970673
+popt_ori [  0.54820566 279.35283      3.54972476]
+origin BIC  1324.0460139461256 Original_Mean_score  1324.0460139461256
+BIC  148.61620737325035 Mean_score  185.72624901638994
+BIC  49.816209940250424 Mean_score  50.769215522971606
+BIC  63.45434901004468 Mean_score  78.73454645495512
+final BIC  54.816209940250424
+49.816209940250424
+velocity shift [-3.01924683]
+nhi_c: 1.7754229525715326 error: 0.728689140991535
+nhi_w: 12.533058970034174 error: 0.23665576123085674
+fc: 0.12408185313961047 error: 0.04465513337739183
+
+Started process for j=139.
+Processing j=131 (PID: 4077584)
+BIC  250.9387281548236 n=1
+BIC  105.37040751726178 n= 2
+BIC  108.95267430994264 n= 3
+final n= 2 noise level= 0.21266811309616368
+final BIC= 105.3705351493301
+[283.87107649 291.8478393 ]
+Satuated
+BIC= 373.86533558117094
+popt_ori [  3.91932587 283.72182693   1.34937694   0.71472292 286.88187365
+   5.28154607]
+origin BIC  628.6882261389924 Original_Mean_score  633.7771741722678
+BIC  103.04056584107497 Mean_score  108.65452037229511
+BIC  51.92692786201325 Mean_score  53.99847661043601
+BIC  71.69037078549835 Mean_score  71.83151821341342
+final BIC  61.92692786201325
+51.92692786201325
+velocity shift [1.51781278 0.88456674]
+nhi_c: 19.9989829232313 error: 3.8955724744633393
+nhi_w: 5.1715848730371885 error: 0.062187367702518405
+fc: 0.7945384103014208 error: 0.03185920092431377
+
+Started process for j=140.
+Processing j=53 (PID: 4075528)
+BIC  1395.9313269766585 n=1
+BIC  260.7634184957147 n= 2
+BIC  197.13276267657773 n= 3
+BIC  207.7999018644893 n= 4
+final n= 3 noise level= 0.06731396754846913
+final BIC= 197.13289795120005
+[283.47161599 276.46822139 268.19286875]
+BIC= 226.02202979367962
+popt_ori [1.10186349e-01 2.76648448e+02 7.74714935e+00 3.68478391e-01
+ 2.83471167e+02 1.61477743e+00 2.88749243e-01 2.68242415e+02
+ 1.93015291e+00]
+origin BIC  503.3887539533748 Original_Mean_score  504.2498700345393
+BIC  140.30980469267237 Mean_score  150.0923831734993
+BIC  64.84765428616168 Mean_score  69.44985416535052
+BIC  84.20166587732437 Mean_score  764.7179507044706
+final BIC  79.84765428616168
+64.84765428616168
+velocity shift [-4.         -2.94606443  4.        ]
+nhi_c: 10.021204347320094 error: 0.8261033931151563
+nhi_w: 8.100755757962549 error: 0.39861261160972306
+fc: 0.5529867789742492 error: 0.023731669903375233
+
+Started process for j=141.
+Processing j=134 (PID: 4077615)
+BIC  182.34400848320954 n=1
+BIC  78.21529354965722 n= 2
+BIC  88.01980145034034 n= 3
+final n= 2 noise level= 0.058506148955861356
+final BIC= 78.21530495525758
+[277.11439653 280.89937977]
+BIC= 98.99295213926038
+popt_ori [  0.30298387 277.36060602   1.68475472   0.36280751 280.78615035
+   4.12976853]
+origin BIC  954.1011420593976 Original_Mean_score  954.1229407536479
+BIC  169.3584277411327 Mean_score  202.02458418383364
+BIC  54.25294324807754 Mean_score  55.5727022112982
+BIC  68.49674908097067 Mean_score  157.47862287714932
+final BIC  64.25294324807754
+54.25294324807754
+velocity shift [ 1.15167829 -4.        ]
+nhi_c: 2.6633376904910224 error: 1.5699798049362543
+nhi_w: 12.905214524122233 error: 0.23138163331129755
+fc: 0.17107163554945776 error: 0.08363029534591906
+
+Started process for j=142.
+Processing j=141 (PID: 4077803)
+BIC  308.85664898211996 n=1
+BIC  297.4310619825227 n= 2
+[278.16920154]
+BIC= 330.3808864123162
+popt_ori [  0.38616926 278.31958926   2.00559109]
+origin BIC  3141.241942436134 Original_Mean_score  3141.241942436134
+BIC  170.52502683299798 Mean_score  190.38167807083937
+BIC  59.0926337937706 Mean_score  62.19698692544458
+BIC  107.6015040370036 Mean_score  369.4142071758575
+final BIC  64.0926337937706
+59.0926337937706
+velocity shift [4.]
+nhi_c: 0.8121748333092689 error: 0.3005876405152804
+nhi_w: 10.838338370514139 error: 0.12590400270516153
+fc: 0.06971150704697998 error: 0.02401361443932761
+
+Started process for j=143.
+Processing j=123 (PID: 4076937)
+BIC  280.726069944678 n=1
+BIC  251.51631255123144 n= 2
+BIC  234.80776259117783 n= 3
+final n= 2 noise level= 0.03176901516424342
+final BIC= 251.51639945274147
+[214.99216308 235.13037787]
+BIC= 284.54110093215183
+popt_ori [5.68895963e-02 2.14881654e+02 2.90146694e+00 4.17286542e-02
+ 2.35150069e+02 1.18504264e+00]
+origin BIC  3452.2357821268124 Original_Mean_score  3452.2357821530545
+BIC  67.58150707061674 Mean_score  67.58690049585951
+BIC  58.10879588085841 Mean_score  60.25747525059015
+BIC  79.54435420748285 Mean_score  83.16155494900678
+final BIC  68.10879588085841
+58.10879588085841
+velocity shift [-1.1140834  4.       ]
+nhi_c: 0.47864826123132675 error: 0.038352961866141566
+nhi_w: 12.213393995954752 error: 0.2250734094183728
+fc: 0.03771246987145209 error: 0.002983765532930466
+
+Started process for j=144.
+Processing j=76 (PID: 4075762)
+BIC  432.4241331123998 n=1
+BIC  302.1494236170807 n= 2
+BIC  237.72883498220355 n= 3
+BIC  234.01823943601886 n= 4
+final n= 3 noise level= 0.21325731836359382
+final BIC= 237.7289904595525
+[285.70288637 294.52216991 263.43459907]
+BIC= 413.4626369656
+popt_ori [  2.21987526 285.88093056   1.84882223   1.45751961 294.46515416
+   1.32739307   0.32486232 263.52434466   1.72752458]
+origin BIC  1775.4944276846204 Original_Mean_score  1779.0091847444985
+BIC  529.5663924050332 Mean_score  532.1101932270719
+BIC  82.94302481233947 Mean_score  83.93364093268558
+BIC  78.9808377898356 Mean_score  229.43907607924822
+final BIC  97.94302481233947
+82.94302481233947
+velocity shift [ 0.96630473 -3.89541604 -1.48925022]
+nhi_c: 9.139047706099426 error: 3.415778962384937
+nhi_w: 20.759333301532678 error: 0.19190816646205536
+fc: 0.3056703205356343 error: 0.0793488467273517
+
+Started process for j=145.
+Processing j=102 (PID: 4076414)
+BIC  434.8739876141378 n=1
+BIC  342.84896310143483 n= 2
+BIC  325.59763845941757 n= 3
+final n= 2 noise level= 0.026183443716516392
+final BIC= 342.8487379205131
+[266.73741846 259.03186586]
+BIC= 420.9386121549086
+popt_ori [  0.34766362 266.7489556    2.68161827   0.7494904  266.65185289
+   1.31731996]
+origin BIC  615.6725510995324 Original_Mean_score  634.1666882632104
+BIC  119.08993446120164 Mean_score  130.62815414567953
+BIC  109.9582124483028 Mean_score  128.49201730218945
+BIC  121.71713689732559 Mean_score  180.20377443717044
+final BIC  119.9582124483028
+109.9582124483028
+velocity shift [4.         0.31031632]
+nhi_c: 5.061957551357641 error: 1.2730129853168504
+nhi_w: 12.602919433335991 error: 1.222436167714465
+fc: 0.2865549279365917 error: 0.05510577338729782
+
+Started process for j=146.
+Processing j=142 (PID: 4077805)
+BIC  165.0185448388791 n=1
+BIC  181.8239125137267 n= 2
+[213.57901749]
+BIC= 191.08427969387242
+popt_ori [  0.63756195 213.64344009   1.32977541]
+origin BIC  8365.15363679157 Original_Mean_score  8365.15363679157
+BIC  507.0001243705227 Mean_score  507.2009250085514
+BIC  184.64316256280208 Mean_score  224.40607799667706
+BIC  206.25311239274282 Mean_score  211.0627902477841
+final BIC  189.64316256280208
+184.64316256280208
+velocity shift [-1.14951208]
+nhi_c: 1.2677354019972755 error: 0.46803286517102877
+nhi_w: 24.847228368786055 error: 9.218572540541494
+fc: 0.04854440592468221 error: 0.02417475450748302
+
+Started process for j=147.
+Processing j=133 (PID: 4077613)
+BIC  391.1877897678883 n=1
+BIC  119.74665892424088 n= 2
+BIC  126.47129719765036 n= 3
+final n= 2 noise level= 0.07798749382444493
+final BIC= 119.74666712647104
+[277.25349357 286.48135119]
+BIC= 144.53132746558208
+popt_ori [5.93810078e-01 2.77255847e+02 2.23167484e+00 1.79049076e-01
+ 2.86192252e+02 3.87073424e+00]
+origin BIC  603.4902650557384 Original_Mean_score  604.2939467113906
+BIC  151.24802520168686 Mean_score  162.5577955019643
+BIC  52.39994795417782 Mean_score  53.065527050222336
+BIC  74.20757249994718 Mean_score  81.83748321877249
+final BIC  62.39994795417782
+52.39994795417782
+velocity shift [2.01981688 2.42826088]
+nhi_c: 2.002518614671999 error: 0.521896251848452
+nhi_w: 13.025862401673368 error: 0.512308988415326
+fc: 0.13324912460590352 error: 0.030440800540814245
+
+Started process for j=148.
+Processing j=135 (PID: 4077617)
+BIC  213.21355010575937 n=1
+BIC  169.6246023549722 n= 2
+BIC  190.2625519709644 n= 3
+final n= 2 noise level= 0.0469921513392029
+final BIC= 169.89718718671838
+[276.84264757 281.73028345]
+BIC= 210.99539899052039
+popt_ori [  0.51008996 277.49718261   2.67298037   0.61989083 281.77815285
+   2.33685848]
+origin BIC  1206.7231651874392 Original_Mean_score  1207.185487206617
+BIC  184.54747142423972 Mean_score  215.25662666535808
+BIC  55.88543409576887 Mean_score  56.61351307987647
+BIC  76.62944203761325 Mean_score  76.70661429869757
+final BIC  65.88543409576887
+55.88543409576887
+velocity shift [4.        2.0286023]
+nhi_c: 4.241518879696777 error: 0.5040989198336173
+nhi_w: 11.729073208445296 error: 0.12054668016000804
+fc: 0.26558307020101285 error: 0.023267796029430514
+
+Started process for j=149.
+Processing j=115 (PID: 4076759)
+BIC  1333.6220387699595 n=1
+BIC  912.8416807306186 n= 2
+BIC  149.10562119662563 n= 3
+BIC  161.7110386568254 n= 4
+final n= 3 noise level= 0.05734808156569552
+final BIC= 149.10568660190572
+[292.07120582 300.99712415 285.82110689]
+BIC= 248.95724939028952
+popt_ori [7.07936992e-01 2.86006975e+02 2.15330842e+00 2.32819344e-01
+ 3.00761254e+02 3.39587320e+00 1.32537309e+00 2.92084343e+02
+ 1.51004048e+00]
+origin BIC  772.902945537948 Original_Mean_score  776.1945274950349
+BIC  157.68110515870922 Mean_score  158.51576037257277
+BIC  79.39561581606867 Mean_score  80.62401714016467
+BIC  82.62262139641287 Mean_score  92.27726335029017
+final BIC  94.39561581606867
+79.39561581606867
+velocity shift [ 0.3351676  -0.46079623 -1.44205981]
+nhi_c: 7.831691303457543 error: 1.4741692638114396
+nhi_w: 15.848615941648966 error: 0.5587308871203753
+fc: 0.3307259159433393 error: 0.04238875282550504
+
+Started process for j=150.
+Processing j=145 (PID: 4078070)
+BIC  307.55341386337193 n=1
+BIC  275.6110132229173 n= 2
+BIC  284.0289966696334 n= 3
+final n= 2 noise level= 0.23402715256010712
+final BIC= 278.1574900556728
+[259.99529365 275.23824655]
+BIC= 293.5329159914483
+popt_ori [3.88172734e-01 2.59968232e+02 1.22072195e+00 1.96370266e-01
+ 2.75238015e+02 6.69049633e+00]
+origin BIC  748.3272351852186 Original_Mean_score  748.3308856051141
+BIC  203.57690324490824 Mean_score  208.01532325227035
+BIC  145.8397334830372 Mean_score  194.14456012167034
+BIC  148.56141150351303 Mean_score  151.1132148931289
+final BIC  150.8397334830372
+145.8397334830372
+velocity shift [-1.10436761 -4.        ]
+nhi_c: 1.0123812888005321 error: 0.7375190154853569
+nhi_w: 8.890614779248464 error: 0.5105093071743533
+fc: 0.10222979811805408 error: 0.0670682099602952
+
+Started process for j=151.
+Processing j=117 (PID: 4076803)
+BIC  430.4338505029258 n=1
+BIC  286.40857300723627 n= 2
+BIC  242.82028512421937 n= 3
+BIC  254.70414842609196 n= 4
+final n= 3 noise level= 0.11379381503722233
+final BIC= 242.82029914527178
+[279.66550843 285.839087   269.12711974]
+BIC= 282.3631913944902
+popt_ori [9.35334320e-01 2.79650497e+02 1.00859729e+00 2.06394518e-01
+ 2.85812298e+02 3.05305575e+00 1.31101297e-01 2.69197301e+02
+ 2.52353568e+00]
+origin BIC  790.5643028588742 Original_Mean_score  790.8402777486345
+BIC  133.56135570160833 Mean_score  137.47374051519466
+BIC  79.61969132199164 Mean_score  107.69671019658291
+BIC  89.93552220666653 Mean_score  91.42376439064545
+final BIC  94.61969132199164
+79.61969132199164
+velocity shift [-1.75016691 -3.2070959   4.        ]
+nhi_c: 4.1578510053955435 error: 0.5030963338202081
+nhi_w: 8.535193662675988 error: 0.3305556661484243
+fc: 0.3275692408027467 error: 0.02798412404441573
+
+Started process for j=152.
+Processing j=151 (PID: 4078279)
+BIC  464.36517675613885 n=1
+BIC  403.88448023924684 n= 2
+BIC  350.7495725082468 n= 3
+BIC  329.06156763211266 n= 4
+BIC  346.85709897529296 n= 5
+final n= 3 noise level= 0.5502651695262016
+final BIC= 371.4957523049119
+[246.54927611 252.37556655 270.72366239]
+Satuated
+BIC= 405.22455383335506
+popt_ori [  4.30449901 252.1907514    1.62752865   1.07422269 246.63310572
+   2.0547621    1.31040913 270.81313204   1.63166053]
+origin BIC  622.2382597783086 Original_Mean_score  622.6979172127568
+BIC  95.70909624117135 Mean_score  119.0155960426182
+BIC  109.39708576038298 Mean_score  115.54261331993403
+final BIC  110.70909624117135
+95.70909624117135
+velocity shift [-3.87111803 -3.15801078  2.57705757]
+nhi_c: 30.09614478250888 error: 8.82638184946875
+nhi_w: 24.867266458295926 error: 1.298433414737572
+fc: 0.5475669013819419 error: 0.0737971882743948
+
+Started process for j=153.
+Processing j=90 (PID: 4076031)
+BIC  481.7665965229667 n=1
+BIC  223.05158327015045 n= 2
+BIC  190.91570407089387 n= 3
+BIC  208.649243574354 n= 4
+final n= 3 noise level= 0.09511325109722572
+final BIC= 190.91576463599748
+[242.19961145 262.2092175  249.11643471]
+BIC= 210.94565792669758
+popt_ori [9.20889592e-01 2.42140119e+02 2.21719547e+00 2.97886975e-01
+ 2.62176839e+02 1.41311042e+00 1.46497645e-01 2.48412547e+02
+ 2.96102233e+00]
+origin BIC  1523.4179722806823 Original_Mean_score  1526.7697991043376
+BIC  90.87569469196828 Mean_score  96.24270499504816
+BIC  75.21418922147345 Mean_score  82.98038284943007
+BIC  90.4607130180818 Mean_score  152.94530224593157
+final BIC  85.21418922147345
+75.21418922147345
+velocity shift [-1.80718705  0.23202146 -4.        ]
+nhi_c: 6.052554006848398 error: 1.727704167610896
+nhi_w: 12.913137505954616 error: 1.152070755400723
+fc: 0.31913173335981715 error: 0.06498347022161897
+
+Started process for j=154.
+Processing j=63 (PID: 4075596)
+BIC  516.3434625933114 n=1
+BIC  475.7833833967428 n= 2
+BIC  490.08129203863825 n= 3
+final n= 2 noise level= 0.07793507062780654
+final BIC= 475.78337926927
+[273.06949155 273.1880035 ]
+BIC= 513.2579870741705
+popt_ori [  0.37348922 273.03123334   6.40866858   0.32034554 273.19090599
+   0.79280584]
+origin BIC  1446.5984562460876 Original_Mean_score  1446.8341314480604
+BIC  215.02797538030046 Mean_score  236.06590301587752
+BIC  91.7825415138024 Mean_score  95.98473427802605
+BIC  70.37910366078077 Mean_score  85.6522790416254
+BIC  83.6198408619793 Mean_score  164.8636540575505
+final BIC  80.37910366078077
+70.37910366078077
+velocity shift [-4.          3.25513038]
+nhi_c: 4.772247699570607 error: 0.8457340124095626
+nhi_w: 23.053918258634788 error: 1.546177422178001
+fc: 0.171502164787577 error: 0.02692383693503289
+
+Started process for j=155.
+Processing j=155 (PID: 4078418)
+BIC  322.9958048548367 n=1
+BIC  272.4918082391322 n= 2
+BIC  271.65425303442527 n= 3
+final n= 1 noise level= 0.2733371070937547
+final BIC= 322.9959702731967
+[238.0469075]
+BIC= 522.7059203083201
+popt_ori [  1.69219074 238.63108457   2.26839921]
+origin BIC  7263.779180113782 Original_Mean_score  7263.779180113782
+BIC  303.61829616071236 Mean_score  306.18959672584
+BIC  118.16355410822379 Mean_score  120.4294429875112
+BIC  103.7297256902802 Mean_score  371.67617538015344
+final BIC  123.16355410822379
+118.16355410822379
+velocity shift [-4.]
+nhi_c: 7.386546633288693 error: 4.132457172613174
+nhi_w: 49.48149722614636 error: 1.4095946304617515
+fc: 0.1298892336009757 error: 0.06331066930971183
+
+Started process for j=156.
+Processing j=140 (PID: 4077699)
+BIC  340.91991836288764 n=1
+BIC  291.0456068311591 n= 2
+BIC  284.39310439512275 n= 3
+final n= 2 noise level= 0.11216562235823374
+final BIC= 291.0456428012958
+[278.63810418 271.2959424 ]
+BIC= 305.1117816588269
+popt_ori [2.38332817e-01 2.78641961e+02 1.31373312e+00 1.18351529e-01
+ 2.71315959e+02 2.53753939e+00]
+origin BIC  2671.025834741361 Original_Mean_score  2671.0316680349606
+BIC  152.08446161785594 Mean_score  153.0425414621426
+BIC  53.51713660331865 Mean_score  55.04525363489725
+BIC  63.96501974880486 Mean_score  64.23085156295343
+final BIC  63.51713660331865
+53.51713660331865
+velocity shift [4.         1.88424363]
+nhi_c: 0.9141778526522504 error: 0.1830162316172095
+nhi_w: 11.23808445275415 error: 0.2286053790656648
+fc: 0.07522696841768658 error: 0.01399903436456882
+
+Started process for j=157.
+Processing j=18 (PID: 4075238)
+BIC  378.7809470198273 n=1
+BIC  191.78313229552305 n= 2
+BIC  183.7289928728326 n= 3
+final n= 2 noise level= 0.09370760426532368
+final BIC= 191.78301388192602
+[231.86778362 219.82968463]
+BIC= 220.54033531845613
+popt_ori [8.72442737e-01 2.31630920e+02 4.58978917e+00 1.76522289e-01
+ 2.19332310e+02 6.36532703e+00]
+origin BIC  5039.725528836958 Original_Mean_score  5040.162371969616
+BIC  159.99807560241118 Mean_score  162.1971824150251
+BIC  49.85911258959045 Mean_score  51.026368214012074
+Fit failed: Optimal parameters not found: The maximum number of function evaluations is exceeded.
+BIC  64.25890283838662 Mean_score  64.3677038850023
+final BIC  59.85911258959045
+49.85911258959045
+velocity shift [0.57024043 4.        ]
+nhi_c: 13.978433289680563 error: 1.092061414562931
+nhi_w: 16.42832870282006 error: 0.33691245270044085
+fc: 0.4597146283819414 error: 0.020061817692381065
+
+Started process for j=158.
+Processing j=148 (PID: 4078183)
+BIC  295.35907555937524 n=1
+BIC  184.41351338121623 n= 2
+BIC  176.36886329040016 n= 3
+final n= 2 noise level= 0.1563848964581072
+final BIC= 184.41350893589953
+[245.85244881 264.87681388]
+BIC= 458.8355262639769
+popt_ori [  1.50117457 246.03564047   4.69959969   0.27470267 264.80126633
+   2.45320565]
+origin BIC  4221.5366747544185 Original_Mean_score  4222.189305388938
+BIC  89.2919028624998 Mean_score  119.30262218974838
+BIC  71.05491069407725 Mean_score  98.94724777362995
+BIC  68.30123002030807 Mean_score  339.2754163725843
+final BIC  81.05491069407725
+71.05491069407725
+velocity shift [ 4. -4.]
+nhi_c: 20.4523816659817 error: 5.734683063611071
+nhi_w: 42.39516262855245 error: 1.7487295184235776
+fc: 0.3254284935960568 error: 0.062215458084560485
+
+Started process for j=159.
+Processing j=137 (PID: 4077625)
+BIC  476.4468402416772 n=1
+BIC  410.1008402432458 n= 2
+BIC  366.8091819002416 n= 3
+BIC  347.2579594769122 n= 4
+final n= 3 noise level= 0.06820012995518508
+final BIC= 366.8087501850969
+[279.63113071 273.47416264 248.87982092]
+BIC= 418.50026903733647
+popt_ori [3.40264569e-01 2.79635931e+02 1.98806367e+00 1.13992389e-01
+ 2.73377357e+02 1.27991013e+00 1.08853962e-01 2.48835073e+02
+ 8.87641760e-01]
+origin BIC  2137.809072268267 Original_Mean_score  2139.3098363251397
+BIC  194.51151969649737 Mean_score  208.4255651149988
+BIC  59.11332538736643 Mean_score  67.29575900097583
+BIC  73.40882799425374 Mean_score  470.0460551493585
+final BIC  74.11332538736643
+59.11332538736643
+velocity shift [ 4.         -0.82357954  0.99805473]
+nhi_c: 1.1821293867096994 error: 0.4486446914079878
+nhi_w: 10.290469483685577 error: 0.0885928820823573
+fc: 0.1030393723396145 error: 0.035085350132852945
+
+Started process for j=160.
+Processing j=144 (PID: 4078053)
+BIC  3286.0154226906216 n=1
+BIC  911.6847037318729 n= 2
+BIC  453.8815971799536 n= 3
+BIC  389.2893553381334 n= 4
+BIC  382.77462266203383 n= 5
+final n= 4 noise level= 0.07156057355149822
+final BIC= 389.2892064121387
+[245.33297425 276.45905295 252.49780291 256.88703068]
+BIC= 1159.6628395619227
+popt_ori [  2.24587542 245.87838986   2.36953565   0.35372118 274.61862575
+   8.23733404   2.20732494 256.09462153   2.04946127   2.13285122
+ 250.33165425   1.58215657]
+origin BIC  378.3646127571355 Original_Mean_score  379.46628414540584
+BIC  99.39626737272607 Mean_score  101.49216159554342
+BIC  73.65139170033653 Mean_score  108.77421106288055
+final BIC  119.39626737272607
+99.39626737272607
+velocity shift [-1.22923231  2.03950896  2.61700776  4.        ]
+nhi_c: 43.42609279257383 error: 6.10078382028166
+nhi_w: 23.192261125886702 error: 0.5425791953128832
+fc: 0.6518637918572178 error: 0.03232069764313764
+
+Started process for j=161.
+Processing j=162 (PID: 4079105)
+BIC  829.1002519624062 n=1
+BIC  207.55623793144008 n= 2
+BIC  196.92455994508646 n= 3
+final n= 2 noise level= 0.2369174473840197
+final BIC= 207.55633844083764
+[251.08207799 270.82727742]
+BIC= 435.93409875512816
+popt_ori [  1.32202203 250.83342448   3.39988032   0.75888065 270.54696216
+   6.09340106]
+origin BIC  2971.3117631282125 Original_Mean_score  2978.446367332189
+BIC  123.76789223830716 Mean_score  125.79804423265443
+BIC  70.31071330738108 Mean_score  185.62947633201773
+final BIC  133.76789223830716
+123.76789223830716
+velocity shift [2.47031969 4.        ]
+nhi_c: 22.94524674997654 error: 4.494793478612604
+nhi_w: 36.591642593224876 error: 0.37706670686018967
+fc: 0.38539545822940585 error: 0.04646430275368346
+
+Started process for j=162.
+Processing j=156 (PID: 4078438)
+BIC  1070.0680412905394 n=1
+BIC  343.9898928172952 n= 2
+BIC  311.2792260059508 n= 3
+BIC  295.8917778957389 n= 4
+final n= 2 noise level= 0.06629060500076561
+final BIC= 343.9899256172691
+[235.6047381  244.34522239]
+Satuated
+BIC= 8917.822221730774
+popt_ori [  2.90511511 234.54664048   2.51288134   4.33908991 242.4256503
+   3.2244352 ]
+origin BIC  8018.114020471511 Original_Mean_score  8025.32534324518
+BIC  939.2818600781518 Mean_score  951.1709722482786
+BIC  75.41839033812228 Mean_score  76.98859593708895
+BIC  68.718797858095 Mean_score  171.86369895905787
+final BIC  85.41839033812228
+75.41839033812228
+velocity shift [-2.15837617  0.644435  ]
+nhi_c: 57.886179963979345 error: 23.20404692550955
+nhi_w: 61.24368177832931 error: 0.3898475893571334
+fc: 0.48590822752060003 error: 0.1001471285093111
+
+Started process for j=163.

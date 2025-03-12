@@ -6,6 +6,9 @@ from astropy.io.votable import parse
 from astropy.io import fits
 from astropy import wcs
 from scipy.interpolate import interp1d
+from astropy.coordinates import SkyCoord
+from astropy.nddata import Cutout2D, NoOverlapError
+
 
 datapathbase='/d/bip5/hchen'
 
@@ -175,7 +178,57 @@ def slope_corr(x,y,err,n=3):
     ycor=y-ypol
     return 1-ycor 
     
+def parse_coords(coord_string):
+        """
+        Convert a coordinate string in the format 'JHHMMSS±DDMMSS' to RA and Dec.
 
+        Parameters:
+        coord_string (str): The coordinate string, e.g., 'J053344-721624'.
+
+        Returns:
+        tuple: RA (in decimal degrees), Dec (in decimal degrees)
+        """
+        # Add colons between the components to make it parseable
+        ra = coord_string[1:3] + 'h' + coord_string[3:5] + 'm' + coord_string[5:7] + 's'
+        dec = coord_string[7:10] + 'd' + coord_string[10:12] + 'm' + coord_string[12:] + 's'
+        
+        # Create a SkyCoord object with formatted RA and Dec
+        coords = SkyCoord(ra + ' ' + dec, frame='icrs')
+        
+        # Get RA and Dec in decimal degrees
+        return coords.ra.degree, coords.dec.degree
+    
+def read_synchro_emi(name,mode='LMC',radius =120):
+    ra,dec=parse_coords(name)
+    if mode=='SMC':
+        fit = fits.open(datapathbase+'/MC_synchrotron_emi/non_thermal_map_14_projected_smc.fits')
+        TB=fit[0].data/88.4
+    elif mode=='LMC':
+        fit = fits.open(datapathbase+'/MC_synchrotron_emi/non_thermal_map_14_tau_eff_5sigma_lmc.fits')
+        TB=fit[0].data/78.2
+        
+    wcs1 =wcs.WCS(fit[0].header)
+    x, y = wcs1.wcs_world2pix(ra, dec, 0)
+   # Check if the coordinates are within the image bounds
+    if (x < 0 or y < 0 or x >= TB.shape[1] or y >= TB.shape[0]):
+        return 0, 0  # Return zeros if outside bounds
+
+    try:
+        # Create a cutout around the position
+        size = (radius / 3600) / np.abs(wcs1.wcs.cdelt[0]) * 2  # Diameter in pixels
+        cutout = Cutout2D(TB, (x, y), size, wcs=wcs1, mode='partial', fill_value=np.nan)
+
+        # Calculate the mean and std deviation, ignoring NaNs
+        values = cutout.data
+        values = values[~np.isnan(values)]  # Remove NaN values
+
+        if values.size == 0:
+            return 0, 0  # Return zeros if all are NaN
+        else:
+            return np.nanmean(values), np.nanstd(values)
+    except NoOverlapError:
+        return 0, 0  # Return zeros if no overlap with the image
+    
 def get_emi_abs_data(name,name_abs,ra,dec,mode='SMC',R_out=8,R_in=4,emi='ring',avg_m='raw',v_move=0.,save_saturated=False):
     if mode=='LMC':
         a = np.loadtxt(f"{datapathbase}/LMC_GASKAP_emi_all_abs/{name}.txt")
@@ -260,6 +313,15 @@ def get_emi_abs_data(name,name_abs,ra,dec,mode='SMC',R_out=8,R_in=4,emi='ring',a
         #p=np.where(yemi_err==0.)
         #yemi_err[p]=np.max(yemi_err)/100
     
-    yemi_selferr = yemi-savgol_filter(yemi, window_length=51, polyorder=3)
+    #yemi_selferr = yemi-savgol_filter(yemi, window_length=51, polyorder=3)
+    data_dict = {
+    "velocity_tau": x,
+    "1_e_tau": y,
+    "1_e_tau_err": yerr,
+    "velocity_TB": xemi,
+    "TB": yemi,
+    "TB_err": yemi_err
+    }
+
     
-    return x,y,yerr,xemi,yemi,yemi_err,yemi_selferr
+    return data_dict
