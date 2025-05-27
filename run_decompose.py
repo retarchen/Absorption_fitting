@@ -55,7 +55,7 @@ def process_iteration(j, queue):
         #                peak_abs=[], peak_emi=[], Tsmin=3.77,
         #                fit_mode='BIC', v_sh=4)
         
-        tsyn,_=rd.read_synchro_emi(nlist[j],radius=60)
+        tsyn,_=rd.read_synchro_emi(nlist[j],radius=30)
         spec_fit=sd(x,y,yerr,xemi,yemi,yemi_err)
         spec_fit.name=nlist[j]
         spec_fit.v_shift=4.
@@ -156,8 +156,8 @@ if __name__ == "__main__":
     #print(j_values)
 
     # Timeout and number of concurrent processes
-    max_concurrent_processes = 29  # Number of parallel processes
-    timeout = 25*60*60  # Timeout for each task in seconds
+    max_concurrent_processes = 30  # Number of parallel processes
+    timeout = 200*60*60  # Timeout for each task in seconds
 
     # Open the file to log long-running iterations
     with open(datapathbase + '/output_data/LMC_fitting/long_runs.txt', 'a') as f:

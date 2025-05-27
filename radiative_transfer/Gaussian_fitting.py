@@ -202,7 +202,7 @@ class GaussianFitting:
                 popt,pcov,bic_list= fit_and_calculate_bic(self.x, self.y, self.y_err)
                 if len(popt)/3>1:
                     #b=max(abs(y.min()),np.max(popt[0::3])/5,calculate_noise(y,y_err,n=10)*4)
-                    b=self.calculate_noise(self.y,self.y_err,n=10)*4
+                    b=self.calculate_noise(self.y,self.y_err,n=10)*3
                     _popt = popt.reshape(-1, 3)
                     _=np.argmax(popt[0::3])
                     mask = ~((_popt[:, 0] < b) & (abs(_popt[:, 1] - _popt[:, 1][_]) > 20))

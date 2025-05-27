@@ -273,7 +273,7 @@ class SpectraDecomposing:
                     sigma_Tsf.append(pcov_[ncold:_])
                     all_Tsf.append(pop_[ncold:_])
                     order.append(CNMsequences[cn])
-                    fit_err.append(pcov_[_:])
+                    fit_err.append(pcov_)
                     
                     residuals=yemi-T_exp(xemi, *pop_)
                     chi2 = np.nansum((residuals / yemi_err) ** 2)
@@ -282,7 +282,7 @@ class SpectraDecomposing:
                     #print(k,n,chi2,yemi_err.min())
                     bic = k * np.log(n) + chi2
                     count = np.sum(np.array(fit_err)>50)
-                    bic +=10* count
+                    bic +=50* count
 
                     a=pop_[_:]
                     count = np.sum(a[0::3]<self.calculate_noise(yemi,yemi_err)*3)
@@ -395,7 +395,7 @@ class SpectraDecomposing:
                     num=0
                     lim=1
                     #while improving or num<=lim:
-                    
+                    bic_limit=500
                     while improving:
                         #print(improving, num,lim)
                         _bbic=100000
@@ -414,6 +414,17 @@ class SpectraDecomposing:
                                             for j in range(len(res1))]
 
                                 #print('score_1',np.array(score_1))
+                                # identify large mean bic but small minimum bic
+                                score_1=np.array(score_1)
+                                #if np.mean(score_1)-np.min(score_1)>100 and np.min(score_1)<best_bic:
+                                if np.min(score_1)<best_bic:
+                                    #print('>300')
+                                    #print(np.min(score_1),np.max(score_1),np.mean(score_1))
+                                    bic_limit=best_mean_score+30
+                                    _p=np.argwhere(score_1<bic_limit).flatten()
+                                    score_1=score_1[_p]
+                                    #print(np.min(score_1),np.max(score_1),np.mean(score_1))
+                                    #print(score_1[score_1<np.mean(score_1)])
 
                                 #print('sc',score_1)
                                 p=np.argmin(score_1)
@@ -450,7 +461,7 @@ class SpectraDecomposing:
                         print('BIC ',bic, 'Mean_score ', mean_score)
                         
                         if bic<700:
-                            if (bic-best_bic)<.1 and (mean_score-best_mean_score)<5:
+                            if (bic-best_bic)<.1 and (mean_score-best_mean_score)<20:
                             #if bic< best_bic+.1:
                                 best_bic = bic
                                 best_mean_score=mean_score
@@ -477,11 +488,12 @@ class SpectraDecomposing:
                 #                                                                        y,y_error,popt,nwarm=nwarm-2-lim)
                     res1,popt2_1,funTexp1,Fsequences1,wf1,sigma_Tsf1,all_Tsf1,order1,fit_err1,v_shift1=loop(p0_1[:back],ncold, x, 
                                                                                         y,y_error,popt,nwarm=nwarm-2)
+         
                 # print('res1',np.array(res1))
                 #  print(res1)
 
-                    return res1,popt2_1,funTexp1,Fsequences1,wf1,sigma_Tsf1,all_Tsf1,order1,fit_err1,v_shift1
-                res,popt2_,funTexp,Fsequences,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift=fit_and_calculate_bic(xemi, yemi, yemi_err)
+                    return res1,popt2_1,funTexp1,Fsequences1,wf1,sigma_Tsf1,all_Tsf1,order1,fit_err1,v_shift1,bic_limit
+                res,popt2_,funTexp,Fsequences,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift,bic_limit=fit_and_calculate_bic(xemi, yemi, yemi_err)
 
             
         else:
@@ -535,7 +547,10 @@ class SpectraDecomposing:
                                                                 np.array(wf),np.array(sigma_Tsf),np.array(all_Tsf))
         #print(score_1.shape,popt2_.shape,funTexp.shape,Fsequences.shape,wf.shape,sigma_Tsf.shape,all_Tsf.shape)
         if len(score_1)>4:
-            _p=np.argwhere(score_1<(np.mean(score_1)+np.std(score_1))).flatten()
+            if np.mean(score_1)-np.min(score_1)>300:
+                _p=np.argwhere(score_1<(bic_limit)).flatten()
+            else:
+                _p=np.argwhere(score_1<(np.mean(score_1)+4*np.std(score_1))).flatten()
             #print(score_1,_p,np.mean(score_1)+np.std(score_1))
             score_1,popt2_,funTexp,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift,res=(score_1[_p],popt2_[_p],funTexp[_p],wf[_p],sigma_Tsf[_p],
                                                                                    all_Tsf[_p],order[_p],fit_err[_p],v_shift[_p],res[_p])
@@ -564,7 +579,7 @@ class SpectraDecomposing:
         #                                                                        order[___p],fit_err[___p],v_shift[___p],res[___p])
             #print('Ts>10 num', ___p.shape)
         p=np.argmin(score_1)
-        print('final BIC ', res[p])
+        print('final BIC ', res[p],'mean score ', np.mean(res) )
         print(score_1[p])
         print('velocity shift',v_shift[p])
     # print('all_Tsf',all_Tsf)
@@ -691,6 +706,7 @@ class SpectraDecomposing:
             print('nhi_w:',NHI_w,'error:',sigma_NHIw)
             f_c=NHI_c/(NHI_c+NHI_w)
             sigma_fc=np.sqrt(((NHI_c/(NHI_c+NHI_w)**2*sigma_NHIw))**2+((NHI_w/(NHI_c+NHI_w)**2*sigma_NHIc))**2)
+            NHI_uncorr=K*np.trapz(funT,xemi)
             print('fc:',f_c,'error:',sigma_fc)
             data = {
                 "Name": name,
@@ -700,7 +716,8 @@ class SpectraDecomposing:
                 "Sigma_NHIw": sigma_NHIw,
                 "f_c": f_c,
                 "Sigma_fc": sigma_fc,
-                "Tsky":self.Tsky
+                "Tsky":self.Tsky,
+                "NHI_uncorr_fit":NHI_uncorr
             }
             df = pd.DataFrame([data])
             file_path=self.datapath+'Fulldata.csv'
