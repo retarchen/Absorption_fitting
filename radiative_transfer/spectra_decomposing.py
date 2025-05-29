@@ -219,8 +219,11 @@ class SpectraDecomposing:
                     highbound[ncold+_]=Tsmin+100
             for _ in range(nwarm):
                 highbound[2*ncold+_*3+1]=xemi.max()
+                highbound[2*ncold+_*3]=np.max(yemi)+ 3*np.max(yemi_err)
+                highbound[2*ncold+_*3+2]=np.ptp(xemi[yemi >  2* yemi_err])
+
                 
-        # print(highbound,lowbound,p0)
+            #print(highbound,lowbound,p0)
             values = np.arange(0, ncold)
         # print(p0,lowbound,highbound)
             CNMsequences = np.array(list(itertools.permutations(values, ncold)))
@@ -275,20 +278,27 @@ class SpectraDecomposing:
                     order.append(CNMsequences[cn])
                     fit_err.append(pcov_)
                     
+                    
                     residuals=yemi-T_exp(xemi, *pop_)
                     chi2 = np.nansum((residuals / yemi_err) ** 2)
                     k = len(pop_)
                     n = len(yemi)
                     #print(k,n,chi2,yemi_err.min())
                     bic = k * np.log(n) + chi2
-                    count = np.sum(np.array(fit_err)>50)
-                    bic +=50* count
+                    _pc=np.diag(pcov)
+                    count = np.sum(np.array(_pc)>50)
+                    p=np.argwhere(_pc>50).flatten()
+                    _b=bic/3+np.sum(_pc[p]/10)
+                    bic+=_b*count
+                    #bic +=np.sum(_pc[p]/2)
 
                     a=pop_[_:]
                     count = np.sum(a[0::3]<self.calculate_noise(yemi,yemi_err)*3)
                     #print(a[0::3],calculate_noise(yemi,yemi_err),count)
-                    bic +=10* count
+                    _b=20
+                    bic +=_b* count
                     #print(k,n,chi2,bic)
+                    #print(pcov_,bic)
                     res.append(bic)
                 # print(i,cn)
                     #res.append(np.sqrt(np.sum((yemi-T_exp(xemi, *pop_))**2)))
@@ -416,8 +426,9 @@ class SpectraDecomposing:
                                 #print('score_1',np.array(score_1))
                                 # identify large mean bic but small minimum bic
                                 score_1=np.array(score_1)
+                               # print('sc',score_1)
                                 #if np.mean(score_1)-np.min(score_1)>100 and np.min(score_1)<best_bic:
-                                if np.min(score_1)<best_bic:
+                                if np.min(score_1)<best_bic and np.mean(score_1)-np.min(score_1)>100:
                                     #print('>300')
                                     #print(np.min(score_1),np.max(score_1),np.mean(score_1))
                                     bic_limit=best_mean_score+30
@@ -459,24 +470,27 @@ class SpectraDecomposing:
                         b_pos=-1
                         
                         print('BIC ',bic, 'Mean_score ', mean_score)
+                       #print('bestBIC ',best_bic, 'Mean_score ', best_mean_score)
                         
-                        if bic<700:
-                            if (bic-best_bic)<.1 and (mean_score-best_mean_score)<20:
-                            #if bic< best_bic+.1:
-                                best_bic = bic
-                                best_mean_score=mean_score
-                                if not improving:
-                                    num=0
-                                    lim=0
-                            else:
-                                # If the BIC did not improve, stop fitting additional Gaussians
-                                num+=1
-                            # if num>=lim and lim<2:
-                            #     lim+=1
-                                improving = False
+                        
+                        if (bic-best_bic)<.1 and (mean_score-best_mean_score)<20 and bic<800:
+                        #if bic< best_bic+.1:
+                            best_bic = bic
+                            best_mean_score=mean_score
+                            if not improving:
+                                num=0
+                                lim=0
                         else:
+                            # If the BIC did not improve, stop fitting additional Gaussians
                             num+=1
-                            improving = True
+                        # if num>=lim and lim<2:
+                        #     lim+=1
+                        
+                            improving = False
+                            
+                       # print(improving)
+
+                            
                         
 
                     #print(p0_1)
@@ -546,8 +560,8 @@ class SpectraDecomposing:
                                                                 np.array(funTexp),np.array(Fsequences),
                                                                 np.array(wf),np.array(sigma_Tsf),np.array(all_Tsf))
         #print(score_1.shape,popt2_.shape,funTexp.shape,Fsequences.shape,wf.shape,sigma_Tsf.shape,all_Tsf.shape)
-        if len(score_1)>4:
-            if np.mean(score_1)-np.min(score_1)>300:
+        if len(score_1)>3:
+            if np.mean(score_1)-np.min(score_1)>100:
                 _p=np.argwhere(score_1<(bic_limit)).flatten()
             else:
                 _p=np.argwhere(score_1<(np.mean(score_1)+4*np.std(score_1))).flatten()
@@ -701,6 +715,7 @@ class SpectraDecomposing:
                 #NHI_w=abs(1.823e18*trapz(gaussian_func_multi(xemi,*gausf), xemi)/1e20)
                 NHI_w+=K*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
                 _d=(K*_popt[0]*np.sqrt(2*np.pi)*_pcov[2])**2+(K*_pcov[0]*np.sqrt(2*np.pi)*_popt[2])**2
+                #print('errors:', _popt,_pcov,_d)
                 sigma_NHIw+=_d
             sigma_NHIw=np.sqrt(sigma_NHIw)
             print('nhi_w:',NHI_w,'error:',sigma_NHIw)
@@ -787,7 +802,7 @@ class SpectraDecomposing:
                 _popt_err=fit_e[j:j+3]
                 fwhm_=2.35482*_popt[2]
                 NHI_w=K*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
-                NHI_w_err=(K*_popt[0]*np.sqrt(2*np.pi)*_popt_err[2])**2+(K*_popt_err[0]*np.sqrt(2*np.pi)*_popt[2])**2
+                NHI_w_err=np.sqrt((K*_popt[0]*np.sqrt(2*np.pi)*_popt_err[2])**2+(K*_popt_err[0]*np.sqrt(2*np.pi)*_popt[2])**2)
                 T_K=21.866*fwhm_**2
                 #latex_code = r'''
                 #    & &  &  & & &%.1f & %.2f $\pm$ %.2f & %.1f $\pm$ %.1f & %.2f $\pm$ %.2f & %d & %.2f  \\ 
