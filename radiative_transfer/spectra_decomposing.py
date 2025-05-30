@@ -265,7 +265,7 @@ class SpectraDecomposing:
                         pop_, pcov = curve_fit(T_exp, xemi, yemi,p0=p0,bounds=(lowbound,highbound),maxfev=120000)
                     except RuntimeError as e:
                         print(f"Fit failed: {e}")
-                    pcov_=np.diag(pcov)
+                    pcov_=np.sqrt(np.diag(pcov))
                 # print(pcov_)
                     popt2_.append(pop_)
                     funTexp.append(T_exp(xemi, *pop_))
@@ -285,7 +285,7 @@ class SpectraDecomposing:
                     n = len(yemi)
                     #print(k,n,chi2,yemi_err.min())
                     bic = k * np.log(n) + chi2
-                    _pc=np.diag(pcov)
+                    _pc=np.sqrt(np.diag(pcov))
                     count = np.sum(np.array(_pc)>50)
                     p=np.argwhere(_pc>50).flatten()
                     _b=bic/3+np.sum(_pc[p]/10)
@@ -603,16 +603,16 @@ class SpectraDecomposing:
             if len(all_Tsf[:,i])>1:
                 m_=np.sum(wf*all_Tsf[:,i])/np.sum(wf)
                 mean_Ts.append(m_)
-                sigma_meanTsf.append(np.sqrt(np.sum(wf*(all_Tsf[:,i]-m_)**2+sigma_Tsf[:,i])/np.sum(wf)*len(wf)/(len(wf)-1)))
+                sigma_meanTsf.append(np.sqrt(np.sum(wf*(all_Tsf[:,i]-m_)**2+sigma_Tsf[:,i]**2)/np.sum(wf)*len(wf)/(len(wf)-1)))
             else:
                 mean_Ts.append(all_Tsf[:,i])
-                sigma_meanTsf.append(np.sqrt(sigma_Tsf[:,i]))
+                sigma_meanTsf.append(sigma_Tsf[:,i])
             
         v_shi=v_shift[p]
         popt2=popt2_[p]
         _=2*ncold
         Ts=popt2[ncold:_]
-        Ts_err=np.sqrt(sigma_Tsf[p])
+        Ts_err=sigma_Tsf[p]
         gausf=popt2[_:]
         funT=funTexp[p]
         _F=Fsequences[p%len(Fsequences)]

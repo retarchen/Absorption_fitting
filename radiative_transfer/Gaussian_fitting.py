@@ -90,7 +90,7 @@ class GaussianFitting:
             #print(p0,f)
             pop_, pcov = curve_fit(self.gaussian_func_multi, x, y1,p0=p0,bounds=(lowbound,highbound),
                                 maxfev = 100000)
-            pcov_=np.diag(pcov)
+            pcov_=np.sqrt(np.diag(pcov))
             residuals=y-self.gaussian_func_multi(x,*pop_)
             chi2 = np.nansum((residuals / y_err) ** 2)
             k = len(pop_)
