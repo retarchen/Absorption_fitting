@@ -492,7 +492,7 @@ class SpectraDecomposing:
                             num+=1
                         # if num>=lim and lim<2:
                         #     lim+=1
-                            if bic<700:
+                            if best_bic<700:
                                 improving = False
                             
                        # print(improving)
