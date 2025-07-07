@@ -129,6 +129,7 @@ class SpectraDecomposing:
         yemi_selferr=yemi-savgol_filter(yemi, window_length=51, polyorder=3)
         #y is 1-e^(-tau)
         
+        bic_limit=-1000
         ynew=np.copy(y)
         g = Gaussian1DKernel(stddev=0.5)
         ynew = convolve(ynew, g)
@@ -222,8 +223,9 @@ class SpectraDecomposing:
                 highbound[2*ncold+_*3]=np.max(yemi)+ 3*np.max(yemi_err)
                 highbound[2*ncold+_*3+2]=np.ptp(xemi[yemi >  2* yemi_err])
 
-                
-            #print(highbound,lowbound,p0)
+            mask = (p0 > highbound) | (p0 < lowbound)
+            p0[mask] = (highbound[mask] + lowbound[mask]) / 2
+           # print(highbound,lowbound,p0)
             values = np.arange(0, ncold)
         # print(p0,lowbound,highbound)
             CNMsequences = np.array(list(itertools.permutations(values, ncold)))
@@ -293,8 +295,12 @@ class SpectraDecomposing:
                     #bic +=np.sum(_pc[p]/2)
 
                     a=pop_[_:]
-                    count = np.sum(a[0::3]<self.calculate_noise(yemi,yemi_err)*3)
+                    #count = np.sum(a[0::3]<self.calculate_noise(yemi,yemi_err)*3)
+                    count = np.sum(a[0::3]<max(np.max(yemi_err),self.calculate_noise(yemi,yemi_err)*3))
                     #print(a[0::3],calculate_noise(yemi,yemi_err),count)
+                    #print(count)
+                    #if count>0:
+                    #    print(count)
                     _b=20
                     bic +=_b* count
                     #print(k,n,chi2,bic)
@@ -429,9 +435,10 @@ class SpectraDecomposing:
                                # print('sc',score_1)
                                 #if np.mean(score_1)-np.min(score_1)>100 and np.min(score_1)<best_bic:
                                 if np.min(score_1)<best_bic and np.mean(score_1)-np.min(score_1)>100:
+                                    #print('True')
                                     #print('>300')
                                     #print(np.min(score_1),np.max(score_1),np.mean(score_1))
-                                    bic_limit=best_mean_score+30
+                                    bic_limit=best_mean_score+40
                                     _p=np.argwhere(score_1<bic_limit).flatten()
                                     score_1=score_1[_p]
                                     #print(np.min(score_1),np.max(score_1),np.mean(score_1))
@@ -473,7 +480,7 @@ class SpectraDecomposing:
                        #print('bestBIC ',best_bic, 'Mean_score ', best_mean_score)
                         
                         
-                        if (bic-best_bic)<.1 and (mean_score-best_mean_score)<20 and bic<800:
+                        if (bic-best_bic)<.1 and (mean_score-best_mean_score)<10:
                         #if bic< best_bic+.1:
                             best_bic = bic
                             best_mean_score=mean_score
@@ -485,8 +492,8 @@ class SpectraDecomposing:
                             num+=1
                         # if num>=lim and lim<2:
                         #     lim+=1
-                        
-                            improving = False
+                            if bic<700:
+                                improving = False
                             
                        # print(improving)
 
@@ -561,10 +568,11 @@ class SpectraDecomposing:
                                                                 np.array(wf),np.array(sigma_Tsf),np.array(all_Tsf))
         #print(score_1.shape,popt2_.shape,funTexp.shape,Fsequences.shape,wf.shape,sigma_Tsf.shape,all_Tsf.shape)
         if len(score_1)>3:
-            if np.mean(score_1)-np.min(score_1)>100:
+            
+            if np.mean(score_1)-np.min(score_1)>100 and bic_limit>0:
                 _p=np.argwhere(score_1<(bic_limit)).flatten()
             else:
-                _p=np.argwhere(score_1<(np.mean(score_1)+4*np.std(score_1))).flatten()
+                _p=np.argwhere(score_1<(np.mean(score_1)+3*np.std(score_1))).flatten()
             #print(score_1,_p,np.mean(score_1)+np.std(score_1))
             score_1,popt2_,funTexp,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift,res=(score_1[_p],popt2_[_p],funTexp[_p],wf[_p],sigma_Tsf[_p],
                                                                                    all_Tsf[_p],order[_p],fit_err[_p],v_shift[_p],res[_p])
