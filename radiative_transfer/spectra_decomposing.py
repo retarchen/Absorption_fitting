@@ -29,6 +29,7 @@ class SpectraDecomposing:
         self.F=[0,0.5,1]
         self.Tsky=2.73 #CMB
         self.v_shift=0.00001  # mannually adjust shift
+        self.nGaussian=0
         self.nGaussianMax=8
         self.bic_weight=20
        # self.bic_weight=20
@@ -221,7 +222,7 @@ class SpectraDecomposing:
             for _ in range(nwarm):
                 highbound[2*ncold+_*3+1]=xemi.max()
                 highbound[2*ncold+_*3]=np.max(yemi)+ 3*np.max(yemi_err)
-                highbound[2*ncold+_*3+2]=np.ptp(xemi[yemi >  2* yemi_err])
+                highbound[2*ncold+_*3+2]=np.ptp(xemi[yemi >  4* yemi_err])
 
             mask = (p0 > highbound) | (p0 < lowbound)
             p0[mask] = (highbound[mask] + lowbound[mask]) / 2
@@ -287,12 +288,19 @@ class SpectraDecomposing:
                     n = len(yemi)
                     #print(k,n,chi2,yemi_err.min())
                     bic = k * np.log(n) + chi2
-                    _pc=np.sqrt(np.diag(pcov))
+                    
+                    _pc=pcov_
                     count = np.sum(np.array(_pc)>50)
                     p=np.argwhere(_pc>50).flatten()
                     _b=bic/3+np.sum(_pc[p]/10)
                     bic+=_b*count
                     #bic +=np.sum(_pc[p]/2)
+                    
+                    count = np.sum(np.array(_pc)/np.array(pop_)>0.5)
+                   # if count>0:
+                   #     print(bic,count)
+                    _b=bic/2
+                    bic+=_b*count
 
                     a=pop_[_:]
                     #count = np.sum(a[0::3]<self.calculate_noise(yemi,yemi_err)*3)
@@ -454,6 +462,8 @@ class SpectraDecomposing:
                                 #print(_bic-_bbic,_mean_score-_mmean_score)
                                 if _bic-_bbic<.1 and _mean_score-_mmean_score<10:
                                     #print('BIC ',_bic, 'Mean_score ', _mean_score)
+                                    #if np.sum(fit_err1/popt2_1>0.5)>0:
+                                    #    print('BIC ',_bic, 'Mean_score ', _mean_score,'fit_err',fit_err1)
                                     _bbic = _bic
                                     b_pos=pos
                                     _mmean_score=_mean_score
@@ -481,6 +491,9 @@ class SpectraDecomposing:
                         
                         
                         if (bic-best_bic)<.1 and (mean_score-best_mean_score)<10:
+                           # a=np.array(fit_err1)
+                           # b=np.array(popt2_1)
+                            #print('BIC ',_bic, 'Mean_score ', _mean_score,'fit_err',a/b)
                         #if bic< best_bic+.1:
                             best_bic = bic
                             best_mean_score=mean_score
@@ -627,6 +640,7 @@ class SpectraDecomposing:
         Tfit_err=self.sigma1_data(yemi-funT)
         Or=order[p]
         fit_e=fit_err[p]
+        fit_e=fit_e[_:]
         #print('fiterr',fit_err)
 
         #if self.selfabs:
@@ -720,6 +734,7 @@ class SpectraDecomposing:
                 j=i*3
                 _popt=gausf[j:j+3]
                 _pcov=fit_e[j:j+3]
+                #print(gausf.shape,fit_e.shape)
                 #NHI_w=abs(1.823e18*trapz(gaussian_func_multi(xemi,*gausf), xemi)/1e20)
                 NHI_w+=K*_popt[0]*np.sqrt(2*np.pi)*_popt[2]
                 _d=(K*_popt[0]*np.sqrt(2*np.pi)*_pcov[2])**2+(K*_pcov[0]*np.sqrt(2*np.pi)*_popt[2])**2
