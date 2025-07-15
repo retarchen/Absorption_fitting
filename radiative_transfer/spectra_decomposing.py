@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from astropy.convolution import Gaussian1DKernel, convolve
 from scipy.optimize import curve_fit
 from astropy.coordinates import SkyCoord
-from scipy.signal import find_peaks
+from scipy.signal import find_peaks, peak_widths
 import itertools
 import scipy.stats as stats
 from scipy.integrate import trapz
@@ -118,6 +118,24 @@ class SpectraDecomposing:
         F=chi_square1/chi_square2*x_2/x_1
         CF=stats.f.cdf(F, x_1, x_2)
         return CF
+    
+    @staticmethod
+    def fwhm_x_range(x, y):
+        peaks, _ = find_peaks(y)
+        if len(peaks) == 0:
+            return np.nan  # No peaks found
+
+        results_half = peak_widths(y, peaks, rel_height=0.3)
+        left_ips = results_half[2]
+        right_ips = results_half[3]
+
+        x_left = x[left_ips.astype(int)]
+        x_right = x[right_ips.astype(int)]
+
+        x_min = np.min(x_left)
+        x_max = np.max(x_right)
+
+        return x_max - x_min
 
     def Gaussian_fit(self):
   #  def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1],selfabs=False,
@@ -222,13 +240,14 @@ class SpectraDecomposing:
             for _ in range(nwarm):
                 highbound[2*ncold+_*3+1]=xemi.max()
                 highbound[2*ncold+_*3]=np.max(yemi)+ 3*np.max(yemi_err)
-                highbound[2*ncold+_*3+2]=np.ptp(xemi[yemi >  4* yemi_err])
+                highbound[2*ncold+_*3+2]=max(np.ptp(xemi[yemi > 4 * yemi_err]) if np.any(yemi > 4 * yemi_err) else 0,
+                                             self.fwhm_x_range(xemi,yemi))
 
             mask = (p0 > highbound) | (p0 < lowbound)
             p0[mask] = (highbound[mask] + lowbound[mask]) / 2
            # print(highbound,lowbound,p0)
             values = np.arange(0, ncold)
-        # print(p0,lowbound,highbound)
+           # print(p0,lowbound,highbound)
             CNMsequences = np.array(list(itertools.permutations(values, ncold)))
             Fsequences = np.array(list(itertools.product(F, repeat=nwarm)))
             for cn in range(len(CNMsequences)):
@@ -860,17 +879,20 @@ class SpectraDecomposing:
         print()
         #ax[0].fill_between(xemi,yemi+ yemi_err,yemi- yemi_err,alpha=0.2)
         #print(np.min(yemi),np.min(xemi))
-        ax[0].plot(xemi, yemi, label='Original data',linewidth=1.2,c='tab:blue')
+        ax[0].plot(xemi, yemi, label='GASKAP emission',linewidth=1.2,c='tab:blue')
         ax[0].plot(xemi, funT, label='Best fit',linewidth=3,alpha=0.9,c='tab:orange')
         #ax[0].fill_between(xemi,yemi+yemi_err,yemi-yemi_err,alpha=0.2,facecolor='gray',edgecolor='gray')
         for i in range(ncold):
             j=i*3
             _popt=popt[j:j+3]
             _popt[1]=_popt[1]+v_shift[i]
+            #ax[0].plot(xemi, (1-np.exp(-self.gaussian_func(xemi,*_popt)))*Ts[i],
+            #        label='CNM, Ts_best=%.2f$\pm$%.2f K, \n Ts_mean=%.2f$\pm$%.2f K, \n v_shift=%.1f km/s'%(Ts[i],Ts_err[i],
+            #                                                                            mean_Ts[i],sigma_meanTsf[i],v_shift[i]),
+            #        linewidth=1.8,linestyle=linestyle_plot[i],color='green')
             ax[0].plot(xemi, (1-np.exp(-self.gaussian_func(xemi,*_popt)))*Ts[i],
-                    label='CNM, Ts_best=%.2f$\pm$%.2f K, \n Ts_mean=%.2f$\pm$%.2f K, \n v_shift=%.1f km/s'%(Ts[i],Ts_err[i],
-                                                                                        mean_Ts[i],sigma_meanTsf[i],v_shift[i]),
-                    linewidth=1.8,linestyle=linestyle_plot[i],color='green')
+                    label='CNM,Ts=%.0f$\pm$%.0f K'%( mean_Ts[i],sigma_meanTsf[i]),
+                       linewidth=1.8,linestyle=linestyle_plot[i],color='green')
         
         #print('gausf',gausf)
         for i in range(int(len(gausf)/3)):
@@ -880,7 +902,7 @@ class SpectraDecomposing:
                                                                                                 2.35482*_popt[2]),
                     linewidth=1.8,linestyle=linestyle_plot[i],color='gray')
         
-        
+        ax[0].set_title(name)
         ax[0].set_ylabel(r'$T_B$')
         nco=2 if nwarm>4 else 1
         ax[0].legend(framealpha=0,fontsize='x-small',ncol=nco)
@@ -897,7 +919,7 @@ class SpectraDecomposing:
         #y=1-np.exp(-y)
         #yerr=1-np.exp(-yerr)
         a=1-np.exp(-self.gaussian_func_multi(x,*popt_ori))
-        ax[2].plot(x, y, label='original data',linewidth=1.2,c='tab:blue')
+        ax[2].plot(x, y, label='GASKAP absorption',linewidth=1.2,c='tab:blue')
         ax[2].plot(x, a, label='Best fit',linewidth=3,alpha=0.9,c='tab:orange')
         
         for i in range(ncold):
