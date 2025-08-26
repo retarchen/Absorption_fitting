@@ -16,7 +16,7 @@ class GaussianFitting:
         self.x_peak=[]
         self.fit_mode='BIC'
         self.nGaussianMax=8
-        self.bic_weight=20
+        self.bic_weight=10
         
     
     #This is a single Gaussian function
@@ -67,7 +67,6 @@ class GaussianFitting:
             for i in range(len(self.x_peak)):
                 p0=np.append(p0,[1, self.x_peak[i], 1])
             auto=False
-            
         
         #mianly use curve_fit to fit the data
         def loop(p0,x,y,y_err):
@@ -82,6 +81,7 @@ class GaussianFitting:
                 ind=np.argmin(np.abs(x - p0[_*3+1]))
                 lowbound[_*3]=np.mean(y_err[(ind-4):(ind+4)])*3
                 p0[_*3]=np.mean(y_err[(ind-4):(ind+4)])*3+1
+                lowbound[_*3+2]=abs(x[2]-x[1])
                 #lowbound[_*3]=calculate_noise(y,y_err,n=2)*3
                 #p0[_*3]=calculate_noise(y,y_err,n=2)*3+1
             highbound=np.array([np.inf for _ in range(len(p0))])
@@ -100,7 +100,16 @@ class GaussianFitting:
             b=max(abs(y.min()),np.max(pop_[0::3])/5,self.calculate_noise(y,y_err,n=10)*4)
             count = np.sum(pop_[0::3]<b)
             bic +=10* count
-        # print(k * np.log(n),chi2,np.sum((residuals/y_err)**2))
+            
+            _pc=pcov_
+            #print(pcov_)
+            count = np.sum(np.array(_pc)>50)
+            p=np.argwhere(_pc>50).flatten()
+            #if len(p)>0:
+            #    print(_pc[p])
+            _b=bic/3+np.sum(_pc[p]/10)
+            bic+=_b*count
+            # print(k * np.log(n),chi2,np.sum((residuals/y_err)**2))
             #a=calculate_noise(y,y_err,n=10)*4
             #count = np.sum(pop_[0::3] < a)
             #print(count)
@@ -113,9 +122,7 @@ class GaussianFitting:
             #bic +=a* count
             #print(pop_[1::3],count,a)
             #bic  += 20 if np.any(pop_[0::3] < a) else 0
-
             return pop_,bic,pcov_
-        
         if auto:
             if self.fit_mode=='F_test':
                 #if CF> 0.97, adding another Gaussian function is needed and then do the iteration again.
@@ -187,6 +194,7 @@ class GaussianFitting:
                         k+=1
                         print('BIC ',bic,'n=',k)
                         bic_list.append(bic)
+                        print(best_bic,self.bic_weight,bic)
                         if bic< best_bic-self.bic_weight:
                             best_bic = bic
 
@@ -202,7 +210,8 @@ class GaussianFitting:
                 popt,pcov,bic_list= fit_and_calculate_bic(self.x, self.y, self.y_err)
                 if len(popt)/3>1:
                     #b=max(abs(y.min()),np.max(popt[0::3])/5,calculate_noise(y,y_err,n=10)*4)
-                    b=self.calculate_noise(self.y,self.y_err,n=10)*3
+                    #b=self.calculate_noise(self.y,self.y_err,n=10)*3
+                    b=max(self.calculate_noise(self.y,self.y_err,n=10)*3,abs(self.y.min())*0.8)
                     _popt = popt.reshape(-1, 3)
                     _=np.argmax(popt[0::3])
                     mask = ~((_popt[:, 0] < b) & (abs(_popt[:, 1] - _popt[:, 1][_]) > 20))
@@ -218,20 +227,18 @@ class GaussianFitting:
                     print('final n=',int(len(popt)/3),'noise level=',b)
                     print('final BIC=',bic_)
                     
-                        
-                
-
-            
-        else:
+        if auto==False:
             num = len(p0) // 3
             modifications = [
-                [p0[i * 3 + 1] - 4, p0[i * 3 + 1] + 4] for i in range(num)
+                [p0[i * 3 + 1] - 4, p0[i * 3 + 1] - 3, p0[i * 3 + 1] - 2,p0[i * 3 + 1] - 1, p0[i * 3 + 1] - 0.5, 
+                 p0[i * 3 + 1] + 0.5,p0[i * 3 + 1] + 1,
+                 p0[i * 3 + 1] + 2,p0[i * 3 + 1] + 3,p0[i * 3 + 1] + 4] for i in range(num)
             ]
             # Generate all combinations of the modified second elements
             all_combinations = list(product(*modifications))
             original_p0_combination = tuple(p0[i * 3 + 1] for i in range(num))
             all_combinations.append(original_p0_combination)
-        # print(all_combinations)
+            # print(all_combinations)
             # Evaluate all combinations to find the minimum BIC
             results = []
             for combination in all_combinations:
@@ -241,8 +248,8 @@ class GaussianFitting:
                 results.append(loop(new_p0, self.x, self.y, self.y_err))
 
             popt, bic, pcov = min(results, key=lambda r: r[1])
-            print('BIC=',bic)
-
+            print('manual BIC=',bic)
+        
         return popt,pcov
 
 
