@@ -32,6 +32,7 @@ class SpectraDecomposing:
         self.nGaussian=0
         self.nGaussianMax=8
         self.bic_weight=20
+        self.num_cold=0  # number of cold components assigned, if zero, means no assignment and fitting is fully automatic.
        # self.bic_weight=20
         self.peak_abs=[]
         self.peak_emi=[]
@@ -156,6 +157,7 @@ class SpectraDecomposing:
         gf=Gf(x,ynew,yerr)
         gf.x_peak=self.peak_abs
         gf.bic_weight=self.bic_weight
+        gf.num_cold=self.num_cold
         popt_,pcov_=gf.fitting()
 
        # popt_,pcov_=Gf.fitting(x,ynew,yerr,x_peak=self.peak_abs)
@@ -170,6 +172,7 @@ class SpectraDecomposing:
         gf=Gf(x,y,yerr)
         gf.x_peak=popt_[1::3]
         gf.bic_weight=self.bic_weight
+        gf.num_cold=self.num_cold
         popt,pcov=gf.fitting()
         
         #popt,pcov=Gf.fitting(x,y,yerr,x_peak=popt_[1::3])
@@ -220,9 +223,9 @@ class SpectraDecomposing:
             for _ in range(nwarm):
                 lowbound[2*ncold+_*3+1]=xemi.min()
                 ind=np.argmin(np.abs(x - p0[2*ncold+_*3+1]))
-                lowbound[2*ncold+_*3]=np.mean(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])
+                lowbound[2*ncold+_*3]=np.max(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])
                 #lowbound[2*ncold+_*3]=np.max(yemi_err)*0.5
-                p0[2*ncold+_*3]=np.mean(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])*1+1
+                p0[2*ncold+_*3]=np.max(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])*1+1
                 #p0[2*ncold+_*3]=np.max(yemi_err)*0.5+1
                 #lowbound[2*ncold+_*3]=calculate_noise(yemi,yemi_err,n=3)*2
             highbound=np.array([np.inf for _ in range(len(p0))])
@@ -419,7 +422,7 @@ class SpectraDecomposing:
                     #print('_pe',x[pe])
                     index=np.argsort(y[pe])[::-1]
                     pe=pe[index]
-                    _pe = min(5, len(pe))
+                    _pe = min(6, len(pe))
                     #print('peak',len(pe),x[pe],y[pe])
                     res1,popt2_1,funTexp1,Fsequences1,wf1,sigma_Tsf1,all_Tsf1,order1,fit_err1,v_shift1=loop(p0_1,ncold, x, 
                                                                                     y,y_error,popt,nwarm=0)
@@ -501,10 +504,11 @@ class SpectraDecomposing:
                         p0_1=np.append(p0_1,[np.max(y_error), x[pe[b_pos]], 1])
                         bic=_bbic
                         mean_score=_mmean_score
-                        pe, _ =find_peaks(y_res, height=np.max(y_res)/5, distance=5)
+                        pe0, _ =find_peaks(y_res, height=np.max(y_res)/5, distance=5)
+                        pe=np.append(pe,pe0)
                         index=np.argsort(y[pe])[::-1]
                         pe=pe[index]
-                        _pe = min(5, len(pe))
+                        _pe = min(7, len(pe))
                         b_pos=-1
                         
                         print('BIC ',bic, 'Mean_score ', mean_score)

@@ -16,7 +16,8 @@ class GaussianFitting:
         self.x_peak=[]
         self.fit_mode='BIC'
         self.nGaussianMax=8
-        self.bic_weight=10
+        self.bic_weight=10 
+        self.num_cold=0  # number of cold components assigned, if zero, means no assignment and fitting is fully automatic.
         
     
     #This is a single Gaussian function
@@ -37,6 +38,13 @@ class GaussianFitting:
     def calculate_noise(y,yerr,n=1):
         ye=n*yerr-y
         p=np.argwhere(ye>0).flatten()
+        ye_n=yerr[p]
+        
+        return np.nanmean(ye_n)
+    
+    @staticmethod
+    def calculate_noise_centerx(xc,x,yerr):
+        p=np.argwhere(abs(x-xc)<5).flatten()
         ye_n=yerr[p]
         
         return np.nanmean(ye_n)
@@ -67,6 +75,7 @@ class GaussianFitting:
             for i in range(len(self.x_peak)):
                 p0=np.append(p0,[1, self.x_peak[i], 1])
             auto=False
+        
         
         #mianly use curve_fit to fit the data
         def loop(p0,x,y,y_err):
@@ -195,12 +204,17 @@ class GaussianFitting:
                         print('BIC ',bic,'n=',k)
                         bic_list.append(bic)
                         print(best_bic,self.bic_weight,bic)
-                        if bic< best_bic-self.bic_weight:
-                            best_bic = bic
+                        if self.num_cold==0:
+                            if bic< best_bic-self.bic_weight:
+                                best_bic = bic
 
+                            else:
+                                # If the BIC did not improve, stop fitting additional Gaussians
+                                
+                                    improving = False
                         else:
-                            # If the BIC did not improve, stop fitting additional Gaussians
-                            improving = False
+                            if k>self.num_cold:
+                                improving = False
                     #print(best_bic,p0_1)    
                     popt_1,score_1,pcov_1=loop(p0_1[:-3],x, y,y_err)
                 
@@ -211,7 +225,17 @@ class GaussianFitting:
                 if len(popt)/3>1:
                     #b=max(abs(y.min()),np.max(popt[0::3])/5,calculate_noise(y,y_err,n=10)*4)
                     #b=self.calculate_noise(self.y,self.y_err,n=10)*3
+                    __popt=[]
+                    print(popt)
+                    for i in range(int(len(popt)/3)):
+                        _m=self.calculate_noise_centerx(popt[i*3+1],self.x,self.y_err)
+                        if _m*3<popt[i*3]:
+                            __popt.append(popt[i*3:i*3+3])
+                            
+                    popt=np.array(__popt).flatten()
+                    print(popt)
                     b=max(self.calculate_noise(self.y,self.y_err,n=10)*3,abs(self.y.min())*0.8)
+                    
                     _popt = popt.reshape(-1, 3)
                     _=np.argmax(popt[0::3])
                     mask = ~((_popt[:, 0] < b) & (abs(_popt[:, 1] - _popt[:, 1][_]) > 20))
