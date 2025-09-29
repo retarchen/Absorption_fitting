@@ -223,9 +223,9 @@ class SpectraDecomposing:
             for _ in range(nwarm):
                 lowbound[2*ncold+_*3+1]=xemi.min()
                 ind=np.argmin(np.abs(x - p0[2*ncold+_*3+1]))
-                lowbound[2*ncold+_*3]=np.max(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])
+                lowbound[2*ncold+_*3]=np.mean(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])
                 #lowbound[2*ncold+_*3]=np.max(yemi_err)*0.5
-                p0[2*ncold+_*3]=np.max(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])*1+1
+                p0[2*ncold+_*3]=np.mean(yemi_err[max(ind-20,0):min(ind+20,len(xemi)-1)])*1+1
                 #p0[2*ncold+_*3]=np.max(yemi_err)*0.5+1
                 #lowbound[2*ncold+_*3]=calculate_noise(yemi,yemi_err,n=3)*2
             highbound=np.array([np.inf for _ in range(len(p0))])
