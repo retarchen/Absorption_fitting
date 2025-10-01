@@ -12,6 +12,7 @@ from .Gaussian_fitting import GaussianFitting as Gf
 import pandas as pd
 import os
 from itertools import product
+from scipy.interpolate import interp1d
 
 linestyle_plot=['--','dotted','-.','solid','--','dotted','-.','solid']
 #datapathbase='/d/bip5/hchen'
@@ -32,6 +33,7 @@ class SpectraDecomposing:
         self.nGaussian=0
         self.nGaussianMax=8
         self.bic_weight=20
+        self.bic_max_value=10000
         self.num_cold=0  # number of cold components assigned, if zero, means no assignment and fitting is fully automatic.
        # self.bic_weight=20
         self.peak_abs=[]
@@ -42,6 +44,7 @@ class SpectraDecomposing:
         self.name='source'
         self.datapath='./'
         self.renew=False
+        self.align_data=False
         
     @staticmethod
     def parse_coords(coord_string):
@@ -142,6 +145,24 @@ class SpectraDecomposing:
   #  def Gaussian_fit(x,y,yerr,xemi,yemi,yemi_err,peak_abs=[],peak_emi=[],F=[0,0.5,1],selfabs=False,
   #                          C_Flim=0.97,Tsmin=9,iteration_max=7,fit_mode='F_test',v_sh=4.):
         x,y,yerr,xemi,yemi,yemi_err=self.x,np.copy(self.y),self.y_err,self.xemi,self.yemi,self.yemi_err
+        p=np.argwhere(yerr>0).flatten()
+        x,y,yerr=x[p],y[p],yerr[p]
+        p=np.argwhere(yemi_err>0).flatten()
+        xemi,yemi,yemi_err=xemi[p],yemi[p],yemi_err[p]
+        
+        if self.align_data:
+            common_x = np.linspace(max(xemi.min(), x.min()), min(xemi.max(), x.max()), min(len(xemi), len(x)))
+            interp_emi = interp1d(xemi, yemi, kind='linear', fill_value="extrapolate")
+            yemi = interp_emi(common_x)
+            interp_emi = interp1d(xemi, yemi_err, kind='linear', fill_value="extrapolate")
+            yemi_err = interp_emi(common_x)
+            interp_abs = interp1d(x, y, kind='linear', fill_value="extrapolate")
+            y= interp_abs(common_x)
+            interp_abs = interp1d(x, yerr, kind='linear', fill_value="extrapolate")
+            yerr= interp_abs(common_x)
+            x=common_x
+            xemi=common_x
+
         peak_emi=self.peak_emi
         F=self.F
         Tsmin=self.Tsmin
@@ -316,6 +337,7 @@ class SpectraDecomposing:
                     _pc=pcov_
                     count = np.sum(np.array(_pc)>50)
                     p=np.argwhere(_pc>50).flatten()
+                    
                     _b=bic/3+np.sum(_pc[p]/10)
                     bic+=_b*count
                     #bic +=np.sum(_pc[p]/2)
@@ -446,8 +468,8 @@ class SpectraDecomposing:
                     bic_limit=500
                     while improving:
                         #print(improving, num,lim)
-                        _bbic=100000
-                        _mmean_score=1000000
+                        _bbic=self.bic_max_value
+                        _mmean_score=self.bic_max_value
                         try:
                             for pos in range(_pe):
                                 _pp=pe[pos]
@@ -464,6 +486,12 @@ class SpectraDecomposing:
                                 #print('score_1',np.array(score_1))
                                 # identify large mean bic but small minimum bic
                                 score_1=np.array(score_1)
+                                p=np.argwhere(score_1<self.bic_max_value).flatten()
+                                if len(p)>0:
+                                    score_1=score_1[p]
+                                else:
+                                    print('too large BIC value')
+                                
                                # print('sc',score_1)
                                 #if np.mean(score_1)-np.min(score_1)>100 and np.min(score_1)<best_bic:
                                 if np.min(score_1)<best_bic and np.mean(score_1)-np.min(score_1)>100:
@@ -601,10 +629,18 @@ class SpectraDecomposing:
                 score_+=Ts_score
             score_1.append(score_)
         res=np.array(res)
+        
+        
+
         score_1,popt2_,funTexp,Fsequences,wf,sigma_Tsf,all_Tsf=(np.array(score_1),np.array(popt2_),
                                                                 np.array(funTexp),np.array(Fsequences),
                                                                 np.array(wf),np.array(sigma_Tsf),np.array(all_Tsf))
         #print(score_1.shape,popt2_.shape,funTexp.shape,Fsequences.shape,wf.shape,sigma_Tsf.shape,all_Tsf.shape)
+        
+        p=np.argwhere(score_1<self.bic_max_value).flatten()
+        if len(p)>0:
+            score_1,popt2_,funTexp,wf,sigma_Tsf,all_Tsf,order,fit_err,v_shift,res=score_1[p],popt2_[p],funTexp[p],wf[p],sigma_Tsf[p],all_Tsf[p],order[p],fit_err[p],v_shift[p],res[p]
+            
         if len(score_1)>3:
             
             if np.mean(score_1)-np.min(score_1)>100 and bic_limit>0:
@@ -692,6 +728,25 @@ class SpectraDecomposing:
         '''
         ax=self.ax
         x,y,yerr,xemi,yemi,yemi_err=self.x,np.copy(self.y),self.y_err,self.xemi,self.yemi,self.yemi_err
+        p=np.argwhere(yerr>0).flatten()
+        x,y,yerr=x[p],y[p],yerr[p]
+        p=np.argwhere(yemi_err>0).flatten()
+        xemi,yemi,yemi_err=xemi[p],yemi[p],yemi_err[p]
+        
+        if self.align_data:
+            common_x = np.linspace(max(xemi.min(), x.min()), min(xemi.max(), x.max()), min(len(xemi), len(x)))
+            interp_emi = interp1d(xemi, yemi, kind='linear', fill_value="extrapolate")
+            yemi = interp_emi(common_x)
+            interp_emi = interp1d(xemi, yemi_err, kind='linear', fill_value="extrapolate")
+            yemi_err = interp_emi(common_x)
+            interp_abs = interp1d(x, y, kind='linear', fill_value="extrapolate")
+            y= interp_abs(common_x)
+            interp_abs = interp1d(x, yerr, kind='linear', fill_value="extrapolate")
+            yerr= interp_abs(common_x)
+            x=common_x
+            xemi=common_x
+            
+            
         peak_emi=self.peak_emi
         F=self.F
         Tsmin=self.Tsmin
