@@ -147,9 +147,10 @@ class GaussianFitting:
                     popt_2,_,pcov_2=loop(p0_2,self.x, self.y,self.y_err)
                     function_2=self.gaussian_func_multi(self.x,*popt_2)
                     CF=self.F_test(self.x,self.y, function_1, function_2, self.y_err, len(self.x)-len(p0_1), len(self.x)-len(p0_2))
+                    print('F value:',CF,'n=',n_)
                     n_+=1
                     p0_1=p0_2
-                    print(CF,n_)
+                    
                 popt=popt_1
                 pcov=pcov_1
             elif self.fit_mode=='BIC':
@@ -203,7 +204,7 @@ class GaussianFitting:
                         k+=1
                         print('BIC ',bic,'n=',k)
                         bic_list.append(bic)
-                        print(best_bic,self.bic_weight,bic)
+                        #print(best_bic,self.bic_weight,bic)
                         if self.num_cold==0:
                             if bic< best_bic-self.bic_weight:
                                 best_bic = bic
@@ -226,14 +227,15 @@ class GaussianFitting:
                     #b=max(abs(y.min()),np.max(popt[0::3])/5,calculate_noise(y,y_err,n=10)*4)
                     #b=self.calculate_noise(self.y,self.y_err,n=10)*3
                     __popt=[]
-                    print(popt)
+                    #print(popt)
                     for i in range(int(len(popt)/3)):
                         _m=self.calculate_noise_centerx(popt[i*3+1],self.x,self.y_err)
+                        #print(_m*3)
                         if _m*3<popt[i*3]:
                             __popt.append(popt[i*3:i*3+3])
                             
                     popt=np.array(__popt).flatten()
-                    print(popt)
+                    #print(popt)
                     b=max(self.calculate_noise(self.y,self.y_err,n=10)*3,abs(self.y.min())*0.8)
                     
                     _popt = popt.reshape(-1, 3)
@@ -248,8 +250,7 @@ class GaussianFitting:
                         
                     popt_new = popt_new.flatten()
                     popt,bic_,pcov=loop(popt_new , self.x, self.y, self.y_err)
-                    print('final n=',int(len(popt)/3),'noise level=',b)
-                    print('final BIC=',bic_)
+                    print('final BIC=',bic_,'n=',int(len(popt)/3),)
                     
         if auto==False:
             num = len(p0) // 3
@@ -300,6 +301,7 @@ class GaussianFitting:
         plt.axhline(y=0, color='black', linestyle='--')
         plt.fill_between(x,y_err,-y_err,alpha=0.2,facecolor='gray',edgecolor='gray')
         plt.subplots_adjust(hspace=0)
+        plt.xlabel('Velocity (km/s)')
         
         
     def fitting_plot2(self,ax=None):

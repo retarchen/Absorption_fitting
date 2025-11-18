@@ -175,6 +175,7 @@ class SpectraDecomposing:
         g = Gaussian1DKernel(stddev=0.5)
         ynew = convolve(ynew, g)
         
+        print('start absorption fitting')
         gf=Gf(x,ynew,yerr)
         gf.x_peak=self.peak_abs
         gf.bic_weight=self.bic_weight
@@ -182,7 +183,7 @@ class SpectraDecomposing:
         popt_,pcov_=gf.fitting()
 
        # popt_,pcov_=Gf.fitting(x,ynew,yerr,x_peak=self.peak_abs)
-        print(popt_[1::3])
+        #print(popt_[1::3])
         if y.max()>=1.:
             print('Satuated')
             p=np.argwhere(y>=0.99).flatten()
@@ -199,7 +200,7 @@ class SpectraDecomposing:
         #popt,pcov=Gf.fitting(x,y,yerr,x_peak=popt_[1::3])
         #popt[1]=popt[1]-3
         popt_ori=np.copy(popt)
-        print('popt_ori',popt_ori)
+        print('Absorption fitting finished')
         ncold=int(len(popt)/3)
         p0=np.zeros(ncold*2)+self.Tsmin
         for _ in range(ncold):
@@ -225,6 +226,8 @@ class SpectraDecomposing:
             nwarm=1
             p0=np.append(p0,[np.max(yemi), xemi[p], 1]) 
             auto=True
+            
+        print('start emission fitting')
         def loop(p0,ncold, xemi, yemi,yemi_err,popt,F=F,nwarm=nwarm,Tsmin=Tsmin):
             #print(p0)
             popt2_=[]
@@ -335,11 +338,15 @@ class SpectraDecomposing:
                     bic = k * np.log(n) + chi2
                     
                     _pc=pcov_
+                    #print('pcov',_pc)
                     count = np.sum(np.array(_pc)>50)
                     p=np.argwhere(_pc>50).flatten()
                     
                     _b=bic/3+np.sum(_pc[p]/10)
                     bic+=_b*count
+                    #if len(p)>0:
+                    #    print('large error bars:',_pc[p])
+                    #    print('bic',bic)
                     #bic +=np.sum(_pc[p]/2)
                     
                     count = np.sum(np.array(_pc)/np.array(pop_)>0.5)
@@ -436,6 +443,7 @@ class SpectraDecomposing:
                 fit_err=fit_err1
                 v_shift=v_shift1
             elif self.fit_mode=='BIC':
+                print('Fitting mode: BIC')
                 def fit_and_calculate_bic(x, y, y_error):
                     p0_1=np.zeros(ncold*2)+Tsmin
                     for _ in range(ncold):
@@ -450,7 +458,7 @@ class SpectraDecomposing:
                                                                                     y,y_error,popt,nwarm=0)
                     _=2*ncold
                     Ts_1 = [popt2_1[i][ncold:_] for i in range(len(popt2_1))]
-                    score_1 = [ res1[j] + sum(-5 if Ts_1[j][i] > 3.77 else 0 for i in range(ncold))
+                    score_1 = [ res1[j] + sum(-5 if Ts_1[j][i] > 10 else 0 for i in range(ncold))
                                             for j in range(len(res1))]
                     p=np.argmin(score_1)
                     _bbic=score_1[p]
@@ -458,7 +466,7 @@ class SpectraDecomposing:
                     best_mean_score=np.mean(score_1)
                     _mmean_score=np.mean(score_1)
                     b_pos=-1
-                    print('origin BIC ',_bbic,'Original_Mean_score ', _mmean_score)
+                    print('BIC ',_bbic,'Mean_score ', _mmean_score,'nemi=',0)
                     improving = True
                     nwarm=1
                     y_res=y
@@ -471,6 +479,7 @@ class SpectraDecomposing:
                         _bbic=self.bic_max_value
                         _mmean_score=self.bic_max_value
                         try:
+                            #print('_pe',x[pe])
                             for pos in range(_pe):
                                 _pp=pe[pos]
                                 _p0_1=np.append(p0_1,[np.max(y_error), x[_pp], 1])
@@ -480,7 +489,7 @@ class SpectraDecomposing:
                                                                                             y,y_error,popt,nwarm=nwarm)
                                 _=2*ncold
                                 Ts_1 = [popt2_1[i][ncold:_] for i in range(len(popt2_1))]
-                                score_1 = [ res1[j] + sum(-5 if Ts_1[j][i] > 10 else 0 for i in range(ncold))
+                                score_1 = [ res1[j] + sum(-10 if Ts_1[j][i] > 10 else 0 for i in range(ncold))
                                             for j in range(len(res1))]
 
                                 #print('score_1',np.array(score_1))
@@ -534,12 +543,13 @@ class SpectraDecomposing:
                         mean_score=_mmean_score
                         pe0, _ =find_peaks(y_res, height=np.max(y_res)/5, distance=5)
                         pe=np.append(pe,pe0)
+                        pe=np.unique(pe)
                         index=np.argsort(y[pe])[::-1]
                         pe=pe[index]
                         _pe = min(7, len(pe))
                         b_pos=-1
                         
-                        print('BIC ',bic, 'Mean_score ', mean_score)
+                        print('BIC ',bic, 'Mean_score ', mean_score,'nemi=',nwarm-1)
                        #print('bestBIC ',best_bic, 'Mean_score ', best_mean_score)
                         
                         
@@ -584,14 +594,21 @@ class SpectraDecomposing:
 
             
         else:
+            print('Fitting mode: mannual')
             resye=np.sqrt(np.sum(yemi_selferr**2))
-            print(resye)
+            #print(resye)
             
             p0_=p0[2*ncold:]
             t0=p0[:2*ncold]
             num = len(p0_) // 3
+            #modifications = [
+            #    [p0_[i * 3 + 1] - 4, p0_[i * 3 + 1] + 4] for i in range(num)
+            #]
+            
             modifications = [
-                [p0_[i * 3 + 1] - 4, p0_[i * 3 + 1] + 4] for i in range(num)
+                [p0[i * 3 + 1] - 4, 
+                 p0[i * 3 + 1], 
+                 p0[i * 3 + 1] + 4] for i in range(num)
             ]
             # Generate all combinations of the modified second elements
             all_combinations = list(product(*modifications))
@@ -623,7 +640,7 @@ class SpectraDecomposing:
             score_+=res[j]
             for i in range(ncold):
                 if Ts_1[j][i]>10:
-                    Ts_score=-5
+                    Ts_score=-10
                 else:
                     Ts_score=0
                 score_+=Ts_score
@@ -676,7 +693,7 @@ class SpectraDecomposing:
             #print('Ts>10 num', ___p.shape)
         p=np.argmin(score_1)
         print('final BIC ', res[p],'mean score ', np.mean(res) )
-        print(score_1[p])
+        #print(score_1[p])
         print('velocity shift',v_shift[p])
     # print('all_Tsf',all_Tsf)
     
@@ -890,14 +907,15 @@ class SpectraDecomposing:
                 file_path=self.datapath+'CNMonlydata.csv'
                 write_header = not os.path.exists(file_path)
                 df.to_csv(file_path, mode='a', index=False,header=write_header)
+                # with open(self.datapath+'output.txt', 'a') as file:
+                #     file.write(latex_code)
                 #a=np.c_[name,ra,dec,_popt[0],_popt[1],fwhm_,mean_Ts[i],sigma_meanTsf[i],T_K,
                 #     NHI_c,NHI_c_err,v_shift[i]]
                 #with open(datapathbase+'/output_data/LMC_fitting/CNMonlydata.txt', 'a') as file:
                 #    np.savetxt(file, a)
 
                 #with open(datapathbase+'/output_data/LMC_fitting/CNMoutput.txt', 'a') as file:
-                with open(self.datapath+'output.txt', 'a') as file:
-                    file.write(latex_code)
+                
             #properties for WNM components
             for i in range(int(len(gausf)/3)):
                 j=i*3
@@ -914,8 +932,8 @@ class SpectraDecomposing:
                      &  & & &%.1f & %.2f $\pm$ %.2f & %.1f $\pm$ %.1f & %.2f $\pm$ %.2f & %d & %.2f $\pm$ %.2f \\ 
                     '''%(_F[i],_popt[0],_popt_err[0],_popt[1],_popt_err[1],fwhm_,2.355*_popt_err[2], T_K,NHI_w,NHI_w_err)
                 #with open(datapathbase+'/output_data/LMC_fitting/CNMoutput.txt', 'a') as file:
-                with open(self.datapath+'output.txt', 'a') as file:
-                    file.write(latex_code)
+                # with open(self.datapath+'output.txt', 'a') as file:
+                #     file.write(latex_code)
                 #print('nhi1',NHI_w)
                 data = {
                     "Name": name,"TB_WNM": _popt[0], "Sigma_TB_WNM": _popt_err[0], "velocity_TB": _popt[1],"Sigma_velocity_TB": _popt_err[1], "fwhm": fwhm_, 
@@ -960,8 +978,11 @@ class SpectraDecomposing:
             j=i*3
             _popt=gausf[j:j+3]
             ax[0].plot(xemi, self.gaussian_func(xemi,*_popt), label='WNM,F=%.1f \n [%.2f,%.2f,%.2f]'%(_F[i],_popt[0],_popt[1],
-                                                                                                2.35482*_popt[2]),
-                    linewidth=1.8,linestyle=linestyle_plot[i],color='gray')
+                                                                                               2.35482*_popt[2]),
+                   linewidth=1.8,linestyle=linestyle_plot[i],color='gray')
+            
+            # ax[0].plot(xemi, self.gaussian_func(xemi,*_popt), label='WNM',
+            #         linewidth=1.8,linestyle=linestyle_plot[i],color='gray')
         
         ax[0].set_title(name)
         ax[0].set_ylabel(r'$T_B$')
@@ -987,8 +1008,11 @@ class SpectraDecomposing:
             j=i*3
             _popt=popt_ori[j:j+3]
             ax[2].plot(x, 1-np.exp(-self.gaussian_func(x,*_popt)), 
-                    label=r'$\tau$ Fitting parameters:'+'\n [%.2f,%.2f,%.2f]'%(_popt[0],_popt[1],2.35482*_popt[2])
-                    ,linewidth=1.8,linestyle=linestyle_plot[i],c='green')
+                   label=r'$\tau$ Fitting parameters:'+'\n [%.2f,%.2f,%.2f]'%(_popt[0],_popt[1],2.35482*_popt[2])
+                   ,linewidth=1.8,linestyle=linestyle_plot[i],c='green')
+            # ax[2].plot(x, 1-np.exp(-self.gaussian_func(x,*_popt)), 
+            #         label=r'CNM component'
+            #         ,linewidth=1.8,linestyle=linestyle_plot[i],c='green')
             #ax[2].fill_betweenx([0,y.max()],_popt[1]-_popt[2],_popt[1]+_popt[2],alpha=0.2,color='red')
         ax[2].set_ylabel(r'$1-e^{-\tau}$')
         ax[2].legend(framealpha=0,fontsize='small')
