@@ -692,7 +692,7 @@ class SpectraDecomposing:
         #                                                                        order[___p],fit_err[___p],v_shift[___p],res[___p])
             #print('Ts>10 num', ___p.shape)
         p=np.argmin(score_1)
-        print('final BIC ', res[p],'mean score ', np.mean(res) )
+        print('final BIC ', score_1[p],'mean score ', np.mean(score_1) ,'nemi=',len(popt2_[p][2*ncold:])//3)
         #print(score_1[p])
         print('velocity shift',v_shift[p])
     # print('all_Tsf',all_Tsf)
@@ -958,7 +958,7 @@ class SpectraDecomposing:
         print()
         #ax[0].fill_between(xemi,yemi+ yemi_err,yemi- yemi_err,alpha=0.2)
         #print(np.min(yemi),np.min(xemi))
-        ax[0].plot(xemi, yemi, label='GASKAP emission',linewidth=1.2,c='tab:blue')
+        ax[0].plot(xemi, yemi, label='GASKAP emission',linewidth=1.2,c='tab:blue',zorder=20)
         ax[0].plot(xemi, funT, label='Best fit',linewidth=3,alpha=0.9,c='tab:orange')
         #ax[0].fill_between(xemi,yemi+yemi_err,yemi-yemi_err,alpha=0.2,facecolor='gray',edgecolor='gray')
         for i in range(ncold):
@@ -985,7 +985,7 @@ class SpectraDecomposing:
             #         linewidth=1.8,linestyle=linestyle_plot[i],color='gray')
         
         ax[0].set_title(name)
-        ax[0].set_ylabel(r'$T_B$')
+        ax[0].set_ylabel(r'$T_B$ (K)')
         nco=2 if nwarm>4 else 1
         ax[0].legend(framealpha=0,fontsize='x-small',ncol=nco)
         plt.subplots_adjust(hspace=0)
@@ -994,14 +994,14 @@ class SpectraDecomposing:
         #ax[1].fill_between(xemi,Tfit_err,-Tfit_err,alpha=0.2,facecolor='gray',edgecolor='gray')
         ax[1].fill_between(xemi,yemi_err,-yemi_err,alpha=0.2,facecolor='gray',edgecolor='gray')
         ax[1].set_ylabel('Residual')
-        ax[1].set_xlabel('velocity (km/s)')
+        ax[1].set_xlabel('vlsr (km/s)')
         zero=np.array([0]*np.shape(xemi)[0])
         ax[1].plot(xemi,zero,linewidth=1,c='black')
         plt.subplots_adjust(hspace=0)
         #y=1-np.exp(-y)
         #yerr=1-np.exp(-yerr)
         a=1-np.exp(-self.gaussian_func_multi(x,*popt_ori))
-        ax[2].plot(x, y, label='GASKAP absorption',linewidth=1.2,c='tab:blue')
+        ax[2].plot(x, y, label='GASKAP absorption',linewidth=1.2,c='tab:blue',zorder=20)
         ax[2].plot(x, a, label='Best fit',linewidth=3,alpha=0.9,c='tab:orange')
         
         for i in range(ncold):
@@ -1022,6 +1022,6 @@ class SpectraDecomposing:
     # ax[3].fill_between(x,err,-err,alpha=0.2,facecolor='gray',edgecolor='gray')
         ax[3].fill_between(x,yerr,-yerr,alpha=0.2,facecolor='gray',edgecolor='gray')
         ax[3].set_ylabel('Residual')
-        ax[3].set_xlabel('velocity (km/s)')
+        ax[3].set_xlabel('vlsr (km/s)')
         zero=np.array([0]*np.shape(xemi)[0])
         ax[3].plot(xemi,zero,linewidth=1,c='black')
