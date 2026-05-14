@@ -702,7 +702,7 @@ class SpectraDecomposing:
             if len(all_Tsf[:,i])>1:
                 m_=np.sum(wf*all_Tsf[:,i])/np.sum(wf)
                 mean_Ts.append(m_)
-                sigma_meanTsf.append(np.sqrt(np.sum(wf*(all_Tsf[:,i]-m_)**2+sigma_Tsf[:,i]**2)/np.sum(wf)*len(wf)/(len(wf)-1)))
+                sigma_meanTsf.append(np.sqrt(np.sum(wf*(all_Tsf[:,i]-m_)**2+wf*sigma_Tsf[:,i]**2)/np.sum(wf)*len(wf)/(len(wf)-1)))
             else:
                 mean_Ts.append(all_Tsf[:,i])
                 sigma_meanTsf.append(sigma_Tsf[:,i])
