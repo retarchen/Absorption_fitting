@@ -11,10 +11,14 @@ Gaussian-based radiative-transfer fitting for absorption and emission spectra.
 exports radiative-transfer decomposition results. The PyPI project name is
 `spec_rt`; the Python import package is also `spec_rt`.
 
+Version 1.0.0 accelerates complicated absorption spectra with overlap-aware CNM
+ordering and analytic emission-model derivatives. The radiative-transfer and
+BIC selection method is unchanged, and exhaustive legacy ordering remains
+available for validation. See the [performance documentation](https://specrt.readthedocs.io/en/latest/performance.html).
+
 ## Links
 
 - PyPI: https://pypi.org/project/spec-rt/
 - Documentation: https://specrt.readthedocs.io/en/latest/installation.html
 - Source code: https://github.com/retarchen/specRT
 - Citation DOI: https://doi.org/10.5281/zenodo.21052794
-

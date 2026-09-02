@@ -1,3 +1,4 @@
 include README.md
+include CHANGELOG.md
 recursive-include docs *.rst *.py Makefile
 recursive-include examples *.py *.txt *.png *.csv

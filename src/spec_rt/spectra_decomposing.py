@@ -17,6 +17,7 @@ from .spectra_decomposing_io import (
 )
 from .spectra_decomposing_plotting import create_legacy_axes, plot_fit_panels
 from .spectra_decomposing_utils import align_spectra_grids, filter_positive_error_rows
+from .spectra_decomposing_search import build_emission_model, generate_cnm_orderings
 
 
 class _GaussianFitSpecAdapter:
@@ -111,8 +112,13 @@ class SpectraDecomposing:
         self.datapath='./'
         self.renew=False
         self.align_data=False
-        self.max_auto_warm_components=None
+        self.max_auto_warm_components=6
         self.absorption_center_window=5.0
+        self.cnm_order_strategy="overlap"
+        self.cnm_overlap_sigma=2.5
+        self.max_cnm_orderings=720
+        self.use_analytic_jacobian=True
+        self.search_stats={}
 
     def _prepare_inputs(self):
         """Filter invalid rows, validate absorption format, and align grids if needed."""
@@ -217,6 +223,11 @@ class SpectraDecomposing:
 
     def Gaussian_fit(self):
         """Run the full absorption plus emission decomposition workflow."""
+        self.search_stats = {
+            "emission_fit_attempts": 0,
+            "emission_fit_successes": 0,
+            "emission_fit_failures": 0,
+        }
         x, y, yerr, xemi, yemi, yemi_err = self._prepare_inputs()
 
         peak_emi=self.peak_emi
@@ -337,47 +348,43 @@ class SpectraDecomposing:
             mask = (p0 > highbound) | (p0 < lowbound)
             p0[mask] = (highbound[mask] + lowbound[mask]) / 2
            # print(highbound,lowbound,p0)
-            values = np.arange(0, ncold)
-           # print(p0,lowbound,highbound)
-            CNMsequences = np.array(list(itertools.permutations(values, ncold)))
+            CNMsequences = generate_cnm_orderings(
+                popt,
+                strategy=self.cnm_order_strategy,
+                overlap_sigma=self.cnm_overlap_sigma,
+                max_orderings=self.max_cnm_orderings,
+            )
             Fsequences = np.array(list(itertools.product(F, repeat=nwarm)))
+            self.search_stats["cold_components"] = ncold
+            self.search_stats["warm_components"] = nwarm
+            self.search_stats["cnm_orderings"] = len(CNMsequences)
+            self.search_stats["fraction_combinations"] = len(Fsequences)
+            self.search_stats["fits_per_loop"] = len(CNMsequences) * len(Fsequences)
             for cn in range(len(CNMsequences)):
                 for i in range(len(Fsequences)):
-                    def T_exp(x,*pa):
-                        _vp=pa[:ncold]
-                        _=2*ncold
-                        Ts=pa[ncold:_]
-                        para=pa[_:]
-                        T_CNM = np.zeros_like(x)
-                        CN_=CNMsequences[cn]
-                        for j in range(len(CN_)):
-                            index=CN_[j]*3
-                            if j==0:
-                                tau_=0
-                            else:
-                                tau_=np.zeros_like(x)
-                                for l in range(j):
-                                    index2=CN_[l]*3
-                                    #tau_+=np.log(1-gaussian_func(x,*popt[index2:index2+3]))
-                                    tau_+=self.gaussian_func(x,*popt[index2:index2+3])
-                            #T_CNM+=gaussian_func(x,*popt[index:index+3])*Ts[CN_[j]]*np.exp(tau_)
-                            _popt_=popt[index:index+3]
-                            _popt_[1]=_vp[CN_[j]]
-                            #print(_popt_,x,gaussian_func(x,*_popt_))
-                            T_CNM+=(1-np.exp(-self.gaussian_func(x,*_popt_)))*(Ts[CN_[j]])*np.exp(-tau_)
-                        T_WNM = np.zeros_like(x)
-                        F_=Fsequences[i]
-                        for m in range(len(F_)):
-                            i_=m*3
-                            #T_WNM+=(F_[m] + (1 - F_[m]) *(1-gaussian_func_multi(x,*popt))) * gaussian_func(x, *para[i_:i_+3])
-                            T_WNM+=(F_[m] + (1 - F_[m]) *np.exp(-self.gaussian_func_multi(x,*popt))) * self.gaussian_func(x, *para[i_:i_+3])
-                        #print(np.exp(-gaussian_func_multi(x,*popt)))
-                        T_WNM=T_WNM+self.Tsky*(np.exp(-self.gaussian_func_multi(x,*popt))-1)
-                        return T_CNM+T_WNM
+                    T_exp, T_jac = build_emission_model(
+                        xemi,
+                        popt,
+                        CNMsequences[cn],
+                        Fsequences[i],
+                        self.Tsky,
+                    )
                     try:
-                        pop_, pcov = curve_fit(T_exp, xemi, yemi,p0=p0,bounds=(lowbound,highbound),maxfev=120000)
+                        self.search_stats["emission_fit_attempts"] += 1
+                        pop_, pcov = curve_fit(
+                            T_exp,
+                            xemi,
+                            yemi,
+                            p0=p0,
+                            bounds=(lowbound,highbound),
+                            jac=T_jac if self.use_analytic_jacobian else None,
+                            maxfev=120000,
+                        )
                     except RuntimeError as e:
+                        self.search_stats["emission_fit_failures"] += 1
                         print(f"Fit failed: {e}")
+                        continue
+                    self.search_stats["emission_fit_successes"] += 1
                     pcov_=np.sqrt(np.diag(pcov))
                 # print(pcov_)
                     popt2_.append(pop_)
@@ -604,6 +611,11 @@ class SpectraDecomposing:
                         except RuntimeError as e:
                             print(f"Fit failed for Gaussians: {e}")
 
+                        if b_pos < 0:
+                            print("No acceptable warm-component candidate; stopping automatic search")
+                            improving = False
+                            break
+
                         nwarm+=1
                         p0_1=np.append(p0_1,[np.max(y_error), x[pe[b_pos]], 1])
                         bic=_bbic
@@ -637,8 +649,7 @@ class SpectraDecomposing:
                             num+=1
                         # if num>=lim and lim<2:
                         #     lim+=1
-                            if best_bic<700:
-                                improving = False
+                            improving = False
                             
                        # print(improving)
 

@@ -34,8 +34,26 @@ Core options
    ``[0, 0.5, 1]``.
 
 ``max_auto_warm_components``
-   Optional cap for automatically selected WNM components. Leave as ``None``
-   for the full search, or set a small integer for faster examples.
+   Safety cap for automatically selected WNM components. The default is ``6``.
+   Set a smaller integer for a faster exploratory fit, or ``None`` to remove
+   the cap. Automatic BIC selection still stops at the first non-improving
+   component count.
+
+``cnm_order_strategy``
+   Use ``"overlap"`` (default) to permute only blended CNM components. Use
+   ``"exhaustive"`` to reproduce the legacy search over every CNM ordering.
+
+``cnm_overlap_sigma``
+   Controls which CNM components are considered blended in overlap mode. The
+   default is ``2.5`` times the components' combined Gaussian width.
+
+``max_cnm_orderings``
+   Maximum number of overlap-aware CNM orderings. The default is ``720``. Set
+   this to ``None`` to remove the cap.
+
+``use_analytic_jacobian``
+   If ``True`` (default), provide exact model derivatives to SciPy's nonlinear
+   optimizer. Set it to ``False`` only for numerical-derivative comparisons.
 
 Output options
 --------------
@@ -61,7 +79,7 @@ Example
    spec_fit.v_shift = 4
    spec_fit.peak_abs = []
    spec_fit.peak_emi = []
-   spec_fit.max_auto_warm_components = 1
+   spec_fit.max_auto_warm_components = 3
    spec_fit.Tsmin = 10
    spec_fit.Tsky = 2.73
    spec_fit.F = [0, 0.5, 1]
