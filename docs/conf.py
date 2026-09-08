@@ -8,7 +8,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 project = "spec_rt"
 author = "Project contributors"
-release = "1.0.1"
+release = "1.0.2"
 
 extensions = [
     "sphinx.ext.autodoc",

@@ -19,4 +19,4 @@ __all__ = [
     "validate_absorption_input",
     "create_legacy_axes",
 ]
-__version__ = "1.0.1"
+__version__ = "1.0.2"
